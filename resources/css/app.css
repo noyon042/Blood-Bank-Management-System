@@ -1,0 +1,11 @@
+.main_content.large_header_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 235px;
+    z-index: 9;
+    background: #ffffff;
+    content: '';
+    left: 270px;
+}

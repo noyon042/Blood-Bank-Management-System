@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\BloodGroup;
+use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\DataTable;
+use App\Http\Controllers\ListTable;
+use App\Http\Controllers\Recepient;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[Dashboard::class,'dashboard']);
+Route::get('/donorlist/listtable',[ListTable::class,'listtable'])->name('donorlist.listtable');
+Route::get('/bloodgroup/blood',[BloodGroup::class,'blood']);
+Route::get('/recepient/recepientform',[Recepient::class,'form']);
+Route::get('/recepient/recepientdatatable',[DataTable::class,'data']);
+Route::get('/donorlist/form',[ListTable::class,'createForm']);
+Route::post('/donorlist/store',[ListTable::class,'store'])->name('donorlist.store');
+Route::get('/recepient/create',[DataTable::class,'createForm'])->name('recepient.create');
+Route::post('/recepient/store',[DataTable::class,'store'])->name('recepient.store');
+

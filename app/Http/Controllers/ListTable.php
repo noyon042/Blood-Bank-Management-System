@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class ListTable extends Controller
 {
     public function listtable(){
-      $donorLists = DonorList::all();
+      $donorLists = DonorList::paginate(5);
         return view('admin.pages.donorlist.ListTable.listtable', compact('donorLists'));
     }
 
@@ -24,6 +24,6 @@ class ListTable extends Controller
         'address'=>$request->address,
         'last_donation_date'=>$request->last_donation_date
       ]);
-      return redirect()->back();
+      return redirect()->route('donorlist.listtable');
     }
 }

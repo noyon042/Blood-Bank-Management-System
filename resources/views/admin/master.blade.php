@@ -66,36 +66,39 @@
                   </li>
                   <li class="parent"><a href="charts.html"><span>Blood Group</span></a>
                     <ul class="sub-menu">
-                      <li><a href="{{url('/bloodgroup/blood')}}">Blood</a>
+                      <li><a href="{{url('/bloodgroup/addblood')}}">Add Blood</a>
+                      </li>
+                      <li><a href="{{url('/bloodgroup/manageblood')}}">Manage Blood</a>
                       </li>
                       
                     </ul>
                   </li>
-                  <li class="parent"><a href="#"><span>Manage Report</span></a>
+                  <li class="parent"><a href="#"><span>Request Received By Donar</span></a>
                     <ul class="sub-menu">
-                      <li><a href="form-elements.html">Elements</a>
+                      <li><a href="{{url('/request/receivedform')}}">Request Form</a>
                       </li>
-                      <li><a href="form-validation.html">Validation</a>
-                      </li>
+                     
+                     
                       
-                      <li><a href="form-masks.html">Input Masks</a>
-                      </li>
-                      
-                      <li><a href="form-upload.html">Multi Upload</a>
-                      </li>
                     </ul>
                   </li>
-                  <li class="parent"><a href="#"><span>Recepient</span></a>
+                  <li class="parent"><a href="#"><span>Hospital</span></a>
+                  </li>  
+                  <li class="parent"><a href="#"><span>Recipient</span></a>
                     <ul class="sub-menu">
-                      <li><a href="{{url('/recepient/recepientform')}}">Recepient Form</a>
-                      </li>
-                      <li><a href="{{url('/recepient/recepientdatatable')}}">Recepient Data Table</a>
+                     
+                      <li><a href="{{url('/recepient/recepientdatatable')}}">Recipient Data Table</a>
                       </li>
                      
                     </ul>
                   </li>
                  
-             
+                  <li class="parent"><a href="#"><span>Report</span></a>
+                  </li>
+                  <li class="parent"><a href="#"><span>Admin</span></a>
+                  </li>
+                  <li class="parent"><a href="#"><span>Setting</span></a>
+                  </li>
                 
                 
                 </ul>

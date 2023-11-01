@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\DataTable;
 use App\Http\Controllers\ListTable;
 use App\Http\Controllers\Recepient;
+use App\Http\Controllers\RequestReceived;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,11 +21,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[Dashboard::class,'dashboard']);
 Route::get('/donorlist/listtable',[ListTable::class,'listtable'])->name('donorlist.listtable');
-Route::get('/bloodgroup/blood',[BloodGroup::class,'blood']);
+
+Route::get('/bloodgroup/blood',[BloodGroup::class]);
+Route::get('/bloodgroup/addblood',[BloodGroup::class,'addblood']);
+Route::get('/bloodgroup/manageblood',[BloodGroup::class,'manageBlood'])->name('bloodgroup.manageblood');
+Route::get('/manageblood/create',[BloodGroup::class,'createForm'])->name('manageblood.create');
+Route::post('/manageblood/store',[BloodGroup::class,'store'])->name('manageblood.store');
+
+Route::get('/request/receivedform',[RequestReceived::class,'requestReceived']);
+
 Route::get('/recepient/recepientform',[Recepient::class,'form']);
 Route::get('/recepient/recepientdatatable',[DataTable::class,'data']);
-Route::get('/donorlist/form',[ListTable::class,'createForm']);
+
+Route::get('/donorlist/form',[ListTable::class,'createForm'])->name('donorlist.form');
 Route::post('/donorlist/store',[ListTable::class,'store'])->name('donorlist.store');
+
 Route::get('/recepient/create',[DataTable::class,'createForm'])->name('recepient.create');
 Route::post('/recepient/store',[DataTable::class,'store'])->name('recepient.store');
 

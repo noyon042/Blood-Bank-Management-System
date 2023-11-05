@@ -7,10 +7,18 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Blood ID</th>
+      <th scope="col">ID</th>
+      <th scope="col">Blood Group</th>
+      <th scope="col">Select Donor Name</th>
+      <th scope="col">Donor Contact</th>
+      <th scope="col">Recepient Name</th>
+      <th scope="col">Patient Hospital</th>
+      <th scope="col">Date Of Blood Needed</th>
+
       <th scope="col">Location</th>
-      <th scope="col">Expiry Date</th>
+      {{-- <th scope="col">Expiry Date</th> --}}
       <th scope="col">Reason For Mangement</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -20,15 +28,26 @@
 
 <tr>
 
-<th scope="row">{{ $bloodgroup->id }}</th>
+<th scope="row">{{$loop->iteration}}</th>
+<td>{{$bloodgroup->blood_id}}</td>
+<td>{{$bloodgroup->donor_name}}</td>
+<td>{{$bloodgroup->contact}}</td>
+<td>{{$bloodgroup->name}}</td>
+<td>{{$bloodgroup->hospital_name}}</td>
+<td>{{$bloodgroup->date_of_need}}</td>
+
 <td>{{$bloodgroup->location}}</td>
-<td>{{$bloodgroup->expiry_date}}</td>
+{{-- <td>{{$bloodgroup->expiry_date}}</td> --}}
 <td>{{$bloodgroup->reason}}</td>
 
 <td>
-<a class="btn btn-success" href="">Edit</a>
+    <a class="btn btn-success" href="">View</a>
+<a class="btn btn-primary" href="">Edit</a>
 <a class="btn btn-danger" href="">Delete</a>
 </td>
 </tr>
 @endforeach
+  </tbody>
+</table>
+
  @endsection

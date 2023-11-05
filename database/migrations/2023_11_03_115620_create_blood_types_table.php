@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recepient_lists', function (Blueprint $table) {
-            $table->id('recepient_id',5);
+        Schema::create('blood_types', function (Blueprint $table) {
+            $table->id();
+            $table->string('blood_id',20);
+            $table->string('donor_name',50);
+            $table->string('contact',20);
             $table->string('name',50);
-            $table->string('blood_group');
-            $table->string('phn_number',12)->unique();
-            $table->string('hospital_name',100);
+            $table->string('hospital_name',20);
             $table->date('date_of_need');
+            $table->string('location',50);
+            $table->text('reason',100)->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('recepient_lists');
+        Schema::dropIfExists('blood_types');
     }
 };

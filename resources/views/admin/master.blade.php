@@ -22,31 +22,31 @@
   <body>
     <div class="be-wrapper be-fixed-sidebar ">
       <nav class="navbar navbar-expand fixed-top be-top-header">
-        <div class="container-fluid">
-          <div class="be-navbar-header"><a style="margin: 0 30px; font-size: xx-large; " href="index.html">BBMS</a>
+        <div class="container-fluid bg-dark">
+          <div class="be-navbar-header"><a style="margin: 0 30px; font-size: xx-large; " href="index.html" class="text-danger fw-bold">BBMS</a>
           </div>
           <div class="page-title"><span style="text-align: center;
-    color: blue;">Blood Bank Management System</span></div>
+    color: rgb(255, 255, 255);">Blood Bank Management System</span></div>
           <div class="be-right-navbar">
             <ul class="nav navbar-nav float-right be-user-nav">
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false"><img src="https://i.ibb.co/Y0jGJFC/me.jpg" alt="Avatar"><span class="user-name">Noyon Mahmud</span></a>
-                <div class="dropdown-menu" role="menu">     
+                <div class="dropdown-menu" role="menu">
                   <div class="user-info">
                     <div class="user-name">Noyon Mahmud</div>
                     <div>Admin</div>
-                  </div><a class="dropdown-item" href="pages-profile.html"><span></span>Logout</a>
+                  </div><a class="dropdown-item" href="{{route('admin.logout')}}"><span></span>Logout</a>
                 </div>
               </li>
             </ul>
             <ul class="nav navbar-nav float-right be-icons-nav">
 
-              
-             
+
+
             </ul>
           </div>
         </div>
       </nav>
-      <div class="be-left-sidebar">
+      <div class="be-left-sidebar bg-dark">
         <div class="left-sidebar-wrapper">
           <a class="left-sidebar-toggle" href="#">Dashboard</a>
           <div class="left-sidebar-spacer">
@@ -56,68 +56,68 @@
                   <li class="divider">Menu</li>
                   <li class="active"><a href="{{url('/')}}"><i ></i><span>Dashboard</span></a>
                   </li>
-                  <li class="parent"><a href="#"><span>Donor List</span></a>
+                  <li class=""><a href="#"><span>Donor List</span></a>
                     <ul class="sub-menu">
-                    
+
                       <li><a href="{{url('/donorlist/listtable')}}">List</a>
                       </li>
-                      
+
                     </ul>
                   </li>
-                  <li class="parent"><a href="charts.html"><span>Blood Group</span></a>
+                  <li class="t"><a href="charts.html"><span class="">Blood Group</span></a>
                     <ul class="sub-menu">
                       <li><a href="{{url('/bloodgroup/addblood')}}">Add Blood</a>
                       </li>
                       <li><a href="{{url('/bloodgroup/manageblood')}}">Manage Blood</a>
                       </li>
-                      
+
                     </ul>
                   </li>
-                  <li class="parent"><a href="#"><span>Request Received By Donar</span></a>
+                  <li class=""><a href="#"><span class="">Request Received By Donar</span></a>
                     <ul class="sub-menu">
                       <li><a href="{{url('/request/receivedform')}}">Request Form</a>
                       </li>
-                     
-                     
-                      
+
+
+
                     </ul>
                   </li>
-                  <li class="parent"><a href="#"><span>Hospital</span></a>
-                  </li>  
-                  <li class="parent"><a href="#"><span>Recipient</span></a>
+                  <li class=""><a href="#"><span class="">Hospital</span></a>
+                  </li>
+                  <li class=""><a href="#"><span class="">Recipient</span></a>
                     <ul class="sub-menu">
-                     
+
                       <li><a href="{{url('/recepient/recepientdatatable')}}">Recipient Data Table</a>
                       </li>
-                     
+
                     </ul>
                   </li>
-                 
-                  <li class="parent"><a href="#"><span>Report</span></a>
+
+                  <li class=""><a href="#"><span>Report</span></a>
                   </li>
-                  <li class="parent"><a href="#"><span>Admin</span></a>
+                  <li class=""><a href="#"><span>Admin</span></a>
                   </li>
-                  <li class="parent"><a href="#"><span>Setting</span></a>
+                  <li class=""><a href="#"><span>Setting</span></a>
                   </li>
-                
-                
+
+
                 </ul>
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
       <div class="be-content">
         <div class="main-content container-fluid">
-         
-    
+
+
           @yield('content')
-          
-          
+
+
         </div>
       </div>
-     
+
     </div>
     <script src="https://foxythemes.net/preview/products/beagle/assets/lib/jquery/jquery.min.js" type="text/javascript"></script>
     <script src="https://foxythemes.net/preview/products/beagle/assets/lib/perfect-scrollbar/js/perfect-scrollbar.min.js" type="text/javascript"></script>
@@ -140,7 +140,7 @@
       	//-initialize the javascript
       	App.init();
       	App.dashboard();
-      
+
       });
     </script>
   </body>

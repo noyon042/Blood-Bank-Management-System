@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
-<h1>Donate Blood</h1>
-<a href="{{route('donorlist.form')}}" class="btn btn-success">Create New List</a>
+<h1>Recepient's request to Donor</h1>
+<a href="{{route('request.form')}}" class="btn btn-success">Create New List</a>
 <table class="table table-striped">
     <thead>
         <tr>

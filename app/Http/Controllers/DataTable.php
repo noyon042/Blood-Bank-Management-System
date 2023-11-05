@@ -28,6 +28,6 @@ class DataTable extends Controller
             'hospital_name' => $request->hospital_name,
             'date_of_need' => $request->date_of_need
         ]);
-        return redirect()->back();
+        return redirect()->route('recepient.recepientdatatable');
     }
 }

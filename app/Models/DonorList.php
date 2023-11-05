@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,4 +10,5 @@ class DonorList extends Model
     use HasFactory;
 
     protected $guarded= [];
+    
 }

@@ -2,7 +2,8 @@
 
 @section('content')
 
-<h1>heloo</h1>
+<h1>Noyon</h1>
+
 <div class="row">
             <div class="col-12 col-lg-6 col-xl-3">
                         <div class="widget widget-tile">

@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
+
+use App\Http\Controllers\Controller;
 use App\Models\DonorList;
 use Illuminate\Http\Request;
 
@@ -19,6 +21,7 @@ class ListTable extends Controller
 
       DonorList::create([
         'donor_name'=>$request->donor_name,
+        'email'=>$request->email,
         'blood_group'=>$request->blood_group,
         'contact'=>$request->contact,
         'address'=>$request->address,

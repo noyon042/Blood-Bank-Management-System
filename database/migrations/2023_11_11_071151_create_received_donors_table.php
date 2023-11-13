@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recepient_lists', function (Blueprint $table) {
+        Schema::create('received_donors', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50);
-            $table->string('email',50)->unique();
-            $table->string('blood_group');
-            $table->string('phn_number',50)->unique();
-            $table->string('hospital_name',100);
-            $table->date('date_of_need');
+            $table->foreignId('donor_id')->constrained('donor_lists')->cascadeOnDelete();
+            $table->foreignId('recepient_id')->constrained('recepient_lists')->cascadeOnDelete();
+            $table->string('response');
+            $table->string('hospital_name');
             $table->timestamps();
+
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('recepient_lists');
+        Schema::dropIfExists('received_donors');
     }
 };

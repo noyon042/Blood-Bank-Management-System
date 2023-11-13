@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
-use App\Models\RecepientList;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\RecepientList;
 
 class DataTable extends Controller
 {
@@ -20,9 +22,10 @@ class DataTable extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         RecepientList::create([
-            'recepient_id' => $request->recepient_id,
             'name' => $request->name,
+            'email' => $request->email,
             'blood_group' => $request->blood_group,
             'phn_number' => $request->phn_number,
             'hospital_name' => $request->hospital_name,

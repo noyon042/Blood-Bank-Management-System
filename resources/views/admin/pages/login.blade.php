@@ -21,19 +21,27 @@
 
 
               <form action="{{route('admin.login.post')}}" method="post">
+
+            @if (session('error'))
+            <div class="text-danger ">{{session('error')}}</div>
+            @endif
+
+           
+
+
                @csrf
 
                   <div class="form-outline mb-4">
-                    <input required name="email" type="email"id="typeEmailX-2" class="form-control form-control-lg" />
-                    <label class="form-label" for="typeEmailX-2">Email</label>
+                    <input required name="email" type="email"id="typeEmailX-2" class="form-control form-control-sm " placeholder="Enter your email address"/>
+
                     @error('email')
                      <div class="alert alert-danger">{{$message}}</div>
                     @enderror
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input required name="password" type="password" id="typePasswordX-2" class="form-control form-control-lg" />
-                    <label class="form-label" for="typePasswordX-2">Password</label>
+                    <input required name="password" type="password" id="typePasswordX-2" class="form-control form-control-sm" placeholder="Enter your valid password"/>
+
                     @error('password')
                     <div class="alert alert-danger">{{$message}}</div>
                    @enderror
@@ -44,7 +52,7 @@
 
                   <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
                 </form>
-                  <hr class="my-4">
+
 
 
 

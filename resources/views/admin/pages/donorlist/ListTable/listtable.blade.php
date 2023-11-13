@@ -7,6 +7,7 @@
         <tr>
             <th scope="col">Donor ID</th>
             <th scope="col">Donor Name</th>
+            <th scope="col">Email</th>
             <th scope="col">Blood Type</th>
             <th scope="col">Contact</th>
             <th scope="col">Address</th>
@@ -17,12 +18,13 @@
     </thead>
     <tbody>
 
-    @foreach ($donorLists as $donorList)
+    @foreach ($donorLists as $key=>$donorList)
 
         <tr>
 
-<th scope="row">{{ $donorList->id }}</th>
+<th scope="row">{{ $key+1 }}</th>
 <td>{{$donorList->donor_name}}</td>
+<td>{{$donorList->email}}</td>
 <td>{{$donorList->blood_group}}</td>
 <td>{{$donorList->Contact}}</td>
 <td>{{$donorList->address}}</td>

@@ -7,6 +7,7 @@
         <tr>
             <th scope="col"> ID</th>
             <th scope="col">Name </th>
+            <th scope="col">email </th>
             <th scope="col">Blood type</th>
             <th scope="col">Phone Number</th>
             <th scope="col">Hospital Name</th>
@@ -15,12 +16,13 @@
 
     </thead>
 
-    @foreach ($recepientLists as $recepientList)
+    @foreach ($recepientLists as $key=> $recepientList)
 
     <tr>
 
-        <th scope="row">{{ $recepientList->recepient_id }}</th>
+        <th scope="row">{{ $key+1}}</th>
         <td>{{$recepientList->name}}</td>
+        <td>{{$recepientList->email}}</td>
         <td>{{$recepientList->blood_group}}</td>
         <td>{{$recepientList->phn_number}}</td>
         <td>{{$recepientList->hospital_name}}</td>

@@ -34,7 +34,7 @@
                   <div class="user-info">
                     <div class="user-name">Noyon Mahmud</div>
                     <div>Admin</div>
-                  </div><a class="dropdown-item" href="{{route('admin.logout')}}"><span></span>Logout</a>
+                  </div><a class="dropdown-item" href="{{route('admin.logout')}}">{{auth()->user()->name}}<span></span> -Logout</a>
                 </div>
               </li>
             </ul>
@@ -54,40 +54,44 @@
               <div class="left-sidebar-content">
                 <ul class="sidebar-elements">
                   <li class="divider">Menu</li>
-                  <li class="active"><a href="{{url('/')}}"><i ></i><span>Dashboard</span></a>
+                  <li class="active"><a href="{{route('dashboard')}}"><i ></i><span>Dashboard</span></a>
                   </li>
                   <li class=""><a href="#"><span>Donor List</span></a>
                     <ul class="sub-menu">
 
-                      <li><a href="{{url('/donorlist/listtable')}}">List</a>
+                      <li><a href="{{route('donorlist.listtable')}}">List</a>
                       </li>
 
                     </ul>
                   </li>
                   <li class="t"><a href="charts.html"><span class="">Blood Group</span></a>
                     <ul class="sub-menu">
-                      <li><a href="{{url('/bloodgroup/addblood')}}">Add Blood</a>
+                      <li><a href="{{route('addblood')}}">Add Blood</a>
                       </li>
-                      <li><a href="{{url('/bloodgroup/manageblood')}}">Manage Blood</a>
+                      <li><a href="{{route('bloodgroup.manageblood')}}">Manage Blood</a>
                       </li>
 
                     </ul>
                   </li>
                   <li class=""><a href="#"><span class="">Request Received By Donar</span></a>
                     <ul class="sub-menu">
-                      <li><a href="{{url('/request/receivedform')}}">Request Form</a>
+                      <li><a href="{{route('request.receivedform')}}">Request Form</a>
                       </li>
 
 
 
                     </ul>
-                  </li>
-                  <li class=""><a href="#"><span class="">Hospital</span></a>
-                  </li>
+
+                    <li class=""><a href="#"><span class="">Hospital</span></a>
+                        <ul class="sub-menu">
+                          <li><a href="{{route('hospital')}}">Hospital Form</a>
+                          </li>
+
+
                   <li class=""><a href="#"><span class="">Recipient</span></a>
                     <ul class="sub-menu">
 
-                      <li><a href="{{url('/recepient/recepientdatatable')}}">Recipient Data Table</a>
+                      <li><a href="{{route('recepient.recepientdatatable')}}">Recipient Data Table</a>
                       </li>
 
                     </ul>
@@ -95,7 +99,16 @@
 
                   <li class=""><a href="#"><span>Report</span></a>
                   </li>
-                  <li class=""><a href="#"><span>Admin</span></a>
+
+
+                  <li class=""><a href=""#" "><span>User Login List</span></a>
+                    <ul class="sub-menu">
+                        <li><a href="{{route('users.list')}}">List</a>
+                        </li>
+
+
+
+                      </ul>
                   </li>
                   <li class=""><a href="#"><span>Setting</span></a>
                   </li>

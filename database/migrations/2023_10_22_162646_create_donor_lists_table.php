@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('donor_lists', function (Blueprint $table) {
             $table->id();
             $table->string('donor_name',100)->unique();
+            $table->string('email',100)->unique();
             $table->string('blood_group',5);
             $table->string('contact',70)->unique();
             $table->text('address')->nullable();
@@ -21,5 +22,9 @@ return new class extends Migration
             $table->timestamps();
         });
 
+    }
+    public function down(): void
+    {
+        Schema::dropIfExists('donor_lists');
     }
 };

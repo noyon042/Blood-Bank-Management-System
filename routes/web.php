@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\Backend\UserController;
-use App\Http\Controllers\BloodGroup;
-use App\Http\Controllers\Dashboard;
-use App\Http\Controllers\DataTable;
-use App\Http\Controllers\ListTable;
-use App\Http\Controllers\Recepient;
-use App\Http\Controllers\RequestReceived;
+use App\Http\Controllers\Backend\BloodGroup;
+use App\Http\Controllers\Backend\Dashboard;
+use App\Http\Controllers\Backend\DataTable;
+use App\Http\Controllers\Backend\Hospital;
+use App\Http\Controllers\Backend\ListTable;
+use App\Http\Controllers\Backend\Recepient;
+use App\Http\Controllers\Backend\RequestReceived;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,26 +21,44 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin/login',[UserController::class,'loginForm'])->name('admin.login');
+
+
+
+
+
+
+
+
+
+
+
+Route::group(['prefix'=>'admin'],function(){
+
+
+Route::get('/login',[UserController::class,'loginForm'])->name('admin.login');
 Route::post('/login-form-post',[UserController::class,'loginPost'])->name('admin.login.post');
 
 
 Route::group(['middleware'=>'auth'],function(){
 
-    Route::get('/admin/logout',[UserController::class,'logout'])->name('admin.logout');
+    Route::get('/logout',[UserController::class,'logout'])->name('admin.logout');
+
+    Route::get('/users',[UserController::class,'list'])->name('users.list');
+    Route::get('/users/create',[UserController::class,'createForm'])->name('users.create');
+    Route::post('/users/store',[UserController::class,'store'])->name('users.store');
 
 Route::get('/',[Dashboard::class,'dashboard'])->name('dashboard');
 Route::get('/donorlist/listtable',[ListTable::class,'listtable'])->name('donorlist.listtable');
 
 Route::get('/bloodgroup/blood',[BloodGroup::class]);
-Route::get('/bloodgroup/addblood',[BloodGroup::class,'addblood']);
+Route::get('/bloodgroup/addblood',[BloodGroup::class,'addblood'])->name('addblood');
 Route::get('/bloodgroup/manageblood',[BloodGroup::class,'manageBlood'])->name('bloodgroup.manageblood');
 Route::get('/manageblood/create',[BloodGroup::class,'createForm'])->name('manageblood.create');
 Route::post('/manageblood/store',[BloodGroup::class,'store'])->name('manageblood.store');
 
-Route::get('/request/receivedform',[RequestReceived::class,'requestReceived']);
+Route::get('/request/receivedform',[RequestReceived::class,'requestReceived'])->name('request.receivedform');
 Route::get('/request/form',[RequestReceived::class,'form'])->name('request.form');
-Route::get('/request/store',[RequestReceived::class,'store'])->name('request.store');
+Route::post('/request/store',[RequestReceived::class,'store'])->name('request.store');
 
 Route::get('/recepient/recepientform',[Recepient::class,'form']);
 Route::get('/recepient/recepientdatatable',[DataTable::class,'data'])->name('recepient.recepientdatatable');
@@ -49,4 +68,10 @@ Route::post('/donorlist/store',[ListTable::class,'store'])->name('donorlist.stor
 
 Route::get('/recepient/create',[DataTable::class,'createForm'])->name('recepient.create');
 Route::post('/recepient/store',[DataTable::class,'store'])->name('recepient.store');
+
+Route::get('/hospital',[Hospital::class,'hospital'])->name('hospital');
+Route::get('/hospital/form',[Hospital::class,'createForm'])->name('hospital.form');
+Route::get('/hospital/store',[Hospital::class,'store'])->name('hospital.store');
+
+});
 });

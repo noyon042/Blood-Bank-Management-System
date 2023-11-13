@@ -6,13 +6,14 @@
 <form action="{{route('recepient.store')}}" method="post">
     @csrf
 
-    <div class="form-group">
-        <label for=""> Recepient ID</label>
-        <input type="text" name="recepient_id" class="form-control" id="" placeholder="Recepient ID">
-    </div>
+
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" name="name" id="" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+        <label for="">Email</label>
+        <input type="email" name="email" class="form-control" id="" placeholder="Email">
     </div>
     <div class="form-group">
         <label for="bloodType">Blood Type</label>

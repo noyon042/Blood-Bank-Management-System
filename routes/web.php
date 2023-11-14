@@ -4,10 +4,12 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\BloodGroup;
 use App\Http\Controllers\Backend\Dashboard;
 use App\Http\Controllers\Backend\DataTable;
-use App\Http\Controllers\Backend\Hospital;
+use App\Http\Controllers\Backend\HospitalInfo;
+use App\Http\Controllers\Backend\HospitalList;
 use App\Http\Controllers\Backend\ListTable;
 use App\Http\Controllers\Backend\Recepient;
 use App\Http\Controllers\Backend\RequestReceived;
+use App\Http\Controllers\FrontendHomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
+ Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
 
 
@@ -69,9 +71,11 @@ Route::post('/donorlist/store',[ListTable::class,'store'])->name('donorlist.stor
 Route::get('/recepient/create',[DataTable::class,'createForm'])->name('recepient.create');
 Route::post('/recepient/store',[DataTable::class,'store'])->name('recepient.store');
 
-Route::get('/hospital',[Hospital::class,'hospital'])->name('hospital');
-Route::get('/hospital/form',[Hospital::class,'createForm'])->name('hospital.form');
-Route::get('/hospital/store',[Hospital::class,'store'])->name('hospital.store');
-
+// Route::get('/hospital',[HospitalList::class,'hospital'])->name('hospital');
+// Route::get('/hospital/form',[HospitalList::class,'createForm'])->name('hospital.form');
+// Route::get('/hospital/store',[HospitalList::class,'store'])->name('hospital.store');
+Route::get('/hospital',[HospitalInfo::class,'hospital'])->name('hospital');
+Route::get('/hospital/form',[HospitalInfo::class,'createForm'])->name('hospital.form');
+Route::post('/hospital/store',[HospitalInfo::class,'store'])->name('hospital.store');
 });
 });

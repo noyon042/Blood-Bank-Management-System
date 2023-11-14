@@ -81,11 +81,18 @@
 
 
                     </ul>
+                  </li>
 
-                    <li class=""><a href="#"><span class="">Hospital</span></a>
-                        <ul class="sub-menu">
-                          <li><a href="{{route('hospital')}}">Hospital Form</a>
-                          </li>
+
+                  <li class=""><a href="#"><span class="">Hospital</span></a>
+                    <ul class="sub-menu">
+                      <li><a href="{{route('hospital')}}">Hospital Form</a>
+                      </li>
+
+
+
+                    </ul>
+                  </li>
 
 
                   <li class=""><a href="#"><span class="">Recipient</span></a>

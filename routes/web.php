@@ -9,7 +9,8 @@ use App\Http\Controllers\Backend\HospitalList;
 use App\Http\Controllers\Backend\ListTable;
 use App\Http\Controllers\Backend\Recepient;
 use App\Http\Controllers\Backend\RequestReceived;
-use App\Http\Controllers\FrontendHomeController;
+use App\Http\Controllers\Frontend\FrontendHomeController;
+use App\Http\Controllers\Frontend\MemberController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,18 @@ use Illuminate\Support\Facades\Route;
 
  Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
+
+
+Route::get('/registration',[MemberController::class,'registration'])->name('member.registration');
+Route::post('/registration',[MemberController::class,'store'])->name('member.store');
+
+Route::get('/login',[MemberController::class,'login'])->name('member.login');
+Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login');
+
+Route::group(['middleware'=>'auth'],function(){
+
+    Route::get('/logout',[MemberController::class, 'logout'])->name('member.logout');
+});
 
 
 

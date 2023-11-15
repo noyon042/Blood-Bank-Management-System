@@ -23,8 +23,8 @@
     {{-- @include('notify::components.notify') --}}
 
 
-
     @yield('content')
+
 
            @include('frontend.partials.footer')
 

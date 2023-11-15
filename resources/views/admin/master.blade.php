@@ -112,6 +112,8 @@
                     <ul class="sub-menu">
                         <li><a href="{{route('users.list')}}">List</a>
                         </li>
+                        <li><a href="{{route('website.post')}}">Frontend Post</a>
+                        </li>
 
 
 

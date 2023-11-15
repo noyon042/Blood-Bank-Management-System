@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MemberPost;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -90,5 +91,11 @@ class UserController extends Controller
         ]);
 
         return redirect()->back()->with('message','User created successfully.');
+    }
+
+    public function postList()
+    {
+        $memberPosts=MemberPost::all();
+        return view('admin.pages.users.post',compact('memberPosts'));
     }
 }

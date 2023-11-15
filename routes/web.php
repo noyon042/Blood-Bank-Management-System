@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\Recepient;
 use App\Http\Controllers\Backend\RequestReceived;
 use App\Http\Controllers\Frontend\FrontendHomeController;
 use App\Http\Controllers\Frontend\MemberController;
+use App\Http\Controllers\Frontend\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//all route for frontend(website)
 
  Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
@@ -36,9 +37,16 @@ Route::post('/registration',[MemberController::class,'store'])->name('member.sto
 Route::get('/login',[MemberController::class,'login'])->name('member.login');
 Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login');
 
+
+
 Route::group(['middleware'=>'auth'],function(){
 
     Route::get('/logout',[MemberController::class, 'logout'])->name('member.logout');
+
+    Route::get('/member/post',[PostController::class,'memberPost'])->name('member.post');
+    Route::post('/member/post/store',[PostController::class,'store'])->name('member.post.store');
+
+
 });
 
 
@@ -49,6 +57,7 @@ Route::group(['middleware'=>'auth'],function(){
 
 Route::group(['prefix'=>'admin'],function(){
 
+//all route for backend(admin)
 
 Route::get('/login',[UserController::class,'loginForm'])->name('admin.login');
 Route::post('/login-form-post',[UserController::class,'loginPost'])->name('admin.login.post');
@@ -61,6 +70,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/users',[UserController::class,'list'])->name('users.list');
     Route::get('/users/create',[UserController::class,'createForm'])->name('users.create');
     Route::post('/users/store',[UserController::class,'store'])->name('users.store');
+    Route::get('/website/post',[UserController::class,'postList'])->name('website.post');
 
 Route::get('/',[Dashboard::class,'dashboard'])->name('dashboard');
 Route::get('/donorlist/listtable',[ListTable::class,'listtable'])->name('donorlist.listtable');

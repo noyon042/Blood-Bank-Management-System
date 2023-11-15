@@ -66,9 +66,14 @@
                                     <a class="nav-link" href="{{route('admin.login')}}">Admin</a>
                                 </li>
 
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link" href="#gallery">Gallery</a>
+                                </li> --}}
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('member.post')}}">Post</a>
                                 </li>
+
                                  <li class="nav-item">
                                     <a class="nav-link" href="#process">Process</a>
                                 </li>

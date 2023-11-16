@@ -60,9 +60,75 @@
 
 </div>
 
+
+
+
 <!--*************** About Us Starts Here ***************-->
 <section id="about" class="contianer-fluid about-us">
+
+
+
    <div class="container">
+
+    <div class="row">
+
+        @foreach ($members as $mem)
+
+
+
+        <div class="col-md-3 col-sm-6 vd">
+           <div class="bkjiu">
+            <img src="{{url('/uploads/'.$mem->image)}}" alt="" />
+            <h4>{{$mem->id}}</h4>
+            <h4>{{$mem->name}}</h4>
+            <h4>{{$mem->role}}</h4>
+            <h4>{{$mem->email}}</h4>
+            <h4>{{$mem->blood_group}}</h4>
+            <h4>{{$mem->contact}}</h4>
+            <h4>{{$mem->address}}</h4>
+
+
+
+            <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+            @endforeach
+
+            {{-- <div class="col-md-3 col-sm-6 vd">
+                <div class="bkjiu">
+                 <img src="{{url('/frontend/assets/images/gallery/g1.jpg')}}" alt="">
+                 <h4><b>1 - </b>Registration</h4>
+                 <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
+                 <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                 </div>
+             </div> --}}
+        {{-- <div class="col-md-3 col-sm-6 vd">
+           <div class="bkjiu">
+            <img src="{{url('/frontend/assets/images/gallery/g2.jpg')}}" alt="">
+               <h4><b>2 - </b>Seeing</h4>
+            <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
+            <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div> --}}
+        {{-- <div class="col-md-3 col-sm-6 vd">
+           <div class="bkjiu">
+            <img src="{{url('/frontend/assets/images/gallery/g3.jpg')}}" alt="">
+               <h4><b>3 - </b>Donation</h4>
+            <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
+            <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div> --}}
+        {{-- <div class="col-md-3 col-sm-6 vd">
+           <div class="bkjiu">
+               <img src="{{url('/frontend/assets/images/gallery/g4.jpg')}}" alt="">
+               <h4><b>4 - </b>Save Life</h4>
+                <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
+                <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+           </div>
+        </div> --}}
+   </div>
+
+
        <div class="row session-title">
            <h2>About Us</h2>
            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has</p>
@@ -142,40 +208,7 @@
            <h2>Donation Process</h2>
            <p>The donation process from the time you arrive center until the time you leave</p>
        </div>
-        <div class="row">
-             <div class="col-md-3 col-sm-6 vd">
-                <div class="bkjiu">
-                 <img src="{{url('/frontend/assets/images/gallery/g1.jpg')}}" alt="">
-                 <h4><b>1 - </b>Registration</h4>
-                 <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
-                 <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
-                 </div>
-             </div>
-             <div class="col-md-3 col-sm-6 vd">
-                <div class="bkjiu">
-                 <img src="{{url('/frontend/assets/images/gallery/g2.jpg')}}" alt="">
-                    <h4><b>2 - </b>Seeing</h4>
-                 <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
-                 <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
-                 </div>
-             </div>
-             <div class="col-md-3 col-sm-6 vd">
-                <div class="bkjiu">
-                 <img src="{{url('/frontend/assets/images/gallery/g3.jpg')}}" alt="">
-                    <h4><b>3 - </b>Donation</h4>
-                 <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
-                 <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
-                 </div>
-             </div>
-             <div class="col-md-3 col-sm-6 vd">
-                <div class="bkjiu">
-                    <img src="{{url('/frontend/assets/images/gallery/g4.jpg')}}" alt="">
-                    <h4><b>4 - </b>Save Life</h4>
-                     <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
-                     <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
-                </div>
-             </div>
-        </div>
+
 
 
      </div>

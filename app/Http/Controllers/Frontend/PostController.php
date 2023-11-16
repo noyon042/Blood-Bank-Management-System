@@ -10,11 +10,27 @@ class PostController extends Controller
 {
    public function memberPost()
    {
-    return view('frontend.pages.post');
+    $members=MemberPost::all();
+    return view('frontend.pages.post',compact('members'));
    }
 
    public function store(Request $request)
    {
+
+    // dd($request->all());
+
+    $fileName=null;
+    if($request->hasFile('image'))
+    {
+        // dd('hi');
+        $file=$request->file('image');
+        $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+
+        $file->storeAs('/uploads',$fileName);
+
+    }
+    // dd('bye');
+
        MemberPost::create([
 
            'name'=>$request->name,
@@ -22,11 +38,12 @@ class PostController extends Controller
            'email'=>$request->email,
            'blood_group'=>$request->blood_group,
            'contact'=>$request->contact,
-           'address'=>$request->address
+           'address'=>$request->address,
+           'image'=>$fileName,
        ]);
 
 
        // notify()->success('Customer Registration successful.');
-       return redirect()->back();
+       return redirect()->route('home');
    }
 }

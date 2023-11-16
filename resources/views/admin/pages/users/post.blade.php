@@ -14,6 +14,7 @@
                 <th scope="col">Blood Group</th>
                 <th scope="col">Contact</th>
                 <th scope="col">Address</th>
+                <th scope="col">Upload Image</th>
                 <th scope="col">Action</th>
             </tr>
 
@@ -30,6 +31,7 @@
             <td>{{$post->blood_group}}</td>
             <td>{{$post->contact}}</td>
             <td>{{$post->address}}</td>
+            <td><img src="{{url('/uploads/'.$post->image)}}" alt="" /></td>
             <td>
                 <a class="btn btn-success" href="">Edit</a>
                 <a class="btn btn-danger" href="">Delete</a>

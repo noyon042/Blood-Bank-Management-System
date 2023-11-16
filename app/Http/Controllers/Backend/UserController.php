@@ -60,6 +60,7 @@ class UserController extends Controller
     }
     public function store(Request $request)
     {
+
         $validate=Validator::make($request->all(),[
            'user_name'=>'required',
            'role'=>'required',

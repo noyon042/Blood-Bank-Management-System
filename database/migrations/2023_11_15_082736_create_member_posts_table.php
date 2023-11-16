@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('blood_group');
             $table->string('contact');
             $table->string('address');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

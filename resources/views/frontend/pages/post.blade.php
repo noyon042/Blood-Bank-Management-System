@@ -3,7 +3,7 @@
 
 @section('content')
 
-<form action="{{route('member.post.store')}}" method="post">
+<form action="{{route('member.post.store')}}" method="post" enctype="multipart/form-data">
     @csrf
 
 <div class="form-group">
@@ -57,6 +57,11 @@
     <textarea  class="form-control" name="address" id="" cols="15" rows="5"></textarea>
   </div>
 
+
+  <div class="form-group">
+    <label for="">Upload Image: </label>
+    <input name="image" type="file" class="form-control">
+  </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

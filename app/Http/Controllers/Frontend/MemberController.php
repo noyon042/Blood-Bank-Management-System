@@ -25,7 +25,7 @@ class MemberController extends Controller
         ]);
 
 
-        // notify()->success('Customer Registration successful.');
+        notify()->success('Customer Registration successful.');
         return redirect()->back();
     }
 
@@ -44,7 +44,7 @@ class MemberController extends Controller
 
         if($validate->fails())
         {
-            // notify()->error($val->getMessageBag());
+            notify()->error($validate->getMessageBag());
             return redirect()->back();
         }
 
@@ -53,11 +53,11 @@ class MemberController extends Controller
 
         if(auth()->attempt($credentials))
         {
-            // notify()->success('Login Success.');
+            notify()->success('Login Success.');
             return redirect()->route('home');
         }
 
-        // notify()->error('Invalid Credentials.');
+        notify()->error('Invalid Credentials.');
             return redirect()->back();
 
 
@@ -67,7 +67,7 @@ class MemberController extends Controller
     public function logout()
     {
         auth()->logout();
-        // notify()->success('Logout Success.');
+        notify()->success('Logout Success.');
         return redirect()->route('home');
     }
 }

@@ -3,6 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    @notifyCss
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
@@ -20,6 +21,7 @@
     </style>
   </head>
   <body>
+    @include('notify::components.notify')
     <div class="be-wrapper be-fixed-sidebar ">
       <nav class="navbar navbar-expand fixed-top be-top-header">
         <div class="container-fluid bg-dark">
@@ -165,5 +167,6 @@
 
       });
     </script>
+    @notifyJs
   </body>
 </html>

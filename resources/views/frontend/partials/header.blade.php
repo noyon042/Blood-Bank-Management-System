@@ -58,24 +58,19 @@
                                     <a class="nav-link" href="{{route('home')}}">Home
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#about">About Us</a>
-                                </li>
+
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('admin.login')}}">Admin</a>
                                 </li>
-
-                                {{-- <li class="nav-item">
-                                    <a class="nav-link" href="#gallery">Gallery</a>
-                                </li> --}}
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('member.post')}}">Post</a>
                                 </li>
-
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="#process">Process</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('web.blood.donate')}}">Blood Donate</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('web.blood.receive')}}">Blood Recieve</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#blog">Blog</a>

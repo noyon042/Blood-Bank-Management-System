@@ -96,6 +96,8 @@ class UserController extends Controller
 
     public function postList()
     {
+        // $doner = MemberPost::where('role', '=' 'recepient')->get();
+
         $memberPosts=MemberPost::all();
         return view('admin.pages.users.post',compact('memberPosts'));
     }

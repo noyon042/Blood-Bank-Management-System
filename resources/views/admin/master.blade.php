@@ -24,11 +24,11 @@
     @include('notify::components.notify')
     <div class="be-wrapper be-fixed-sidebar ">
       <nav class="navbar navbar-expand fixed-top be-top-header">
-        <div class="container-fluid bg-dark">
-          <div class="be-navbar-header"><a style="margin: 0 30px; font-size: xx-large; " href="index.html" class="text-danger fw-bold">BBMS</a>
+        <div class="container-fluid bg-danger">
+          <div class="be-navbar-header"><a style="margin: 0 30px; font-size: xx-large; " href="index.html" class="text-white fw-bold">BBMS</a>
           </div>
           <div class="page-title"><span style="text-align: center;
-    color: rgb(255, 255, 255);">Blood Bank Management System</span></div>
+    color: rgb(240, 234, 234);">Blood Bank Management System</span></div>
           <div class="be-right-navbar">
             <ul class="nav navbar-nav float-right be-user-nav">
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false"><img src="https://i.ibb.co/Y0jGJFC/me.jpg" alt="Avatar"><span class="user-name">Noyon Mahmud</span></a>

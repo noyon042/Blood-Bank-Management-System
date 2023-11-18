@@ -46,4 +46,17 @@ class PostController extends Controller
        // notify()->success('Customer Registration successful.');
        return redirect()->route('home');
    }
+
+   public function donate(){
+    $donate=MemberPost::where('role','donation')->get();
+    // dd($donate);
+    return view('frontend.pages.card_section.donate',compact('donate'));
+   }
+
+
+   public function receive(){
+    $receive=MemberPost::where('role','recepient')->get();
+    // dd($donate);
+    return view('frontend.pages.card_section.recieve',compact('receive'));
+   }
 }

@@ -2,6 +2,7 @@
 
 
 @section('content')
+<div class="mx-3 my-3">
 
 <form action="{{route('member.post.store')}}" method="post" enctype="multipart/form-data">
     @csrf
@@ -66,4 +67,5 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+</div>
 @endsection

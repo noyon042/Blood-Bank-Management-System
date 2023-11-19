@@ -74,4 +74,19 @@ class PostController extends Controller
     // dd($receive);
     return view('frontend.pages.list',compact('donorList'));
    }
+
+   public function viewprofile($id)
+   {
+    $profile=MemberPost::find($id);
+
+    // if($profile)
+    // {
+    //     $profile->view();
+    // }
+    notify()->success('Profile Viewed Succesfully');
+    // return redirect()->back();
+    return view('frontend.pages.viewProfile',compact('profile'));
+
+   }
+
 }

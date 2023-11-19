@@ -49,6 +49,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::post('/member/post/store',[PostController::class,'store'])->name('member.post.store');
 
     Route::get('/donor/list',[PostController::class,'list'])->name('donor.list');
+    Route::get('/view/profile/{id}',[PostController::class,'viewprofile'])->name('view.profile');
 
     Route::get('/blood_donate',[PostController::class,'donate'])->name('web.blood.donate');
     Route::get('/blood_receive',[PostController::class,'receive'])->name('web.blood.receive');

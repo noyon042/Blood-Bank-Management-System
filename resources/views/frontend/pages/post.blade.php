@@ -59,6 +59,12 @@
   </div>
 
 
+
+  <div class="form-group">
+    <label for="">Donation Date/ Required Date:</label>
+    <input type="date" name="date" class="form-control" id="dateNeeded" placeholder="Donation Date/ Required Date">
+  </div>
+
   <div class="form-group">
     <label for="">Upload Image: </label>
     <input name="image" type="file" class="form-control">

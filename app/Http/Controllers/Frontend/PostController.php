@@ -39,11 +39,12 @@ class PostController extends Controller
            'blood_group'=>$request->blood_group,
            'contact'=>$request->contact,
            'address'=>$request->address,
+           'date'=>$request->date,
            'image'=>$fileName,
        ]);
 
 
-       // notify()->success('Customer Registration successful.');
+       notify()->success('Member Post successful.');
        return redirect()->route('home');
    }
 
@@ -56,7 +57,21 @@ class PostController extends Controller
 
    public function receive(){
     $receive=MemberPost::where('role','recepient')->get();
-    // dd($donate);
+    // dd($receive);
     return view('frontend.pages.card_section.recieve',compact('receive'));
+   }
+
+   public function view($id){
+
+    $singleMember=MemberPost::find($id);
+    // dd($singleProduct->name);
+    return view('frontend.pages.singleview',compact('singleMember'));
+   }
+
+   public function list()
+   {
+    $donorList=MemberPost::where('role','donation')->get();
+    // dd($receive);
+    return view('frontend.pages.list',compact('donorList'));
    }
 }

@@ -10,8 +10,8 @@ class FrontendHomeController extends Controller
 {
     public function home()
     {
-        $members=MemberPost::all();
+        $memberPost=MemberPost::all();
 
-        return view('frontend.pages.home',compact('members'));
+        return view('frontend.pages.home',compact('memberPost'));
     }
 }

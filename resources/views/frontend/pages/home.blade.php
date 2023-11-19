@@ -44,7 +44,7 @@
 
                     <div class=" vbh">
 
-                        <div class="btn btn-danger  bounceInUp"> Donate Now </div>
+                        <div  class="btn btn-danger  bounceInUp"><a href="{{route('donor.list')}}"> Donor List </div></a>
                         <div class="btn btn-danger  bounceInUp"> Contact US </div>
                     </div>
                 </div>
@@ -139,8 +139,8 @@
                             <div class="card">
                                 <img src="{{url('/frontend/assets/images/gallery/g2.jpg')}}">
                                 <div class="card-body">
-                                    <h3>All Donor List</h3>
-                                    <a href="{{route('web.blood.donate')}}" class="btn btn-outline-success btn-sm">Read More</a>
+                                    <h3>Donation Post</h3>
+                                    <a href="{{route('web.blood.donate')}}" class="btn btn-outline-success btn-sm">View All</a>
 
                                 </div>
                             </div>
@@ -158,8 +158,8 @@
                             <div class="card">
                                 <img src="{{url('/frontend/assets/images/gallery/g1.jpg')}}">
                                 <div class="card-body">
-                                    <h3>All Recepient List</h3>
-                                    <a href="{{route('web.blood.receive')}}" class="btn btn-outline-success btn-sm">Read More</a>
+                                    <h3>Recepient Post</h3>
+                                    <a href="{{route('web.blood.receive')}}" class="btn btn-outline-success btn-sm">View All</a>
 
                                 </div>
                             </div>

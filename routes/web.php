@@ -13,6 +13,7 @@ use App\Http\Controllers\Frontend\FrontendHomeController;
 use App\Http\Controllers\Frontend\MemberController;
 use App\Http\Controllers\Frontend\PostController;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Framework\Attributes\PostCondition;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,7 @@ Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login
 
 
 
+
 Route::group(['middleware'=>'auth'],function(){
 
     Route::get('/logout',[MemberController::class, 'logout'])->name('member.logout');
@@ -46,8 +48,12 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/member/post',[PostController::class,'memberPost'])->name('member.post');
     Route::post('/member/post/store',[PostController::class,'store'])->name('member.post.store');
 
+    Route::get('/donor/list',[PostController::class,'list'])->name('donor.list');
+
     Route::get('/blood_donate',[PostController::class,'donate'])->name('web.blood.donate');
     Route::get('/blood_receive',[PostController::class,'receive'])->name('web.blood.receive');
+
+    Route::get('/member/singleview/{id}',[PostController::class,'view'])->name('member.singleview');
 
 });
 

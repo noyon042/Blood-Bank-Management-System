@@ -25,7 +25,7 @@ class MemberController extends Controller
         ]);
 
 
-        notify()->success('Customer Registration successful.');
+        notify()->success('Member Registration successful.');
         return redirect()->back();
     }
 

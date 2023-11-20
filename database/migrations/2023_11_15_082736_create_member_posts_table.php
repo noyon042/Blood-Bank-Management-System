@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('blood_group');
             $table->string('contact');
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->string('date')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

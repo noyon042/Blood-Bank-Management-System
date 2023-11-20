@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('role');
+            $table->string('blood_group');
+            $table->string('contact');
+            $table->string('address')->nullable();
+            $table->string('date')->nullable();
             $table->string('image')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

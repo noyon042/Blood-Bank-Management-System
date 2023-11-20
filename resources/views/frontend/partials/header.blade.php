@@ -28,6 +28,9 @@
 
                 @auth
                 <a style="color: white" href="{{route('member.logout')}}">Log Out</a>
+                <span style="color: white" >|</span>
+
+                <a style="color: white" href="{{route('member.profile')}}"> {{auth()->user()->name}} ({{ auth()->user()->role }})</a>
                 @endauth
 
             </div>

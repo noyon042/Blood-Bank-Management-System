@@ -45,6 +45,9 @@ Route::group(['middleware'=>'auth'],function(){
 
     Route::get('/logout',[MemberController::class, 'logout'])->name('member.logout');
 
+    Route::get('/member/profile',[MemberController::class,'profile'])->name('member.profile');
+
+
     Route::get('/member/post',[PostController::class,'memberPost'])->name('member.post');
     Route::post('/member/post/store',[PostController::class,'store'])->name('member.post.store');
 
@@ -83,6 +86,10 @@ Route::group(['middleware'=>'auth'],function(){
 
 Route::get('/',[Dashboard::class,'dashboard'])->name('dashboard');
 Route::get('/donorlist/listtable',[ListTable::class,'listtable'])->name('donorlist.listtable');
+Route::get('/donorlist/delete/{id}',[ListTable::class,'delete'])->name('donorlist.delete');
+
+Route::get('/donor/edit/{id}',[ListTable::class, 'edit'])->name('donor.edit');
+Route::put('/donor/update/{id}',[ListTable::class, 'update'])->name('donor.update');
 
 Route::get('/bloodgroup/blood',[BloodGroup::class]);
 Route::get('/bloodgroup/addblood',[BloodGroup::class,'addblood'])->name('addblood');

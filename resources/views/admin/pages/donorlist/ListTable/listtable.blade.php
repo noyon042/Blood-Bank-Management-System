@@ -12,6 +12,7 @@
             <th scope="col">Contact</th>
             <th scope="col">Address</th>
             <th scope="col">Last Donation Date</th>
+            <th scope="col">Image</th>
 
         </tr>
 
@@ -26,12 +27,13 @@
 <td>{{$donorList->donor_name}}</td>
 <td>{{$donorList->email}}</td>
 <td>{{$donorList->blood_group}}</td>
-<td>{{$donorList->Contact}}</td>
+<td>{{$donorList->contact}}</td>
 <td>{{$donorList->address}}</td>
 <td>{{$donorList->last_donation_date}}</td>
+<td><img class="img" src="{{url('/uploads/'.$donorList->image)}}" alt=""></td>
 <td>
-    <a class="btn btn-success" href="">Edit</a>
-    <a class="btn btn-danger" href="">Delete</a>
+    <a class="btn btn-success" href="{{route('donor.edit',$donorList->id)}}">Edit</a>
+    <a class="btn btn-danger" href="{{route('donorlist.delete',$donorList->id)}}">Delete</a>
 </td>
         </tr>
         @endforeach

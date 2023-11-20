@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MemberPost;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -11,17 +12,49 @@ class MemberController extends Controller
 {
     public function registration()
     {
+        // $register=User::all();
         return view('frontend.pages.registration');
     }
 
     public function store(Request $request)
     {
+        // $validate=Validator::make($request->all(),[
+        //     'name'=>'required',
+        //     'role'=>'required',
+        //     'blood_group'=>'required',
+        //     'contact'=>'required',
+        //     'user_email'=>'required|email',
+        //     'user_password'=>'required|min:6',
+
+        //  ]);
+
+        //  if($validate->fails())
+        //  {
+        //      return redirect()->back()->with('myError',$validate->getMessageBag());
+        //  }
+
+         $fileName=null;
+         if($request->hasFile('user_image'))
+         {
+             $file=$request->file('user_image');
+             $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+
+             $file->storeAs('/uploads',$fileName);
+
+         }
+
         User::create([
 
             'name'=>$request->name,
             'email'=>$request->email,
-            'role'=>'member',
             'password'=>bcrypt($request->password),
+            'role'=>'member',
+            'blood_group'=>$request->blood_group,
+            'contact'=>$request->contact,
+            'address'=>$request->address,
+            'date'=>$request->date,
+            'image'=>$fileName
+
         ]);
 
 
@@ -70,5 +103,14 @@ class MemberController extends Controller
         notify()->success('Logout Success.');
         return redirect()->route('home');
     }
+
+public function profile()
+{
+
+    return view('frontend.pages.profile');
+}
+
+
+
 }
 

@@ -18,6 +18,8 @@ class UserTableSeeder extends Seeder
         User::create([
          'name'=>'admin',
          'role'=>'admin',
+         'blood_group'=>'A+',
+         'contact'=>'08632',
          'email'=>'admin@gmail.com',
          'password'=>bcrypt('1234567'),
         ]);

@@ -24,9 +24,13 @@
         <tr>
             <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">Image</th>
+      {{-- <th scope="col">Image</th> --}}
       <th scope="col">Email</th>
       <th scope="col">Role</th>
+      {{-- <th scope="col">Blood Group</th>
+      <th scope="col">contact</th>
+      <th scope="col">Address</th>
+      <th scope="col">Last donation date</th> --}}
       <th scope="col">Action</th>
 
         </tr>
@@ -40,11 +44,15 @@
 
             <td>{{$key+1}}</td>
             <td>{{$singleUser->name}}</td>
-            <td>
+            {{-- <td>
                 <img class="img" src="{{url('/uploads/'.$singleUser->image)}}" alt="">
-            </td>
+            </td> --}}
             <td>{{$singleUser->email}}</td>
             <td>{{$singleUser->role}}</td>
+            {{-- <td>{{$singleUser->blood_group}}</td>
+            <td>{{$singleUser->contact}}</td>
+            <td>{{$singleUser->adress}}</td>
+            <td>{{$singleUser->date}}</td> --}}
             <td>
                 <a class="btn btn-success" href="">View</a>
                 <a class="btn btn-warning" href="">Edit</a>

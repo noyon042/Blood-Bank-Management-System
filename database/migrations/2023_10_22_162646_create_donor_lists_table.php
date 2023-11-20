@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('donor_name',100)->unique();
             $table->string('email',100)->unique();
             $table->string('blood_group',5);
-            $table->string('contact',70)->unique();
+            $table->string('contact',70);
             $table->text('address')->nullable();
             $table->date('last_donation_date');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
 

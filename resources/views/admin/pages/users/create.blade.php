@@ -63,11 +63,40 @@
 
   </div>
 
+  {{-- <div class="form-group">
+    <label for="">Blood Group:</label>
+   <select required class="form-control" name="blood_group" id="">
+        <!-- <option value="">Admin</option> -->
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+   </select>
+  </div>
+
+  <div class="form-group">
+    <label for="">Contact: </label>
+    <input name="contact" type="tel" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="">address: </label>
+    <input name="address" type="text" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="">last Donation date: </label>
+    <input name="date" type="date" class="form-control">
+  </div>
 
   <div class="form-group">
     <label for="">Upload Image: </label>
     <input name="user_image" type="file" class="form-control">
-  </div>
+  </div> --}}
 
 
 

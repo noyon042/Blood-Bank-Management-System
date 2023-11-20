@@ -4,7 +4,7 @@
 
 <h1>Create New Donor List</h1>
 
-<form action="{{route('donorlist.store')}}" method="post">
+<form action="{{route('donorlist.store')}}" method="post" enctype="multipart/form-data">
     @csrf
 
 
@@ -24,7 +24,7 @@
 
   <div class="form-group">
     <label for="">Contact </label>
-    <input type="tel" name="contact" class="form-control" id=""  placeholder="Contact">
+    <input type="text" name="contact" class="form-control" id=""  placeholder="Contact">
   </div>
 
 
@@ -41,6 +41,10 @@
         <input type="date" name="last_donation_date" class="form-control" id="dateNeeded" placeholder="Donation Date" required>
       </div>
 
+      <div class="form-group">
+        <label for="">Upload Image: </label>
+        <input name="image" type="file" class="form-control">
+      </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

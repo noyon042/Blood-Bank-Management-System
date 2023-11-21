@@ -27,10 +27,10 @@
                 </div>
 
                 @auth
-                <a style="color: white" href="{{route('member.logout')}}">Log Out</a>
-                <span style="color: white" >|</span>
+                <a style="color: white" href="{{route('member.logout')}}">Log Out <span style="color: white" >|</span></a>
+                {{-- <span style="color: white" >|</span> --}}
 
-                <a style="color: white" href="{{route('member.profile')}}"> {{auth()->user()->name}} ({{ auth()->user()->role }})</a>
+                <a style="color: white" href="{{route('member.profile')}}">Profile:{{auth()->user()->name}} ({{ auth()->user()->role }})</a>
                 @endauth
 
             </div>
@@ -69,6 +69,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('member.post')}}">Post</a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">My Post</a>
+                                </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('web.blood.donate')}}">Blood Donate</a>
                                 </li>

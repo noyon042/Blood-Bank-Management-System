@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\MemberPost;
 use Illuminate\Http\Request;
+use Psy\Command\WhereamiCommand;
 
 class PostController extends Controller
 {
@@ -88,5 +89,12 @@ class PostController extends Controller
     return view('frontend.pages.viewProfile',compact('profile'));
 
    }
+
+
+//    public function myPost($id)
+//    {
+//     $myPost=MemberPost::find($id);
+//     return view('frontend.pages.myPost.mypost',compact('myPost'));
+//    }
 
 }

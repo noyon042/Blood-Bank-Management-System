@@ -46,10 +46,15 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/logout',[MemberController::class, 'logout'])->name('member.logout');
 
     Route::get('/member/profile',[MemberController::class,'profile'])->name('member.profile');
+    Route::get('/profile/edit/{id}',[MemberController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/update/{id}',[MemberController::class, 'update'])->name('profile.update');
 
 
     Route::get('/member/post',[PostController::class,'memberPost'])->name('member.post');
     Route::post('/member/post/store',[PostController::class,'store'])->name('member.post.store');
+    // Route::get('/myPost/{id}',[PostController::class,'myPost'])->name('myPost');
+
+
 
     Route::get('/donor/list',[PostController::class,'list'])->name('donor.list');
     Route::get('/view/profile/{id}',[PostController::class,'viewprofile'])->name('view.profile');

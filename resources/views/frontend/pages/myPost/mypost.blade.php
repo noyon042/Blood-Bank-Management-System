@@ -58,32 +58,27 @@
 <body>
 
 <div class="profile-container">
-
-
-
     <div class="profile-picture">
-        <img src="{{url('/uploads/'. auth()->user()->image)}}" alt="Profile Picture">
+        {{-- <img src="{{url('/uploads/'.$myPost->image)}}" alt="Profile Picture"> --}}
     </div>
     <div class="user-info">
-        <h2>Name:  {{ auth()->user()->name }}</h2><hr>
+        {{-- <h2>Name: {{$myPost->name}}</h2> --}}
+
+
+    {{-- <a href="#" class="btn btn-outline-success btn-sm">Donate Now</a>mypost --}}
 
 
 
-
-
-        <p>ID:  {{ auth()->user()->id }}</p><hr>
-        <p>Role:  {{ auth()->user()->role }}</p><hr>
-        <p>Blood Group:  {{ auth()->user()->blood_group}}</p><hr>
-        <p>Contact:  {{ auth()->user()->contact }}</p><hr>
-        <p>Address:  {{ auth()->user()->address }}</p><hr>
-        <p>Date:  {{ auth()->user()->date}}</p><hr>
-        <p>Image:  {{ auth()->user()->image}}</p><hr>
-        <p>Email:  {{  auth()->user()->email }}</p><hr>
-
-        <a class="btn btn-success" href="{{route('profile.edit',auth()->user()->id)}}">Edit Profile</a><hr>
-
+{{--
+        <p>ID: {{$myPost->id}}</p>
+        <p>Role: {{$myPost->role}}</p>
+        <p>Email: {{$myPost->email}}</p>
+        <p>Blood Group: {{$myPost->blood_group}}</p>
+        <p>Contact: {{$myPost->contact}}</p>myPost
+        <p>Address: {{$myPost->address}}</p>
+        <p>Image: {{$myPost->image}}</p>
+        <p>Last Donation Date: {{$myPost->date}}</p> --}}
     </div>
-
 </div>
 
 </body>

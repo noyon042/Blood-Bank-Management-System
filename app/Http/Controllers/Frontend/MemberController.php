@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Controller;
 use App\Models\MemberPost;
 use App\Models\User;
@@ -111,6 +112,46 @@ public function profile()
 }
 
 
+public function edit($id)
+{
+//   dd($id);
+  $editprofile=User::find($id);
+//   dd($editprofile);
+  return view('frontend.pages.profile.edit',compact('editprofile'));
+
+}
+
+public function update(Request $request,$id)
+{
+    $upadateProfile=user::find($id);
+
+    if($upadateProfile)
+    {
+
+      $fileName=$upadateProfile->image;
+      if($request->hasFile('image'))
+      {
+          $file=$request->file('image');
+          $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+
+          $file->storeAs('/uploads',$fileName);
+
+      }
+
+      $upadateProfile->update([
+        'name'=>$request->name,
+        'email'=>$request->email,
+        'blood_group'=>$request->blood_group,
+        'contact'=>$request->contact,
+        'address'=>$request->address,
+        'date'=>$request->date,
+        'image'=>$fileName
+      ]);
+
+      notify()->success('Product updated successfully.');
+      return redirect()->back();
+    }
+}
 
 }
 

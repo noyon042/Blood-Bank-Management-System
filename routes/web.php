@@ -52,7 +52,7 @@ Route::group(['middleware'=>'auth'],function(){
 
     Route::get('/member/post',[PostController::class,'memberPost'])->name('member.post');
     Route::post('/member/post/store',[PostController::class,'store'])->name('member.post.store');
-    // Route::get('/myPost/{id}',[PostController::class,'myPost'])->name('myPost');
+    Route::get('/myPost/{id}',[PostController::class,'myPost'])->name('myPost');
 
 
 

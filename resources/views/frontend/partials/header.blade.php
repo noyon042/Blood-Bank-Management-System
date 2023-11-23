@@ -71,7 +71,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="">My Post</a>
+                                    <a class="nav-link" href="{{route('myPost', auth()->user()->id)}}">My Post</a>
                                 </li>
 
                                 <li class="nav-item">

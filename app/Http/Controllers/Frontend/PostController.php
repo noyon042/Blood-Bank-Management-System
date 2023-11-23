@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\MemberPost;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Psy\Command\WhereamiCommand;
 
@@ -11,8 +12,11 @@ class PostController extends Controller
 {
    public function memberPost()
    {
+
     $members=MemberPost::all();
-    return view('frontend.pages.post',compact('members'));
+
+    $user=User::all();
+    return view('frontend.pages.post',compact('members','user'));
    }
 
    public function store(Request $request)
@@ -30,11 +34,11 @@ class PostController extends Controller
         $file->storeAs('/uploads',$fileName);
 
     }
-    // dd('bye');
 
        MemberPost::create([
 
            'name'=>$request->name,
+           'user_id'=> auth()->user()->id,
            'role'=>$request->role,
            'email'=>$request->email,
            'blood_group'=>$request->blood_group,
@@ -71,7 +75,9 @@ class PostController extends Controller
 
    public function list()
    {
-    $donorList=MemberPost::where('role','donation')->get();
+
+
+    $donorList=MemberPost::with('user')->get();
     // dd($receive);
     return view('frontend.pages.list',compact('donorList'));
    }
@@ -91,10 +97,17 @@ class PostController extends Controller
    }
 
 
-//    public function myPost($id)
-//    {
-//     $myPost=MemberPost::find($id);
-//     return view('frontend.pages.myPost.mypost',compact('myPost'));
-//    }
+   public function myPost($user_id)
+   {
+    // dd($user_id);
+    // $myPost=MemberPost::find($user_id);
+
+//    dd($myPost->toarray());
+
+    $myPost=MemberPost::where('user_id', $user_id)->get();
+    // dd($myPost->toarray());
+
+    return view('frontend.pages.myPost.mypost',compact('myPost'));
+   }
 
 }

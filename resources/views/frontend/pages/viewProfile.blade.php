@@ -62,7 +62,7 @@
         <img src="{{url('/uploads/'.$profile->image)}}" alt="Profile Picture">
     </div>
     <div class="user-info">
-        <h2>Name: {{$profile->name}}</h2>
+        <h2>Name: {{$profile->name}}</h2><hr>
 
 {{--
     <a href="#" class="btn btn-outline-success btn-sm">Donate Now</a>
@@ -70,14 +70,14 @@
          --}}
 
 
-        <p>ID: {{$profile->id}}</p>
-        <p>Role: {{$profile->role}}</p>
-        <p>Email: {{$profile->email}}</p>
-        <p>Blood Group: {{$profile->blood_group}}</p>
-        <p>Contact: {{$profile->contact}}</p>
-        <p>Address: {{$profile->address}}</p>
-        <p>Image: {{$profile->image}}</p>
-        <p>Last Donation Date: {{$profile->date}}</p>
+        <p>ID: {{$profile->id}}</p><hr>
+        <p>Role: {{$profile->role}}</p><hr>
+        <p>Email: {{$profile->email}}</p><hr>
+        <p>Blood Group: {{$profile->blood_group}}</p><hr>
+        <p>Contact: {{$profile->contact}}</p><hr>
+        <p>Address: {{$profile->address}}</p><hr>
+        <p>Image: {{$profile->image}}</p><hr>
+        <p>Last Donation Date: {{$profile->date}}</p><hr>
     </div>
 </div>
 

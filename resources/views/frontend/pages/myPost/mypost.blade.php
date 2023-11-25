@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .img{
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+
+
 @extends('frontend.master')
 @section('content')
 <h1>View My Posts</h1>
@@ -5,6 +23,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th scope="col">Role</th>
             {{-- <th scope="col">Request Date</th> --}}
@@ -35,11 +54,11 @@
             <td>{{$request->address}}</td>
             <td>{{$request->date}}</td>
             <td>
-                <img src="{{url('/uploads/'.$request->image)}}" alt="">
+                <img class="img" src="{{url('/uploads/'.$request->image)}}" alt="">
             </td>
             <td>
-                <a class="btn btn-success" href="">Edit</a>
-                <a class="btn btn-danger" href="">Delete</a>
+                <a class="btn btn-success" href="{{route('myPost.edit',$request->id)}}">Edit</a>
+                {{-- <a class="btn btn-danger" href="">Delete</a> --}}
             </td>
         </tr>
         @endforeach
@@ -48,3 +67,6 @@
 {{-- {{$requests->links()}} --}}
 
 @endsection
+
+</body>
+</html>

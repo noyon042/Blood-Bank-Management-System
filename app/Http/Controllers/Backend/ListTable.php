@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\DonorList;
+use App\Models\MemberPost;
 use Illuminate\Http\Request;
 
 class ListTable extends Controller
 {
     public function listtable(){
-      $donorLists = DonorList::paginate(5);
+    //   $donorLists = DonorList::paginate(5);
+    $donorLists =MemberPost::where('role','donation')->get();
         return view('admin.pages.donorlist.ListTable.listtable', compact('donorLists'));
     }
 
@@ -30,13 +32,13 @@ class ListTable extends Controller
 
         }
 
-      DonorList::create([
-        'donor_name'=>$request->donor_name,
+      MemberPost::create([
+        'name'=>$request->name,
         'email'=>$request->email,
         'blood_group'=>$request->blood_group,
         'contact'=>$request->contact,
         'address'=>$request->address,
-        'last_donation_date'=>$request->last_donation_date,
+        'date'=>$request->date,
         'image'=>$fileName
       ]);
       return redirect()->route('donorlist.listtable');
@@ -45,7 +47,7 @@ class ListTable extends Controller
 
     public function delete($id)
     {
-      $donor=DonorList::find($id);
+      $donor=MemberPost::find($id);
       if($donor)
       {
         $donor->delete();
@@ -58,7 +60,7 @@ class ListTable extends Controller
 
     public function edit($id)
     {
-      $donor=DonorList::find($id);
+      $donor=MemberPost::find($id);
 
       return view('admin.pages.donorlist.ListTable.edit',compact('donor'));
 
@@ -66,7 +68,7 @@ class ListTable extends Controller
 
     public function update(Request $request,$id)
     {
-        $donor=DonorList::find($id);
+        $donor=MemberPost::find($id);
 
         if($donor)
         {
@@ -82,16 +84,16 @@ class ListTable extends Controller
           }
 
           $donor->update([
-            'donor_name'=>$request->donor_name,
+            'name'=>$request->name,
             'email'=>$request->email,
             'blood_group'=>$request->blood_group,
             'contact'=>$request->contact,
             'address'=>$request->address,
-            'last_donation_date'=>$request->last_donation_date,
+            'date'=>$request->date,
             'image'=>$fileName
           ]);
 
-          notify()->success('Product updated successfully.');
+          notify()->success('Donor updated successfully.');
           return redirect()->back();
         }
     }

@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('donor_lists', function (Blueprint $table) {
             $table->id();
-            $table->string('donor_name',100)->unique();
+            $table->string('name',100)->unique();
             $table->string('email',100)->unique();
             $table->string('blood_group',5);
             $table->string('contact',70);
             $table->text('address')->nullable();
-            $table->date('last_donation_date');
+            $table->date('date');
             $table->string('image')->nullable();
             $table->timestamps();
         });

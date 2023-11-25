@@ -11,14 +11,14 @@
 
   <div class="form-group">
     <label for="">Enter Name</label>
-    <input name="donor_name" type="text" class="form-control" id=""  placeholder="Enter name">
+    <input name="name" type="text" class="form-control" id=""  placeholder="Enter name">
   </div>
   <div class="form-group">
     <label for="">Enter Email</label>
     <input name="email" type="text" class="form-control" id=""  placeholder="Enter email">
   </div>
   <div class="form-group">
-    <label for="">Blood Type</label>
+    <label for="">Blood Group</label>
     <input type="text" name="blood_group" class="form-control" id=""  placeholder="Blood Type">
   </div>
 
@@ -38,7 +38,7 @@
 
   <div class="form-group">
         <label for="dateNeeded">Last Donation Date</label>
-        <input type="date" name="last_donation_date" class="form-control" id="dateNeeded" placeholder="Donation Date" required>
+        <input type="date" name="date" class="form-control" id="dateNeeded" placeholder="Donation Date" required>
       </div>
 
       <div class="form-group">

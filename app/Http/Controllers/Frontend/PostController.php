@@ -97,17 +97,62 @@ class PostController extends Controller
    }
 
 
-   public function myPost($user_id)
+   public function myPost()
    {
     // dd($user_id);
     // $myPost=MemberPost::find($user_id);
 
 //    dd($myPost->toarray());
 
-    $myPost=MemberPost::where('user_id', $user_id)->get();
+    $myPost=MemberPost::where('user_id', auth()->user()->id)->get();
     // dd($myPost->toarray());
 
     return view('frontend.pages.myPost.mypost',compact('myPost'));
    }
+
+
+
+
+
+   public function edit($id)
+{
+//   dd($id);
+  $editPost=MemberPost::find($id);
+//   dd($editPost);
+  return view('frontend.pages.myPost.edit',compact('editPost'));
+
+}
+
+public function update(Request $request,$id)
+{
+    $editPost=MemberPost::find($id);
+
+    if($editPost)
+    {
+
+      $fileName=$editPost->image;
+      if($request->hasFile('image'))
+      {
+          $file=$request->file('image');
+          $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+
+          $file->storeAs('/uploads',$fileName);
+
+      }
+
+      $editPost->update([
+        'name'=>$request->name,
+        'email'=>$request->email,
+        'blood_group'=>$request->blood_group,
+        'contact'=>$request->contact,
+        'address'=>$request->address,
+        'date'=>$request->date,
+        'image'=>$fileName
+      ]);
+
+      notify()->success('Product updated successfully.');
+      return redirect()->back();
+    }
+}
 
 }

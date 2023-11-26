@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Backend;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\MemberPost;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\RecepientList;
@@ -11,7 +12,9 @@ class DataTable extends Controller
 {
     public function data()
     {
-        $recepientLists = RecepientList::all();
+        // $recepientLists = RecepientList::all();
+
+        $recepientLists =MemberPost::where('role','recepient')->get();
         return view('admin.pages.recepient.rdatatable.data', compact('recepientLists'));
     }
 
@@ -22,14 +25,27 @@ class DataTable extends Controller
 
     public function store(Request $request)
     {
+
+        $fileName=null;
+        if($request->hasFile('image'))
+        {
+            // dd('hi');
+            $file=$request->file('image');
+            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+
+            $file->storeAs('/uploads',$fileName);
+
+        }
+
         // dd($request->all());
-        RecepientList::create([
+        MemberPost::create([
             'name' => $request->name,
             'email' => $request->email,
             'blood_group' => $request->blood_group,
             'phn_number' => $request->phn_number,
             'hospital_name' => $request->hospital_name,
-            'date_of_need' => $request->date_of_need
+            'date_of_need' => $request->date_of_need,
+            'image'=>$fileName
         ]);
         return redirect()->route('recepient.recepientdatatable');
     }

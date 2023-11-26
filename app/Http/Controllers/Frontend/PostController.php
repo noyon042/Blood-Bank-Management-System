@@ -150,7 +150,7 @@ public function update(Request $request,$id)
         'image'=>$fileName
       ]);
 
-      notify()->success('Product updated successfully.');
+      notify()->success('Post updated successfully.');
       return redirect()->back();
     }
 }

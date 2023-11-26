@@ -54,7 +54,7 @@
 
       <div class="form-group">
         <label for="">Upload Image: </label>
-        <input value="{{$editprofile->user_image}}" name="user_image" type="file" class="form-control">
+        <input value="{{$editprofile->image}}" name="image" type="file" class="form-control">
       </div>
 
 

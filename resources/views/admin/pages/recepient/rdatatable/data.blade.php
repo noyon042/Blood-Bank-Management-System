@@ -1,3 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .img{
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+
 @extends('admin.master')
 @section('content')
 
@@ -10,8 +28,12 @@
             <th scope="col">email </th>
             <th scope="col">Blood type</th>
             <th scope="col">Phone Number</th>
-            <th scope="col">Hospital Name</th>
+            <th scope="col">Address</th>
             <th scope="col">Date of Blood Needed</th>
+            <th scope="col">Upload Image</th>
+            <th scope="col">Action</th>
+
+
         </tr>
 
     </thead>
@@ -24,9 +46,11 @@
         <td>{{$recepientList->name}}</td>
         <td>{{$recepientList->email}}</td>
         <td>{{$recepientList->blood_group}}</td>
-        <td>{{$recepientList->phn_number}}</td>
-        <td>{{$recepientList->hospital_name}}</td>
-        <td>{{$recepientList->date_of_need}}</td>
+        <td>{{$recepientList->contact}}</td>
+        <td>{{$recepientList->address}}</td>
+        <td>{{$recepientList->date}}</td>
+        <td><img class="img" src="{{url('/uploads/'.$recepientList->image)}}" alt=""></td>
+
         <td>
             <a class="btn btn-success" href="">Edit</a>
             <a class="btn btn-danger" href="">Delete</a>
@@ -37,3 +61,5 @@
 </table>
 
 @endsection
+</body>
+</html>

@@ -1,4 +1,19 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .img{
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
 
     @extends('admin.master')
     @section('content')
@@ -34,7 +49,7 @@
             <td>{{$post->address}}</td>
             <td>{{$post->date}}</td>
 
-            <td><img src="{{url('/uploads/'.$post->image)}}" alt="" /></td>
+            <td><img class="img" src="{{url('/uploads/'.$post->image)}}" alt="" /></td>
             <td>
                 <a class="btn btn-success" href="">Edit</a>
                 <a class="btn btn-danger" href="">Delete</a>
@@ -46,5 +61,6 @@
 
     @endsection
 
-
+</body>
+</html>
 

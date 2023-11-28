@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\HospitalList;
 use App\Http\Controllers\Backend\ListTable;
 use App\Http\Controllers\Backend\Recepient;
 use App\Http\Controllers\Backend\RequestReceived;
+use App\Http\Controllers\Frontend\ApplyController;
 use App\Http\Controllers\Frontend\FrontendHomeController;
 use App\Http\Controllers\Frontend\MemberController;
 use App\Http\Controllers\Frontend\PostController;
@@ -76,6 +77,9 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/blood_receive',[PostController::class,'receive'])->name('web.blood.receive');
 
     Route::get('/member/singleview/{id}',[PostController::class,'view'])->name('member.singleview');
+    Route::get('/apply-now/{donor_id}',[ApplyController::class,'applyNow'])->name('apply.now');
+    Route::get('/cancel-apply/{donor_id}',[ApplyController::class,'cancelApply'])->name('apply.cancel');
+    Route::get('/recepient/singleView/{id}',[PostController::class,'recView'])->name('recepient.singleView');
 
 });
 
@@ -91,7 +95,6 @@ Route::group(['prefix'=>'admin'],function(){
 
 
 //Admin Login(Admin Panel)
-
 Route::get('/login',[UserController::class,'loginForm'])->name('admin.login');
 Route::post('/login-form-post',[UserController::class,'loginPost'])->name('admin.login.post');
 
@@ -100,63 +103,62 @@ Route::group(['middleware'=>'auth'],function(){
 
     Route::get('/logout',[UserController::class,'logout'])->name('admin.logout');
 
-    //UsersList(Admin Panel)
 
+    //UsersList(Admin Panel)
     Route::get('/users',[UserController::class,'list'])->name('users.list');
     Route::get('/users/create',[UserController::class,'createForm'])->name('users.create');
     Route::post('/users/store',[UserController::class,'store'])->name('users.store');
 
-    //Website Postlist(Admin Panel)
 
+    //Website Postlist(Admin Panel)
     Route::get('/website/post',[UserController::class,'postList'])->name('website.post');
 
-    //Dashboard(Admin Panel)
 
+    //Dashboard(Admin Panel)
 Route::get('/',[Dashboard::class,'dashboard'])->name('dashboard');
 
 //DonorList edit(Admin Panel)
-
 Route::get('/donorlist/listtable',[ListTable::class,'listtable'])->name('donorlist.listtable');
-Route::get('/donorlist/delete/{id}',[ListTable::class,'delete'])->name('donorlist.delete');
+Route::get('/donorlist/form',[ListTable::class,'createForm'])->name('donorlist.form');
+Route::post('/donorlist/store',[ListTable::class,'store'])->name('donorlist.store');
 
+
+Route::get('/donorlist/delete/{id}',[ListTable::class,'delete'])->name('donorlist.delete');
 Route::get('/donor/edit/{id}',[ListTable::class, 'edit'])->name('donor.edit');
 Route::put('/donor/update/{id}',[ListTable::class, 'update'])->name('donor.update');
 
-//BloodGroup(Admin Panel)
 
+//BloodGroup(Admin Panel)
 Route::get('/bloodgroup/blood',[BloodGroup::class]);
 Route::get('/bloodgroup/addblood',[BloodGroup::class,'addblood'])->name('addblood');
 Route::get('/bloodgroup/manageblood',[BloodGroup::class,'manageBlood'])->name('bloodgroup.manageblood');
 Route::get('/manageblood/create',[BloodGroup::class,'createForm'])->name('manageblood.create');
 Route::post('/manageblood/store',[BloodGroup::class,'store'])->name('manageblood.store');
 
-//Request Received by Donor(Admin Panel)
 
+//Request Received by Donor(Admin Panel)
 Route::get('/request/receivedform',[RequestReceived::class,'requestReceived'])->name('request.receivedform');
 Route::get('/request/form',[RequestReceived::class,'form'])->name('request.form');
 Route::post('/request/store',[RequestReceived::class,'store'])->name('request.store');
 
+
+
 //Recepient(Admin Panel)
 
-Route::get('/recepient/recepientform',[Recepient::class,'form']);
+// Route::get('/recepient/recepientform',[Recepient::class,'form']);
 Route::get('/recepient/recepientdatatable',[DataTable::class,'data'])->name('recepient.recepientdatatable');
-
-//Donorlist(Admin Panel)
-
-Route::get('/donorlist/form',[ListTable::class,'createForm'])->name('donorlist.form');
-Route::post('/donorlist/store',[ListTable::class,'store'])->name('donorlist.store');
-
-//Recepient(Admin Panel)
-
 Route::get('/recepient/create',[DataTable::class,'createForm'])->name('recepient.create');
 Route::post('/recepient/store',[DataTable::class,'store'])->name('recepient.store');
+
+Route::get('/recepient/delete/{id}',[DataTable::class,'delete'])->name('recepient.delete');
+Route::get('/recepient/edit/{id}',[DataTable::class, 'edit'])->name('recepient.edit');
+Route::put('/recepient/update/{id}',[DataTable::class, 'update'])->name('recepient.update');
+
 
 // Route::get('/hospital',[HospitalList::class,'hospital'])->name('hospital');
 // Route::get('/hospital/form',[HospitalList::class,'createForm'])->name('hospital.form');
 // Route::get('/hospital/store',[HospitalList::class,'store'])->name('hospital.store');
-
 //Hospital(Admin Panel)
-
 Route::get('/hospital',[HospitalInfo::class,'hospital'])->name('hospital');
 Route::get('/hospital/form',[HospitalInfo::class,'createForm'])->name('hospital.form');
 Route::post('/hospital/store',[HospitalInfo::class,'store'])->name('hospital.store');

@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <h1>Noyon</h1>
 
 <div class="row">
@@ -20,7 +21,7 @@
                           <div class="chart sparkline" id="spark2"></div>
                           <div class="data-info">
                             <div class="desc">Donor Info</div>
-                            <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span class="number" data-toggle="counter" data-end="80" data-suffix="%">0</span>
+                            <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span class="number" data-toggle="counter" data-end="{{ $countDonar->count() }}" data-suffix=""></span>
                             </div>
                           </div>
                         </div>
@@ -30,7 +31,7 @@
                           <div class="chart sparkline" id="spark3"></div>
                           <div class="data-info">
                             <div class="desc">Recepient</div>
-                            <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span class="number" data-toggle="counter" data-end="532">0</span>
+                            <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span class="number" data-toggle="counter" data-end="{{$countRecepient->count()}}">0</span>
                             </div>
                           </div>
                         </div>

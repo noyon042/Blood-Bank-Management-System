@@ -52,8 +52,8 @@
         <td><img class="img" src="{{url('/uploads/'.$recepientList->image)}}" alt=""></td>
 
         <td>
-            <a class="btn btn-success" href="">Edit</a>
-            <a class="btn btn-danger" href="">Delete</a>
+            <a class="btn btn-success" href="{{route('recepient.edit',$recepientList->id)}}">Edit</a>
+            <a class="btn btn-danger" href="{{route('recepient.delete',$recepientList->id)}}">Delete</a>
         </td>
     </tr>
     @endforeach

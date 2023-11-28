@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Controller;
+use App\Models\Apply;
 use App\Models\MemberPost;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -107,8 +108,11 @@ class MemberController extends Controller
 
 public function profile()
 {
+     $memberPosts = Apply::with('memberPost')->get();
 
-    return view('frontend.pages.profile');
+    //  $memberPosts=Apply::all();
+    $applies=Apply::where('user_id',auth()->user()->id)->get();
+    return view('frontend.pages.profile',compact('applies','memberPosts'));
 }
 
 

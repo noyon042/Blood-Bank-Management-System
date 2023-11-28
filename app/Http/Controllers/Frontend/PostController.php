@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use App\Models\MemberPost;
+use Carbon\Carbon;
 use App\Models\User;
+use App\Models\MemberPost;
 use Illuminate\Http\Request;
 use Psy\Command\WhereamiCommand;
+use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
@@ -53,16 +54,38 @@ class PostController extends Controller
        return redirect()->route('home');
    }
 
-   public function donate(){
+   public function donate()
+   {
+
+
+
+
     $donate=MemberPost::where('role','donation')->get();
-    // dd($donate);
-    return view('frontend.pages.card_section.donate',compact('donate'));
+
+
+            $donations = MemberPost::all();
+
+            $correctdate = Carbon::now();
+
+            $differences = [];
+
+            foreach ($donations as $donation)
+             {
+                $donationdate = Carbon::parse($donation->date);
+                $difference = $correctdate->diffInDays($donationdate);
+                $differences[$donation->id] = $difference;
+            }
+           // dd($differences);
+
+return view('frontend.pages.card_section.donate', compact('donate', 'differences'));
+
    }
 
 
    public function receive(){
     $receive=MemberPost::where('role','recepient')->get();
     // dd($receive);
+
     return view('frontend.pages.card_section.recieve',compact('receive'));
    }
 
@@ -70,7 +93,15 @@ class PostController extends Controller
 
     $singleMember=MemberPost::find($id);
     // dd($singleProduct->name);
-    return view('frontend.pages.singleview',compact('singleMember'));
+    return view('frontend.pages.singleView.donarView',compact('singleMember'));
+   }
+
+
+   public function recView($id){
+
+    $singleRecepient=MemberPost::find($id);
+    // dd($singleProduct->name);
+    return view('frontend.pages.singleView.recepientView',compact('singleRecepient'));
    }
 
    public function list()

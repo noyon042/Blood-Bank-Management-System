@@ -14,7 +14,7 @@
             @foreach ($receive as $sekeer )
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <a href="{{route('member.singleview',$sekeer->id)}}">
+                    <a href="{{route('recepient.singleView',$sekeer->id)}}">
                     <img src="{{url('/uploads/'.$sekeer->image)}}" alt="" class="card-img-top">
                     <div class="card-body">
                         <h6>ID: {{$sekeer->id}}</h6>
@@ -27,7 +27,7 @@
                         <h6>Date of Needed: {{$sekeer->date}}</h6>
 
                     </a>
-                        <a href="#" class="btn btn-outline-success btn-sm">Donate Now</a>
+                        <a href="{{route('recepient.singleView',$sekeer->id)}}" class="btn btn-outline-success btn-sm">Donate Now</a>
 
                     </div>
                 </div>

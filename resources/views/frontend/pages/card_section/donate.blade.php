@@ -8,13 +8,14 @@
 <section id="gallery">
     <div class="container">
         <div class="row">
+            {{-- @dd($donate) --}}
             @foreach ($donate as $mem )
             <div class="col-lg-4 mb-4">
                 <div class="card">
 
                     <a href="{{route('member.singleview',$mem->id)}}">
-                    <img src="{{url('/uploads/'.$mem->image)}}" alt="" class="card-img-top">
-                    <div class="card-body">
+                        <img src="{{ url('/uploads/'.$mem->image) }}" alt="" class="card-img-top" style="height: 300px; width: 360px;">
+                        <div class="card-body">
                         <h6>ID: {{$mem->id}}</h6>
                         <h6>Name: {{$mem->name}}</h6>
                         <h6>Role: {{$mem->role}}</h6>
@@ -25,7 +26,23 @@
                         <h6>Last Donation Date: {{$mem->date}}</h6>
 
                     </a>
-                        <a href="#" class="btn btn-outline-success btn-sm">Request For Blood</a>
+
+                    <div>
+                        @if ($differences[$mem->id] > 120)
+
+                        <div class="alert alert-success">
+                            Available
+                        </div>
+                    @else
+                    <div class="alert alert-danger">
+                        Unavailable
+                    </div>
+                    @endif
+
+                    </div>
+                    <div>
+                        <a href="{{route('member.singleview',$mem->id)}}" class="btn btn-outline-success btn-sm">Request For Blood</a>
+                    </div>
 
                     </div>
 

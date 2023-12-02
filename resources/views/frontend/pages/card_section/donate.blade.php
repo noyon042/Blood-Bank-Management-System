@@ -10,6 +10,9 @@
         <div class="row">
             {{-- @dd($donate) --}}
             @foreach ($donate as $mem )
+
+@if($mem->status=='Approved')
+
             <div class="col-lg-4 mb-4">
                 <div class="card">
 
@@ -48,6 +51,7 @@
 
                 </div>
             </div>
+            @endif
             @endforeach
         </div>
 </section>

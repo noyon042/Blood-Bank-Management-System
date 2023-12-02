@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('contact');
             $table->string('address')->nullable();
             $table->string('date')->nullable();
+            $table->string('status')->default('pending');
             $table->string('image')->nullable();
             $table->timestamps();
         });

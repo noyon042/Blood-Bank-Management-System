@@ -46,6 +46,7 @@ class PostController extends Controller
            'contact'=>$request->contact,
            'address'=>$request->address,
            'date'=>$request->date,
+        //    'status'=>'pending',
            'image'=>$fileName,
        ]);
 

@@ -39,6 +39,7 @@ class ListTable extends Controller
         'contact'=>$request->contact,
         'address'=>$request->address,
         'date'=>$request->date,
+        // 'status'=>$request->status,
         'image'=>$fileName
       ]);
       return redirect()->route('donorlist.listtable');
@@ -90,11 +91,30 @@ class ListTable extends Controller
             'contact'=>$request->contact,
             'address'=>$request->address,
             'date'=>$request->date,
+            'status'=>$request->status,
+
             'image'=>$fileName
           ]);
 
           notify()->success('Donor updated successfully.');
           return redirect()->back();
         }
+    }
+
+
+    public function approval($id)
+    {
+
+        $approval=MemberPost::find($id);
+        if($approval)
+        {
+            $approval->update([
+                'status'=>'Approved'
+            ]);
+        }
+
+        notify()->success('Approved by Admin');
+       return redirect()->back();
+
     }
 }

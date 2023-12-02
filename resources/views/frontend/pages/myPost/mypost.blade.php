@@ -34,6 +34,8 @@
             <th scope="col">Address</th>
             <th scope="col">Donation/Required Date</th>
             <th scope="col">Upload Image</th>
+            <th scope="col">Status</th>
+
             <th>Actions</th>
         </tr>
 
@@ -56,6 +58,7 @@
             <td>
                 <img class="img" src="{{url('/uploads/'.$request->image)}}" alt="">
             </td>
+            <td>{{$request->status}}</td>
             <td>
                 <a class="btn btn-success" href="{{route('myPost.edit',$request->id)}}">Edit</a>
                 {{-- <a class="btn btn-danger" href="">Delete</a> --}}

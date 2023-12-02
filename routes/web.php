@@ -121,6 +121,7 @@ Route::get('/',[Dashboard::class,'dashboard'])->name('dashboard');
 Route::get('/donorlist/listtable',[ListTable::class,'listtable'])->name('donorlist.listtable');
 Route::get('/donorlist/form',[ListTable::class,'createForm'])->name('donorlist.form');
 Route::post('/donorlist/store',[ListTable::class,'store'])->name('donorlist.store');
+Route::get('/admin-approval/{id}',[ListTable::class,'approval'])->name('admin.approval');
 
 
 Route::get('/donorlist/delete/{id}',[ListTable::class,'delete'])->name('donorlist.delete');

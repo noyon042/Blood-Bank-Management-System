@@ -20,9 +20,9 @@
 @section('content')
 <h1>Donate Blood</h1>
 <a href="{{route('donorlist.form')}}" class="btn btn-success">Create New List</a>
-<table class="table table-striped">
+<table class="table table-bordered">
     <thead>
-        <tr>
+        <tr class="text-center">
             <th scope="col">Donor ID</th>
             <th scope="col">Donor Name</th>
             <th scope="col">Email</th>
@@ -31,6 +31,8 @@
             <th scope="col">Address</th>
             <th scope="col">Last Donation Date</th>
             <th scope="col">Image</th>
+            <th scope="col">Status</th>
+
             <th scope="col">Action</th>
 
         </tr>
@@ -50,9 +52,19 @@
 <td>{{$donorList->address}}</td>
 <td>{{$donorList->date}}</td>
 <td><img class="img" src="{{url('/uploads/'.$donorList->image)}}" alt=""></td>
+<td>{{$donorList->status}}</td>
+
+
+@if($donorList->status=='pending')
+<a class="btn btn-danger" href="{{route('admin.approval',$donorList->id)}}">Approve Donar</a>
+@endif
+
+
 <td>
     <a class="btn btn-success" href="{{route('donor.edit',$donorList->id)}}">Edit</a>
     <a class="btn btn-danger" href="{{route('donorlist.delete',$donorList->id)}}">Delete</a>
+
+
 </td>
         </tr>
         @endforeach

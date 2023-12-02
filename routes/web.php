@@ -32,6 +32,7 @@ use PHPUnit\Framework\Attributes\PostCondition;
 //HomePage(Website)
 
  Route::get('/',[FrontendHomeController::class,'home'])->name('home');
+ Route::get('/search-memberPost',[FrontendHomeController::class,'search'])->name('memberPost.search');
 
 //Member Registration(Website)
 
@@ -150,6 +151,8 @@ Route::post('/request/store',[RequestReceived::class,'store'])->name('request.st
 Route::get('/recepient/recepientdatatable',[DataTable::class,'data'])->name('recepient.recepientdatatable');
 Route::get('/recepient/create',[DataTable::class,'createForm'])->name('recepient.create');
 Route::post('/recepient/store',[DataTable::class,'store'])->name('recepient.store');
+Route::get('/admin-approval/{id}',[ListTable::class,'approval'])->name('admin.approval');
+
 
 Route::get('/recepient/delete/{id}',[DataTable::class,'delete'])->name('recepient.delete');
 Route::get('/recepient/edit/{id}',[DataTable::class, 'edit'])->name('recepient.edit');

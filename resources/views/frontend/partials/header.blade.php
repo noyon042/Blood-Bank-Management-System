@@ -1,6 +1,29 @@
 <header class="continer-fluid ">
     <div class="header-top">
+
         <div class="container">
+
+               {{-- <form action="{{route('memberPost.search')}}" method="get">
+                <input class="inline-block p-2" type="text" class="form-control" placeholder="Search BloodGroup..." name="search" >
+                <button type="submit" class="btn btn-success p-1">Search</button>
+            </form> --}}
+            <div class="container mt-4">
+                <div class="row justify-content-right">
+                  <div class="col-md-6">
+                    <form action="{{ route('memberPost.search') }}" method="get" class="form-inline">
+                      <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search BloodGroup..." name="search">
+                        <div class="input-group-append">
+                          <button type="submit" class="btn btn-warning">Search</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+
             <div class="row col-det">
 
 

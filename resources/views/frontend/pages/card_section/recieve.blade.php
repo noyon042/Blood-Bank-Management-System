@@ -15,7 +15,7 @@
             <div class="col-lg-4 mb-4">
                 <div class="card">
                     <a href="{{route('recepient.singleView',$sekeer->id)}}">
-                    <img src="{{url('/uploads/'.$sekeer->image)}}" alt="" class="card-img-top">
+                    <img src="{{url('/uploads/'.$sekeer->image)}}" alt="" class="card-img-top" style="height: 300px; width: 360px;">
                     <div class="card-body">
                         <h6>ID: {{$sekeer->id}}</h6>
                         <h6>Name: {{$sekeer->name}}</h6>

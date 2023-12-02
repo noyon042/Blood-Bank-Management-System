@@ -3,15 +3,21 @@
 
 <div class="mx-4 my-4">
 <div style="text-align: center" class="mb-3">
-    <h1>Blood Donation List</h1>
+    {{-- <h1>Blood Donation List</h1> --}}
 </div>
 <section id="gallery">
-    <div class="container">
+    <div class="container", style="text-align: center">
         <div class="row">
             {{-- @dd($donate) --}}
-            @foreach ($donate as $mem )
 
-@if($mem->status=='Approved')
+    <h2>Search result for : {{ request()->search }} found {{$members->count()}} members.</h2>
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+     @if($members->count()>0)
+
+            @foreach ($members as $mem )
+
+           @if($mem->status=='Approved')
 
             <div class="col-lg-4 mb-4">
                 <div class="card">
@@ -53,8 +59,21 @@
             </div>
             @endif
             @endforeach
+
         </div>
-</section>
+
+
+        @else
+
+        <div style="text-align: center">
+            <br><br><br>
+            <h1 style="text-align: center">No member found.</h1>
+
+        </div>
+
+    @endif
+
+    </section>
 </div>
 @endsection
 

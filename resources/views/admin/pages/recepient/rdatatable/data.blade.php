@@ -31,7 +31,9 @@
             <th scope="col">Address</th>
             <th scope="col">Date of Blood Needed</th>
             <th scope="col">Upload Image</th>
+            <th scope="col">Status</th>
             <th scope="col">Action</th>
+
 
 
         </tr>
@@ -50,9 +52,19 @@
         <td>{{$recepientList->address}}</td>
         <td>{{$recepientList->date}}</td>
         <td><img class="img" src="{{url('/uploads/'.$recepientList->image)}}" alt=""></td>
+        <td>{{$recepientList->status}}</td>
+{{--
+<td>
+@if($recepientList->status=='pending')
+<a class="btn btn-danger" href="{{route('admin.approval',$recepientList->id)}}">Approve Recepient</a>
+@endif
+</td> --}}
 
         <td>
             <a class="btn btn-success" href="{{route('recepient.edit',$recepientList->id)}}">Edit</a>
+            @if($recepientList->status=='pending')
+<a class="btn btn-danger" href="{{route('admin.approval',$recepientList->id)}}">Approve Recepient</a>
+@endif
             <a class="btn btn-danger" href="{{route('recepient.delete',$recepientList->id)}}">Delete</a>
         </td>
     </tr>

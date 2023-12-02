@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\DonorList;
+use App\Models\MemberPost;
 use App\Models\ReceivedDonor;
 use App\Models\RecepientList;
 use App\Models\RequestRe;
@@ -57,5 +58,22 @@ class RequestReceived extends Controller
          ]);
 
             return redirect()->route('request.receivedform');
+    }
+
+
+    public function approval($id)
+    {
+
+        $approval=MemberPost::find($id);
+        if($approval)
+        {
+            $approval->update([
+                'status'=>'Approved'
+            ]);
+        }
+
+        notify()->success('Approved by Admin');
+       return redirect()->back();
+
     }
 }

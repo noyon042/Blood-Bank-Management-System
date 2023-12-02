@@ -44,7 +44,7 @@
 
                     <div class=" vbh">
 
-                        <div  class="btn btn-danger  bounceInUp"><a href="{{route('donor.list')}}">All Post List </div></a>
+                        <div  class="btn btn-danger text-white  bounceInUp"><a href="{{route('donor.list')}}"><span class="text-white">All Post List </span></div></a>
                         <div class="btn btn-danger  bounceInUp"> Contact US </div>
                     </div>
                 </div>

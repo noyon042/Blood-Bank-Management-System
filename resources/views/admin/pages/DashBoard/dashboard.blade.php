@@ -11,7 +11,7 @@
                           <div class="chart sparkline" id="spark1"></div>
                           <div class="data-info">
                             <div class="desc">Blood Group</div>
-                            <div class="value"><span class="indicator indicator-equal mdi mdi-chevron-right"></span><span class="number" data-toggle="counter" data-end="">0</span>
+                            <div class="value"><span class="indicator indicator-equal mdi mdi-chevron-right"></span><span class="number" data-toggle="counter" data-end=""></span>
                             </div>
                           </div>
                         </div>

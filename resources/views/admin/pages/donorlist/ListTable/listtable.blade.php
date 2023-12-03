@@ -54,14 +54,19 @@
 <td><img class="img" src="{{url('/uploads/'.$donorList->image)}}" alt=""></td>
 <td>{{$donorList->status}}</td>
 
-<td>
+{{-- <td>
 @if($donorList->status=='pending')
 <a class="btn btn-danger" href="{{route('admin.approval',$donorList->id)}}">Approve Donar</a>
 @endif
-</td>
+</td> --}}
 
 <td>
     <a class="btn btn-success" href="{{route('donor.edit',$donorList->id)}}">Edit</a>
+
+    @if($donorList->status=='pending')
+<a class="btn btn-danger" href="{{route('admin.approval',$donorList->id)}}">Approve Donar</a>
+@endif
+
     <a class="btn btn-danger" href="{{route('donorlist.delete',$donorList->id)}}">Delete</a>
 
 

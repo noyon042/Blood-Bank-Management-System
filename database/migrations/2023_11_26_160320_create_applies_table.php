@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('member_post_id')->constrained('member_posts')->cascadeOnDelete();
+            $table->string('is_applied')->default('1');
             $table->string('status')->default('pending');
             $table->timestamps();
         });

@@ -13,15 +13,15 @@ class CheckAdmin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
 
-        return $next($request);
-        // if(auth()->user()->role=='admin')
-        // {
-        //     return $next($request);
-        // }
-        // notify()->error('You are not admin.');
-        // return redirect()->route('home');
+        
+        if(auth()->user()->role =='admin')
+        {
+            return $next($request);
+        }
+        notify()->error('You are not admin.');
+        return redirect()->route('home');
     }
 }

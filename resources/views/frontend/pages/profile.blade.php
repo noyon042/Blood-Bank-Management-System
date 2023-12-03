@@ -79,19 +79,25 @@
                     <hr>
                     <p>Email: {{ auth()->user()->email }}</p>
                     <hr>
-                    <a class="btn btn-success" href="{{ route('profile.edit', auth()->user()->id) }}">Edit Profile</a>
+                    <a class="btn btn-info" href="{{ route('profile.edit', auth()->user()->id) }}">Edit Profile</a>
                     <hr>
+
                 </div>
             </div>
 
             <hr>
-            <table class="table">
+            <div class="d-flex">
+
+
+            <div>
+            <table class="table ml-4 border " style="width: 750px"  >
                 <thead>
-                    <h1 style="text-align: center">All Apply For Donar:</h1>
+                    <h1 style="text-align: left"> All Apply For Donar:</h1>
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Date</th>
                         <th scope="col">Donor Name</th>
+                        {{-- <th scope="col">Request Status</th> --}}
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -103,6 +109,7 @@
                             <th scope="row">{{ $apply->id }}</th>
                             <td>{{ $apply->created_at }}</td>
                             <td>{{ $apply->memberPost->name}}</td>
+                            {{-- <td>{{ $apply->status }}</td> --}}
                             <td>{{ $apply->status }}</td>
                             <td>
                                 @if ($apply->status == 'pending')
@@ -112,7 +119,45 @@
                             </td>
                         </tr>
                     @endforeach
+
             </table>
+        </div>
+
+
+            {{-- <div>
+                <table class="table ml-4 border" style="width: 750px"  >
+                    <thead>
+                        <h1 style="text-align: left">Request From Receiver:</h1>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Request Date</th>
+                            <th scope="col">Recepient Name</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach ($requestAccept as $apply)
+                            <tr>
+                                <th scope="row">{{ $apply->id }}</th>
+                                <td>{{ $apply->created_at }}</td>
+                                <td>{{ $apply->memberPost->name}}</td>
+                                <td>{{ $apply->status }}</td>
+                                <td>
+                                    @if ($apply->status == 'pending')
+                                        <a class="btn btn-danger" href="{{ route('request.accept', $apply->id) }}">Accept Request
+                                        </a>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                </table>
+            </div> --}}
+        </div>
+
+
+
         </body>
     </html>
 @endsection

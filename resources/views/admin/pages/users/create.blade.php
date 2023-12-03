@@ -33,8 +33,8 @@
     <label for="">Select Role:</label>
    <select required class="form-control" name="role" id="">
         <!-- <option value="">Admin</option> -->
-        <option value="donor">Donor</option>
-        <option value="recepient">Recepient</option>
+        <option value="admin">Manager</option>
+        {{-- <option value="manager">Manager</option> --}}
    </select>
   </div>
 
@@ -63,7 +63,7 @@
 
   </div>
 
-  {{-- <div class="form-group">
+  <div class="form-group">
     <label for="">Blood Group:</label>
    <select required class="form-control" name="blood_group" id="">
         <!-- <option value="">Admin</option> -->
@@ -77,7 +77,11 @@
         <option value="AB-">AB-</option>
    </select>
   </div>
-
+  <div class="form-group">
+    <label for="">Contact: </label>
+    <input name="contact" type="tel" class="form-control">
+  </div>
+{{--
   <div class="form-group">
     <label for="">Contact: </label>
     <input name="contact" type="tel" class="form-control">

@@ -28,8 +28,13 @@
                         <h6>Date: {{$singleMember->date}}</h6>
 
 
-                        <a href="{{route('apply.now',$singleMember->id)}}" class="btn btn-outline-success btn-sm">Apply Now</a>
 
+                  @if (auth()->user()->id!=$singleMember->user_id)
+                        <a href="{{route('apply.now',$singleMember->id)}}" class="btn btn-outline-success btn-sm">Apply Now</a>
+                        @else
+                        <p style="color: red;margin-top:5px;">This is your post.</p>
+                        @endif
+                        
                     </div>
                 </div>
             </div>

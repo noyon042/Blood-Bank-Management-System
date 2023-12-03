@@ -27,6 +27,8 @@
       {{-- <th scope="col">Image</th> --}}
       <th scope="col">Email</th>
       <th scope="col">Role</th>
+      <th scope="col">Blood Group</th>
+      <th scope="col">contact</th>
       {{-- <th scope="col">Blood Group</th>
       <th scope="col">contact</th>
       <th scope="col">Address</th>

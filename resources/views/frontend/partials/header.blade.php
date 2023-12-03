@@ -1,5 +1,22 @@
 <header class="continer-fluid ">
-    <div class="header-top">
+    <div class="header-top col-md-12" style="height: 57px;">
+
+
+        <div style="" class="container mt-4 row justify-content-right col-md-12">
+            <div class="row justify-content-right col-md-12">
+              <div class="col-md-6">
+                <form action="{{ route('memberPost.search') }}" method="get" class="form-inline">
+                  <div class="input-group " style="    position: absolute;
+                  top: 10px; left:0px">
+                    <input type="text" class="form-control" placeholder="Search BloodGroup..." name="search">
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-warning">Search</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
 
         <div class="container">
 
@@ -7,11 +24,11 @@
                 <input class="inline-block p-2" type="text" class="form-control" placeholder="Search BloodGroup..." name="search" >
                 <button type="submit" class="btn btn-success p-1">Search</button>
             </form> --}}
-            <div class="container mt-4">
-                <div class="row justify-content-right">
+            {{-- <div class="container mt-4">
+                <div class="row justify-content-right col-md-12">
                   <div class="col-md-6">
                     <form action="{{ route('memberPost.search') }}" method="get" class="form-inline">
-                      <div class="input-group">
+                      <div class="input-group ">
                         <input type="text" class="form-control" placeholder="Search BloodGroup..." name="search">
                         <div class="input-group-append">
                           <button type="submit" class="btn btn-warning">Search</button>
@@ -20,11 +37,11 @@
                     </form>
                   </div>
                 </div>
-              </div>
+              </div> --}}
 
 
 
-            <div class="row col-det">
+            <div class=" row col-det">
 
 
                 <div class="col-lg-6 col-md-12">
@@ -33,10 +50,14 @@
                         @guest
                         <li>
 
-                            <a style="color: white" href="{{route('member.registration')}}">Registration</a>
-                            <span>|</span></li>
+                            <a class="a btn btn-info" style="    position: absolute;
+                            right: -669px;
+                            top: 11px;
+                            " href="{{route('member.registration')}}">Registration</a>
+                           </li>
                         <li>
-                            <a style="color: white" href="{{route('member.login')}}">login</a>
+                            <a class="a btn btn-warning" style="position: absolute;
+                            right: -746px; top:11px" href="{{route('member.login')}}">login</a>
                             </li>
                             @endguest
 
@@ -50,10 +71,16 @@
                 </div>
 
                 @auth
-                <a style="color: white" href="{{route('member.logout')}}">Log Out <span style="color: white" >|</span></a>
+                <a class="a btn btn-warning" style="position: absolute;
+                right: 13px; top:11px" href="{{route('member.logout')}}">Log Out </a>
                 {{-- <span style="color: white" >|</span> --}}
 
-                <a style="color: white" href="{{route('member.profile')}}">Profile:{{auth()->user()->name}} ({{ auth()->user()->role }})</a>
+                <a class="badge badge-info" style="    color: white;
+                height: 28px;
+                font-size: medium;
+                position: absolute;
+                left: 699px;
+                top: 16px;" href="{{route('member.profile')}}"> Profile:{{auth()->user()->name}} ({{ auth()->user()->role }})</a>
                 @endauth
 
             </div>

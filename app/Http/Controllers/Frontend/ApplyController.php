@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Apply;
+use App\Models\MemberPost;
 use Illuminate\Http\Request;
 
 class ApplyController extends Controller
@@ -36,4 +37,21 @@ class ApplyController extends Controller
        return redirect()->back();
 
     }
+
+
+    // public function acceptRequest($recepient_id)
+    // {
+
+    //     $requestAccept=MemberPost::find($recepient_id);
+    //     if($requestAccept)
+    //     {
+    //         $requestAccept->update([
+    //             'status'=>'accepted'
+    //         ]);
+    //     }
+
+    //     notify()->success('Request Accepted');
+    //    return redirect()->back();
+
+    // }
 }

@@ -13,6 +13,7 @@ use App\Http\Controllers\Frontend\ApplyController;
 use App\Http\Controllers\Frontend\FrontendHomeController;
 use App\Http\Controllers\Frontend\MemberController;
 use App\Http\Controllers\Frontend\PostController;
+use App\Http\Middleware\CheckAdmin;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\Attributes\PostCondition;
 
@@ -43,6 +44,11 @@ Route::post('/registration',[MemberController::class,'store'])->name('member.sto
 Route::get('/login',[MemberController::class,'login'])->name('member.login');
 Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login');
 
+    //Donation and Receive Card(Website)
+
+    Route::get('/blood_donate',[PostController::class,'donate'])->name('web.blood.donate');
+    Route::get('/blood_receive',[PostController::class,'receive'])->name('web.blood.receive');
+
 
 
 
@@ -72,14 +78,16 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/donor/list',[PostController::class,'list'])->name('donor.list');
     Route::get('/view/profile/{id}',[PostController::class,'viewprofile'])->name('view.profile');
 
-    //Donation and Receive Card(Website)
+    // //Donation and Receive Card(Website)
 
-    Route::get('/blood_donate',[PostController::class,'donate'])->name('web.blood.donate');
-    Route::get('/blood_receive',[PostController::class,'receive'])->name('web.blood.receive');
+    // Route::get('/blood_donate',[PostController::class,'donate'])->name('web.blood.donate');
+    // Route::get('/blood_receive',[PostController::class,'receive'])->name('web.blood.receive');
 
     Route::get('/member/singleview/{id}',[PostController::class,'view'])->name('member.singleview');
     Route::get('/apply-now/{donor_id}',[ApplyController::class,'applyNow'])->name('apply.now');
     Route::get('/cancel-apply/{donor_id}',[ApplyController::class,'cancelApply'])->name('apply.cancel');
+    // Route::get('/accept-request/{recepient_id}',[ApplyController::class,'acceptRequest'])->name('request.accept');
+
     Route::get('/recepient/singleView/{id}',[PostController::class,'recView'])->name('recepient.singleView');
 
 });
@@ -101,6 +109,10 @@ Route::post('/login-form-post',[UserController::class,'loginPost'])->name('admin
 
 
 Route::group(['middleware'=>'auth'],function(){
+    Route::group(['middleware'=>'CheckAdmin'],function(){
+
+
+
 
     Route::get('/logout',[UserController::class,'logout'])->name('admin.logout');
 
@@ -166,5 +178,7 @@ Route::put('/recepient/update/{id}',[DataTable::class, 'update'])->name('recepie
 Route::get('/hospital',[HospitalInfo::class,'hospital'])->name('hospital');
 Route::get('/hospital/form',[HospitalInfo::class,'createForm'])->name('hospital.form');
 Route::post('/hospital/store',[HospitalInfo::class,'store'])->name('hospital.store');
+});
+
 });
 });

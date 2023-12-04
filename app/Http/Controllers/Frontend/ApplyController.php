@@ -12,13 +12,22 @@ class ApplyController extends Controller
     public function applyNow($donorId)
     {
 
-       Apply::create([
-            'user_id'=>auth()->user()->id,
-            'member_post_id'=>$donorId,
-       ]);
 
-       notify()->success('Applied Donor');
-       return redirect()->back();
+        $check=Apply::where('user_id',auth()->user()->id)->where('member_post_id',$donorId)->first();
+        if($check)
+        {
+            notify()->error('Already Applied');
+            return redirect()->back();
+        }else{
+            Apply::create([
+                'user_id'=>auth()->user()->id,
+                'member_post_id'=>$donorId,
+           ]);
+
+           notify()->success('Applied Donor');
+           return redirect()->back();
+        }
+
     }
 
 
@@ -42,7 +51,7 @@ class ApplyController extends Controller
     // public function acceptRequest($recepient_id)
     // {
 
-    //     $requestAccept=MemberPost::find($recepient_id);
+    //     $requestAccept=Apply::find($recepient_id);
     //     if($requestAccept)
     //     {
     //         $requestAccept->update([

@@ -113,7 +113,7 @@ public function profile()
     //  $memberPosts=Apply::all();
     $applies=Apply::where('user_id',auth()->user()->id)->get();
     // $requestAccept=Apply::where('user_id',auth()->user()->id)->get();
-    return view('frontend.pages.profile',compact('applies','memberPosts'));
+    return view('frontend.pages.profile',compact('memberPosts','applies'));
 }
 
 

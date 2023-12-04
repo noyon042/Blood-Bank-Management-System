@@ -138,23 +138,23 @@
                     </thead>
                     <tbody>
 
-                        @foreach ($requestAccept as $apply)
+                        @foreach ($requestAccept as $accept)
                             <tr>
-                                <th scope="row">{{ $apply->id }}</th>
-                                <td>{{ $apply->created_at }}</td>
-                                <td>{{ $apply->memberPost->name}}</td>
-                                <td>{{ $apply->status }}</td>
+                                <th scope="row">{{ $accept->id }}</th>
+                                <td>{{ $accept->created_at }}</td>
+                                <td>{{ $accept->memberPost->name}}</td>
+                                <td>{{ $accept->status }}</td>
                                 <td>
-                                    @if ($apply->status == 'pending')
-                                        <a class="btn btn-danger" href="{{ route('request.accept', $apply->id) }}">Accept Request
+                                    @if ($accept->status == 'pending')
+                                        <a class="btn btn-danger" href="{{ route('request.accept', $accept->id) }}">Accept Request
                                         </a>
                                     @endif
                                 </td>
                             </tr>
                         @endforeach
                 </table>
-            </div> --}}
-        </div>
+            </div>
+        </div> --}}
 
 
 

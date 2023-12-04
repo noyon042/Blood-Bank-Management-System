@@ -8,6 +8,7 @@ use App\Models\MemberPost;
 use Illuminate\Http\Request;
 use Psy\Command\WhereamiCommand;
 use App\Http\Controllers\Controller;
+use App\Models\Apply;
 
 class PostController extends Controller
 {
@@ -186,5 +187,35 @@ public function update(Request $request,$id)
       return redirect()->back();
     }
 }
+
+
+public function viewRequest($id)
+{
+    // $recepientRequest = Apply::with('user')->get();
+    // $requestAccept=Apply::where('user_id',$id)->get();
+    
+    $requestAccept = Apply::with('user')
+    ->where('member_post_id',$id)
+    ->get();
+
+return view('frontend.pages.myPost.viewRequest',compact('requestAccept'));
+}
+
+
+   public function acceptRequest($recepient_id)
+    {
+
+        $requestAccept=Apply::find($recepient_id);
+        if($requestAccept)
+        {
+            $requestAccept->update([
+                'status'=>'accepted'
+            ]);
+        }
+
+        notify()->success('Request Accepted');
+       return redirect()->back();
+
+    }
 
 }

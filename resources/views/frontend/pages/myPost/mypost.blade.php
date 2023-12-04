@@ -61,6 +61,8 @@
             <td>{{$request->status}}</td>
             <td>
                 <a class="btn btn-success" href="{{route('myPost.edit',$request->id)}}">Edit</a>
+                <a class="btn btn-primary" href="{{route('view.request',$request->id)}}">View</a>
+
                 {{-- <a class="btn btn-danger" href="">Delete</a> --}}
             </td>
         </tr>

@@ -2,7 +2,9 @@
 
 
 @section('content')
-
+<div style=" margin:auto;width:43% ">
+    <div style="    text-align: center;
+    font-weight: bold;margin:15px"><u>Register For New As A Member:</u></div>
 <form  action="{{route('member.store')}}" method="post" enctype="multipart/form-data">
     @csrf
 
@@ -23,12 +25,22 @@
         <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
 
-    <div class="form-group">
+    {{-- <div class="form-group">
         <label for="">Select Role:</label>
         <select required class="form-control" name="role" id="">
             <!-- <option value="">Admin</option> -->
             <option value="donation">I want to Donate blood</option>
             <option value="recepient">I have come to received blood</option>
+        </select>
+    </div> --}}
+
+    <div class="form-group">
+        <label for="">Select Role:</label>
+        <select required class="form-control" name="role" id="">
+            <option value="member">Register As Member</option>
+
+            {{-- <option value="donation">I want to Donate blood</option>
+            <option value="recepient">I have come to received blood</option> --}}
         </select>
     </div>
 
@@ -69,5 +81,5 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
+</div>
 @endsection

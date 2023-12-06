@@ -2,6 +2,7 @@
 
 
 @section('content')
+<div style=" margin:auto;width:43% ">
 <div class="mx-3 my-3">
 
 <form action="{{route('member.post.store')}}" method="post" enctype="multipart/form-data">
@@ -55,7 +56,7 @@
 
   <div class="form-group">
     <label for="">Address:</label>
-    <textarea  class="form-control" name="address" id="" cols="15" rows="5"></textarea>
+    <input type="text"  class="form-control" name="address" id="" ></textarea>
   </div>
 
 
@@ -73,5 +74,6 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+</div>
 </div>
 @endsection

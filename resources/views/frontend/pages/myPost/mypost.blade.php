@@ -18,6 +18,7 @@
 
 @extends('frontend.master')
 @section('content')
+
 <h1>View My Posts</h1>
 {{-- <a href="{{route('request.form')}}" class="btn btn-success">Donor Received Request</a> --}}
 <table class="table table-striped">

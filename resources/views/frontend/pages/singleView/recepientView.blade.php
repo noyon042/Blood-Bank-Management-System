@@ -12,10 +12,10 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-4 mb-4">
+            <div class="col-lg-4 mb-4" style="margin: auto">
                 <div class="card">
 
-                    <img src="{{url('/uploads/'.$singleRecepient->image)}}" alt="" class="card-img-top">
+                    <img src="{{url('/uploads/'.$singleRecepient->image)}}" alt="" class="card-img-top" style="height: 300px; width: 360px;">
                     <div class="card-body">
                         <h6>ID: {{$singleRecepient->id}}</h6>
                         <h6>Name: {{$singleRecepient->name}}</h6>

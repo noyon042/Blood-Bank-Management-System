@@ -125,13 +125,13 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('web.blood.donate')}}">Blood Donate</a>
+                                    <a class="nav-link" href="{{route('web.blood.donate')}}">Blood Donar</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('web.blood.receive')}}">Blood Recieve</a>
+                                    <a class="nav-link" href="{{route('web.blood.receive')}}">Blood Reciever</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#blog">Blog</a>
+                                    <a class="nav-link" href="{{route('donor.list')}}">All Post List</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#contact">Contact US</a>

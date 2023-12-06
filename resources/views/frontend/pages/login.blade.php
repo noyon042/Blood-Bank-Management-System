@@ -3,7 +3,9 @@
 
 @section('content')
 
-<form action="{{route('member.do.login')}}" method="post">
+<div style=" margin:auto;width:50% ">
+
+<form style="margin: 12%" action="{{route('member.do.login')}}" method="post">
     @csrf
 
 
@@ -20,5 +22,5 @@
 
   <button type="submit" class="btn btn-primary">Login</button>
 </form>
-
+</div>
 @endsection

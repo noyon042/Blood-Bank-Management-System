@@ -38,7 +38,7 @@ class DataTable extends Controller
         }
 
         // dd($request->all());
-        MemberPost::create([
+        RecepientList::create([
             'name' => $request->name,
             'email' => $request->email,
             'blood_group' => $request->blood_group,
@@ -105,5 +105,23 @@ class DataTable extends Controller
           notify()->success('Recepient updated successfully.');
           return redirect()->back();
         }
+    }
+
+
+
+    public function approval($id)
+    {
+
+        $approval=MemberPost::find($id);
+        if($approval)
+        {
+            $approval->update([
+                'status'=>'Approved'
+            ]);
+        }
+
+        notify()->success('Approved by Admin');
+       return redirect()->back();
+
     }
 }

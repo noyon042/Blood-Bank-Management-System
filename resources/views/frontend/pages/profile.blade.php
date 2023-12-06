@@ -86,13 +86,13 @@
             </div>
 
             <hr>
-            <div class="d-flex">
 
 
-            <div>
-            <table class="table ml-4 border " style="width: 750px"  >
+            <div style="width:100%;">
+                <div style=" margin:auto;width:70%">
+                <h1 style="text-align: left"> All Apply For Donar:</h1>
+            <table class="table ml-7 border " style="width: 100%;"  >
                 <thead>
-                    <h1 style="text-align: left"> All Apply For Donar:</h1>
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Date</th>
@@ -122,7 +122,7 @@
 
             </table>
         </div>
-
+    </div>
 
             {{-- <div>
                 <table class="table ml-4 border" style="width: 750px"  >

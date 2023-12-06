@@ -2,9 +2,10 @@
 
 @extends('frontend.master')
 @section('content')
-<h1 >All Post List</h1>
+<div style="margin: auto;width:80%">
+<h1 >All Post List:</h1>
 {{-- <a href="{{route('member.post.store')}}" method="post" class="btn btn-success">Create Post List Of Frontend</a> --}}
-<table class="table table-striped">
+<table class="table table-striped border">
     <thead>
         <tr>
             <th scope="col"> ID</th>
@@ -45,7 +46,7 @@
     @endforeach
 
 </table>
-
+</div>
 @endsection
 
 

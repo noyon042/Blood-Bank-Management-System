@@ -51,9 +51,9 @@
             </td> --}}
             <td>{{$singleUser->email}}</td>
             <td>{{$singleUser->role}}</td>
-            {{-- <td>{{$singleUser->blood_group}}</td>
+            <td>{{$singleUser->blood_group}}</td>
             <td>{{$singleUser->contact}}</td>
-            <td>{{$singleUser->adress}}</td>
+            {{-- <td>{{$singleUser->adress}}</td>
             <td>{{$singleUser->date}}</td> --}}
             <td>
                 <a class="btn btn-success" href="">View</a>

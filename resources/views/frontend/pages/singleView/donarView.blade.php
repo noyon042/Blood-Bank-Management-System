@@ -12,10 +12,10 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-4 mb-4">
+            <div class="col-lg-4 mb-4" style="margin: auto">
                 <div class="card">
 
-                    <img src="{{url('/uploads/'.$singleMember->image)}}" alt="" class="card-img-top">
+                    <img src="{{url('/uploads/'.$singleMember->image)}}" alt="" class="card-img-top" style="height: 300px; width: 360px;">
                     <div class="card-body">
                         <h6>ID: {{$singleMember->id}}</h6>
                         <h6>Name: {{$singleMember->name}}</h6>
@@ -34,7 +34,7 @@
                         @else
                         <p style="color: red;margin-top:5px;">This is your post.</p>
                         @endif
-                        
+
                     </div>
                 </div>
             </div>

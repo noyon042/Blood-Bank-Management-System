@@ -61,19 +61,19 @@ class RequestReceived extends Controller
     }
 
 
-    public function approval($id)
-    {
+    // public function approval($id)
+    // {
 
-        $approval=MemberPost::find($id);
-        if($approval)
-        {
-            $approval->update([
-                'status'=>'Approved'
-            ]);
-        }
+    //     $approval=MemberPost::find($id);
+    //     if($approval)
+    //     {
+    //         $approval->update([
+    //             'status'=>'Approved'
+    //         ]);
+    //     }
 
-        notify()->success('Approved by Admin');
-       return redirect()->back();
+    //     notify()->success('Approved by Admin');
+    //    return redirect()->back();
 
-    }
+    // }
 }

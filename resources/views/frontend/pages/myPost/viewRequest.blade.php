@@ -3,10 +3,11 @@
 @section('content')
 
 
-          <div>
-                <table class="table ml-4 border" style="width: 750px"  >
+          <div style="margin: auto;width:70%"">
+            <h1>Request From Receiver:</h1>
+                <table style="width:100%" class="table ml-4 border"   >
                     <thead>
-                        <h1 style="text-align: left">Request From Receiver:</h1>
+
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Request Date</th>
@@ -33,5 +34,6 @@
                         @endforeach
                 </table>
             </div>
-        </div>
+            
+
 @endsection

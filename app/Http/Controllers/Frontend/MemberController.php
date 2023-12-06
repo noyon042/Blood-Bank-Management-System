@@ -146,6 +146,7 @@ public function update(Request $request,$id)
       $upadateProfile->update([
         'name'=>$request->name,
         'email'=>$request->email,
+        'password'=>$request->password,
         'blood_group'=>$request->blood_group,
         'contact'=>$request->contact,
         'address'=>$request->address,

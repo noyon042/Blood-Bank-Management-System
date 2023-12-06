@@ -193,7 +193,7 @@ public function viewRequest($id)
 {
     // $recepientRequest = Apply::with('user')->get();
     // $requestAccept=Apply::where('user_id',$id)->get();
-    
+
     $requestAccept = Apply::with('user')
     ->where('member_post_id',$id)
     ->get();

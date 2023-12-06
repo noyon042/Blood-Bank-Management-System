@@ -1,7 +1,7 @@
 @extends('frontend.master')
 
 @section('content')
-
+<div style="margin: auto;width:43%">
 <h1>Update Profile</h1>
 
 <form action="{{route('profile.update',$editprofile->id)}}" method="post" enctype="multipart/form-data">
@@ -28,6 +28,12 @@
     <label for="">Email Address</label>
     <input value="{{$editprofile->email}}" name="email" type="text" class="form-control" id=""  placeholder="Enter email">
   </div>
+
+    <div class="form-group">
+    <label for="exampleInputPassword1">Update Password</label>
+    <input value="{{$editprofile->password}}" name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+</div>
+
   <div class="form-group">
     <label for="">Blood Group</label>
     <input value="{{$editprofile->blood_group}}" type="text" name="blood_group" class="form-control" id=""  placeholder="Blood Type">
@@ -60,5 +66,5 @@
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
+</div>
 @endsection

@@ -19,12 +19,17 @@
 
            @if($mem->status=='Approved')
 
-            <div class="col-lg-4 mb-4">
+            <div class="col-lg-4 mb-4" style="margin: auto">
                 <div class="card">
 
-                    <a href="{{route('member.singleview',$mem->id)}}">
-                        <img src="{{ url('/uploads/'.$mem->image) }}" alt="" class="card-img-top" style="height: 300px; width: 360px;">
-                        <div class="card-body">
+                    <a href="{{ route('member.singleview', $mem->id) }}">
+                        @if($mem->image)
+                            <img src="{{ url('/uploads/'.$mem->image) }}" alt="" class="card-img-top" style="height: 300px; width: 360px;">
+                        @else
+                            <!-- Use a default image if no image is available -->
+                            <img src="{{ url('/uploads/default.jpg') }}" alt="" class="card-img-top" style="height: 300px; width: 360px;">
+                        @endif
+                        <div class="card-body" style="min-height: 150px">
                         <h6>ID: {{$mem->id}}</h6>
                         <h6>Name: {{$mem->name}}</h6>
                         <h6>Role: {{$mem->role}}</h6>

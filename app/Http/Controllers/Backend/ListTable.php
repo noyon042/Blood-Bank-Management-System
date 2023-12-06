@@ -32,7 +32,7 @@ class ListTable extends Controller
 
         }
 
-      MemberPost::create([
+      DonorList::create([
         'name'=>$request->name,
         'email'=>$request->email,
         'blood_group'=>$request->blood_group,
@@ -91,7 +91,7 @@ class ListTable extends Controller
             'contact'=>$request->contact,
             'address'=>$request->address,
             'date'=>$request->date,
-            'status'=>$request->status,
+            // 'status'=>$request->status,
 
             'image'=>$fileName
           ]);

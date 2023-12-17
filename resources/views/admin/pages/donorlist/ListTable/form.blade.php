@@ -29,7 +29,7 @@
 
 
   <div class="form-group">
-    <label for="">Address</label>
+    <label for="">Hospital Name/Address</label>
     <textarea  class="form-control" name="address" id="" cols="15" rows="5"></textarea>
   </div>
 

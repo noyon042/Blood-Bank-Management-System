@@ -28,7 +28,7 @@
             <th scope="col">Email</th>
             <th scope="col">Blood Type</th>
             <th scope="col">Contact</th>
-            <th scope="col">Address</th>
+            <th scope="col">Hospital Name/Address</th>
             <th scope="col">Last Donation Date</th>
             <th scope="col">Image</th>
             <th scope="col">Status</th>

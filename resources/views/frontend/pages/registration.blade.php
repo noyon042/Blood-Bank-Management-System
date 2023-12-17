@@ -65,8 +65,8 @@
     </div>
 
     <div class="form-group">
-        <label for="">address: </label>
-        <input name="address" type="text" class="form-control">
+        <label for="">Hospital Name/Address: </label>
+        <input name="address" type="text" placeholder="Hospital Name/Address" class="form-control">
     </div>
 
     <div class="form-group">

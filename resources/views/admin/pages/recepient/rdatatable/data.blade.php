@@ -28,7 +28,7 @@
             <th scope="col">email </th>
             <th scope="col">Blood type</th>
             <th scope="col">Phone Number</th>
-            <th scope="col">Address</th>
+            <th scope="col">Hospital Name/Address</th>
             <th scope="col">Date of Blood Needed</th>
             <th scope="col">Upload Image</th>
             <th scope="col">Status</th>

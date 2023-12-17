@@ -6,9 +6,8 @@
     <thead>
         <tr>
             <th scope="col"> ID</th>
-            <th scope="col">Donor Name </th>
-            <th scope="col">Hospital Name/Address </th>
-
+            <th scope="col">Recepient Name </th>
+            <th scope="col">Hospital Name/Address</th>
             <th scope="col">Availabe Blood Group</th>
             <th scope="col">Action</th>
 
@@ -16,7 +15,7 @@
 
     </thead>
 
-    @foreach ($hospitalAddress as $key=> $hos)
+    @foreach ($hospitalRecepient as $key=> $hos)
 
     <tr>
 

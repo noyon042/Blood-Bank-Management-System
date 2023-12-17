@@ -23,7 +23,7 @@
                         <h6>Email: {{$singleRecepient->email}}</h6>
                         <h6>Blood Group: {{$singleRecepient->blood_group}}</h6>
                         <h6>Contact: {{$singleRecepient->contact}}</h6>
-                        <h6>Address: {{$singleRecepient->address}}</h6>
+                        <h6>Hospital Name/Address: {{$singleRecepient->address}}</h6>
                         <h6>Image: {{$singleRecepient->image}}</h6>
                         <h6>Date of Needed: {{$singleRecepient->date}}</h6>
 

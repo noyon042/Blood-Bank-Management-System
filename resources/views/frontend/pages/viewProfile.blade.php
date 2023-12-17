@@ -75,7 +75,7 @@
         <p>Email: {{$profile->email}}</p><hr>
         <p>Blood Group: {{$profile->blood_group}}</p><hr>
         <p>Contact: {{$profile->contact}}</p><hr>
-        <p>Address: {{$profile->address}}</p><hr>
+        <p>Hospital Name/Address: {{$profile->address}}</p><hr>
         <p>Image: {{$profile->image}}</p><hr>
         <p>Last Donation Date: {{$profile->date}}</p><hr>
     </div>

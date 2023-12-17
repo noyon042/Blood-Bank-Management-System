@@ -32,7 +32,7 @@
             <th scope="col">Email Address</th>
             <th scope="col">Blood Group</th>
             <th scope="col">Contact</th>
-            <th scope="col">Address</th>
+            <th scope="col">Hospital Name/Address</th>
             <th scope="col">Donation/Required Date</th>
             <th scope="col">Upload Image</th>
             <th scope="col">Status</th>

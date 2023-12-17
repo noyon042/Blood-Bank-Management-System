@@ -26,7 +26,7 @@
 
                     <div class=" vbh">
 
-                        <div class="btn btn-success  bounceInUp"> Book Appointment </div>
+                     <a href="{{route('aboutUs')}}">  <div class="btn btn-success  bounceInUp"> About Us </div></a>
                         <div class="btn btn-success  bounceInUp"> Contact US </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
 
                     <div class=" vbh">
 
-                        <div  class="btn btn-danger text-white  bounceInUp"><a href="{{route('donor.list')}}"><span class="text-white">All Post List </span></div></a>
+                        <a href="{{route('donor.list')}}"> <div  class="btn btn-danger text-white  bounceInUp">All Post List</div></a>
                         <div class="btn btn-danger  bounceInUp"> Contact US </div>
                     </div>
                 </div>
@@ -68,72 +68,19 @@
 
 
 <!--*************** About Us Starts Here ***************-->
-<section id="about" class="contianer-fluid about-us">
+{{-- <section id="about" class="contianer-fluid about-us"> --}}
 
 
 
-    <div class="container">
-
-        {{-- <div class="row"> --}}
-
-            {{-- @foreach ($members as $mem)
+    <div style="margin: 90px auto 50px" class="container d-flex justify-content-center">
 
 
-
-            <div class="col-md-3 col-sm-6 vd">
-                <div class="bkjiu">
-                    <img src="{{url('/uploads/'.$mem->image)}}" alt="" />
-                    <h4>{{$mem->id}}</h4>
-                    <h4>{{$mem->name}}</h4>
-                    <h4>{{$mem->role}}</h4>
-                    <h4>{{$mem->email}}</h4>
-                    <h4>{{$mem->blood_group}}</h4>
-                    <h4>{{$mem->contact}}</h4>
-                    <h4>{{$mem->address}}</h4>
-
-
-
-                    <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
-                </div>
-            </div>
-            @endforeach --}}
-
-
-
-
-
-            {{-- <section id="gallery">
-                <div class="container">
-                    <div class="row">
-                        @foreach ($members as $mem )
-                        <div class="col-lg-4 mb-4">
-                            <div class="card">
-                                <img src="{{url('/uploads/'.$mem->image)}}" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h6>ID: {{$mem->id}}</h6>
-                                    <h6>Name: {{$mem->name}}</h6>
-                                    <h6>Role: {{$mem->role}}</h6>
-                                    <h6>Email: {{$mem->email}}</h6>
-                                    <h6>Blood Group: {{$mem->blood_roup}}</h6>
-                                    <h6>Contact: {{$mem->contact}}</h6>
-                                    <h6>Address: {{$mem->address}}</h6>
-                                    <a href="" class="btn btn-outline-success btn-sm">Read More</a>
-
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-            </section> --}}
-
-
-            {{--
-        </div> --}}
         <div class="d-flex justify-content-center">
 
 
             <section id="gallery">
                 <div class="container ">
-                    <div class="row">
+                    <div class="row d-flex justify-content-center">
 
                         <div class="col-lg-9 mb-4">
                             <div class="card">
@@ -168,133 +115,15 @@
                 </div>
             </section>
         </div>
-
-
-        <div class="row session-title">
-            <h2>About Us</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has</p>
-        </div>
-        <div class="row">
-            <div class="col-md-6 text">
-                <h2>About Blood Doners</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged.</p>
-                <p> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-                    Ipsum.</p>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                    alteration in some formhumour, or randomised words which don't look even slightly believable. If you
-                    are going to use a passage. industry's standard dummy has survived not only five centuries, but also
-                    the leap into electronic typesetting, remaining essentially unchanged.</p>
-                <p>Industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged.</p>
-            </div>
-            <div class="col-md-6 image">
-                <img src="{{url('/frontend/assets/images/gallery/g1.jpg')}}">
-            </div>
-        </div>
-
     </div>
-</section>
 
-
-
-<!-- ################# Gallery Start Here #######################--->
-
-<div id="gallery" class="gallery container-fluid">
-    <div class="container">
-        <div class="row session-title">
-            <h2>Checkout Our Gallery</h2>
-        </div>
-        <div class="gallery-row row">
-            <div id="gg-screen"></div>
-            <div class="gg-box">
-                <div class="gg-element">
-                    <img src="{{url('/frontend/assets/images/gallery/g1.jpg')}}">
-                </div>
-                <div class="gg-element">
-                    <img src="{{url('/frontend/assets/images/gallery/g2.jpg')}}">
-                </div>
-                <div class="gg-element">
-                    <img src="{{url('/frontend/assets/images/gallery/g3.jpg')}}">
-                </div>
-                <div class="gg-element">
-                    <img src="{{url('/frontend/assets/images/gallery/g4.jpg')}}">
-                </div>
-                <div class="gg-element">
-                    <img src="{{url('/frontend/assets/images/gallery/g5.jpg')}}">
-                </div>
-                <div class="gg-element">
-                    <img src="{{url('/frontend/assets/images/gallery/g6.jpg')}}">
-                </div>
-                <div class="gg-element">
-                    <img src="{{url('/frontend/assets/images/gallery/g7.jpg')}}">
-                </div>
-                <div class="gg-element">
-                    <img src="{{url('/frontend/assets/images/gallery/g8.jpg')}}">
-                </div>
-                <div class="gg-element">
-                    <img src="{{url('/frontend/assets/images/gallery/g9.jpg')}}">
-                </div>
-                <div class="gg-element">
-                    <img src="{{url('/frontend/assets/images/gallery/g10.jpg')}}">
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<!-- ################# Donation Process Start Here #######################--->
-
-<section id="process" class="donation-care">
-    <div class="container">
-        <div class="row session-title">
-            <h2>Donation Process</h2>
-            <p>The donation process from the time you arrive center until the time you leave</p>
-        </div>
-
-
-
-    </div>
-</section>
-
-
-
-
-<!--################### Our Blog Starts Here #######################--->
-<div id="blog" class="blog-container contaienr-fluid">
-    <div class="container">
-
-        <div class="row news-row">
-            <div class="col-md-6">
-
-            </div>
-            <div class="col-md-6">
-
-            </div>
-            <div class="col-md-6">
-
-            </div>
-            <div class="col-md-6">
-
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
 
 
 <!--*************** Footer  Starts Here *************** -->
-<footer id="contact" class="container-fluid">
+{{-- <footer id="contact" class="container-fluid">
     <div class="container">
 
         <div class="row content-ro">
@@ -318,5 +147,5 @@
     </div>
 
 
-</footer>
-        @endsection
+</footer> --}}
+ @endsection

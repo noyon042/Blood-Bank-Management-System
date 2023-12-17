@@ -28,7 +28,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Blood Group</th>
                 <th scope="col">Contact</th>
-                <th scope="col">Address</th>
+                <th scope="col">Hospital Name/Address</th>
                 <th scope="col">Date</th>
                 <th scope="col">Upload Image</th>
                 <th scope="col">Action</th>

@@ -23,7 +23,7 @@ class FrontendHomeController extends Controller
         if($request->search)
         {
             $members=MemberPost::where('blood_group','LIKE','%'.$request->search.'%')->get();
-
+            
         }else{
             $members=MemberPost::all();
         }
@@ -45,5 +45,11 @@ class FrontendHomeController extends Controller
          }
 
         return view("frontend.pages.search",compact('members','differences'));
+    }
+
+
+    public function about()
+    {
+        return view('frontend.pages.aboutUs');
     }
 }

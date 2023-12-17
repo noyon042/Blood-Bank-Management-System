@@ -46,8 +46,8 @@
 
 
   <div class="form-group">
-    <label for="">Address</label>
-    <input value="{{$editprofile->address}}" type="text" name="address" class="form-control" id=""  placeholder="Address">
+    <label for="">Hospital Name/Address</label>
+    <input value="{{$editprofile->address}}" type="text" name="address" class="form-control" id=""  placeholder="Hospital Name/Address">
   </div>
 
 

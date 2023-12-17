@@ -33,10 +33,27 @@
     <input value="{{$editPost->password}}" name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 </div> --}}
 
-  <div class="form-group">
+  {{-- <div class="form-group">
     <label for="">Blood Type</label>
     <input value="{{$editPost->blood_group}}" type="text" name="blood_group" class="form-control" id=""  placeholder="Blood Type">
+  </div> --}}
+
+  <div class="form-group">
+    <label for="">Blood Group:</label>
+   <select input value="{{$editPost->blood_group}}"required class="form-control" name="blood_group" id="">
+        <!-- <option value="">Admin</option> -->
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+   </select>
   </div>
+
+
 
   <div class="form-group">
     <label for="">Contact </label>
@@ -45,8 +62,8 @@
 
 
   <div class="form-group">
-    <label for="">Address</label>
-    <input value="{{$editPost->address}}" type="text" name="address" class="form-control" id=""  placeholder="Address">
+    <label for="">Hospital Name/Address</label>
+    <input value="{{$editPost->address}}" type="text" name="address" class="form-control" id=""  placeholder="Hospital Name/Address">
   </div>
 
 

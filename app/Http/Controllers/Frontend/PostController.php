@@ -52,7 +52,7 @@ class PostController extends Controller
        ]);
 
 
-       notify()->success('Member Post successful.');
+       notify()->success('Member Post successfully.');
        return redirect()->route('home');
    }
 
@@ -123,7 +123,7 @@ return view('frontend.pages.card_section.donate', compact('donate', 'differences
     // {
     //     $profile->view();
     // }
-    notify()->success('Profile Viewed Succesfully');
+    notify()->success('Post Viewed Succesfully');
     // return redirect()->back();
     return view('frontend.pages.viewProfile',compact('profile'));
 

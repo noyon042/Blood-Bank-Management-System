@@ -71,7 +71,7 @@
                     <hr>
                     <p>Contact: {{ auth()->user()->contact }}</p>
                     <hr>
-                    <p>Address: {{ auth()->user()->address }}</p>
+                    <p>Hospital Name/Address: {{ auth()->user()->address }}</p>
                     <hr>
                     <p>Date: {{ auth()->user()->date }}</p>
                     <hr>

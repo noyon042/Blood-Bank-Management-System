@@ -34,6 +34,8 @@ use PHPUnit\Framework\Attributes\PostCondition;
 
  Route::get('/',[FrontendHomeController::class,'home'])->name('home');
  Route::get('/search-memberPost',[FrontendHomeController::class,'search'])->name('memberPost.search');
+ Route::get('/about-Us',[FrontendHomeController::class,'about'])->name('aboutUs');
+
 
 //Member Registration(Website)
 
@@ -178,7 +180,8 @@ Route::put('/recepient/update/{id}',[DataTable::class, 'update'])->name('recepie
 // Route::get('/hospital/form',[HospitalList::class,'createForm'])->name('hospital.form');
 // Route::get('/hospital/store',[HospitalList::class,'store'])->name('hospital.store');
 //Hospital(Admin Panel)
-Route::get('/hospital',[HospitalInfo::class,'hospital'])->name('hospital');
+Route::get('/hospital-Donor',[HospitalInfo::class,'hospital'])->name('hospital');
+Route::get('/hospital-Recepient',[HospitalInfo::class,'recepientHospital'])->name('hospital-Recipient');
 Route::get('/hospital/form',[HospitalInfo::class,'createForm'])->name('hospital.form');
 Route::post('/hospital/store',[HospitalInfo::class,'store'])->name('hospital.store');
 });

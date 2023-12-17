@@ -87,12 +87,12 @@
         </div>
     </div>
     <div id="menu-jk" class="header-bottom">
-        <div class="container">
-            <div class="row nav-row">
+        <div class="">
+            <div class="row nav-row m-auto">
                 <div class="col-md-3 logo">
                     <img src="{{url('/frontend/assets/images/logo.jpg')}}" alt="">
                 </div>
-                <div class="col-md-9 nav-col">
+                <div class="col-md-9 nav-col" style="margin-top:14px;">
                     <nav class="navbar navbar-expand-lg navbar-light">
 
                         <button
@@ -112,10 +112,10 @@
                                     </a>
                                 </li>
 
-
+{{-- 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('admin.login')}}">Admin</a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('member.post')}}">Post</a>
                                 </li>

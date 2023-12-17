@@ -60,7 +60,7 @@ class MemberController extends Controller
         ]);
 
 
-        notify()->success('Member Registration successful.');
+        notify()->success('Member Registration successfully.');
         return redirect()->back();
     }
 
@@ -154,7 +154,7 @@ public function update(Request $request,$id)
         'image'=>$fileName
       ]);
 
-      notify()->success('Product updated successfully.');
+      notify()->success('Profile updated successfully.');
       return redirect()->back();
     }
 }

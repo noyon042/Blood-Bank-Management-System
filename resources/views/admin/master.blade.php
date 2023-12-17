@@ -63,12 +63,12 @@
                   <li class=""><a href="#"><span>Donor List</span></a>
                     <ul class="sub-menu">
 
-                      <li><a href="{{route('donorlist.listtable')}}">List</a>
+                      <li><a href="{{route('donorlist.listtable')}}">Donor Data List</a>
                       </li>
 
                     </ul>
                   </li>
-                  <li class="t"><a href="charts.html"><span class="">Blood Group</span></a>
+                  {{-- <li class="t"><a href="charts.html"><span class="">Blood Group</span></a>
                     <ul class="sub-menu">
                       <li><a href="{{route('addblood')}}">Add Blood</a>
                       </li>
@@ -76,8 +76,8 @@
                       </li>
 
                     </ul>
-                  </li>
-                  <li class=""><a href="#"><span class="">Request Received By Donar</span></a>
+                  </li> --}}
+                  {{-- <li class=""><a href="#"><span class="">Request Received By Donar</span></a>
                     <ul class="sub-menu">
                       <li><a href="{{route('request.receivedform')}}">Request Form</a>
                       </li>
@@ -85,12 +85,14 @@
 
 
                     </ul>
-                  </li>
+                  </li> --}}
 
 
-                  <li class=""><a href="#"><span class="">Hospital</span></a>
+                  <li class=""><a href="#"><span class="">Hospital Address</span></a>
                     <ul class="sub-menu">
-                      <li><a href="{{route('hospital')}}">Hospital Form</a>
+                      <li><a href="{{route('hospital')}}">Donor Hospital</a>
+                      </li>
+                      <li><a href="{{route('hospital-Recipient')}}">Recepient Hospital</a>
                       </li>
 
 
@@ -102,7 +104,7 @@
                   <li class=""><a href="#"><span class="">Recipient</span></a>
                     <ul class="sub-menu">
 
-                      <li><a href="{{route('recepient.recepientdatatable')}}">Recipient Data Table</a>
+                      <li><a href="{{route('recepient.recepientdatatable')}}">Recipient Data List</a>
                       </li>
 
                     </ul>

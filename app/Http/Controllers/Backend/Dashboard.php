@@ -12,7 +12,7 @@ class Dashboard extends Controller
         $countDonar=MemberPost::where('role','donation')->where('status','Approved')->get();
         $countRecepient=MemberPost::where('role','recepient')->where('status','Approved')->get();
         // $countBloodGroup = MemberPost::whereIn('blood_group', ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'])->get();
-        $countBloodGroup=MemberPost::where('role','donation')->where('status','Approved')->whereIn('blood_group', ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'])->get();
+        $countBloodGroup=MemberPost::where('role','donation')->where('status','Approved')->get();
 
 
         return view('admin.pages.DashBoard.dashboard',compact('countDonar','countRecepient','countBloodGroup'));

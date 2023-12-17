@@ -55,8 +55,8 @@
 
 
   <div class="form-group">
-    <label for="">Address:</label>
-    <input type="text"  class="form-control" name="address" id="" ></textarea>
+    <label for="">Hospital Name/Address:</label>
+    <input type="text"  class="form-control" name="address" id="" placeholder="Hospital Name/Address" >
   </div>
 
 

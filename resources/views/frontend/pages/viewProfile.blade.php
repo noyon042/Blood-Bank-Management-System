@@ -77,7 +77,7 @@
         <p>Contact: {{$profile->contact}}</p><hr>
         <p>Hospital Name/Address: {{$profile->address}}</p><hr>
         <p>Image: {{$profile->image}}</p><hr>
-        <p>Last Donation Date: {{$profile->date}}</p><hr>
+        <p>Donation/Required Date: {{$profile->date}}</p><hr>
     </div>
 </div>
 

@@ -90,7 +90,7 @@
 
             <div style="width:100%;">
                 <div style=" margin:auto;width:70%">
-                <h1 style="text-align: left"> All Apply For Donar:</h1>
+                 <h1 style="text-align: left"> All Apply For Donar:</h1>
             <table class="table ml-7 border " style="width: 100%;"  >
                 <thead>
                     <tr>
@@ -116,6 +116,7 @@
                                     <a class="btn btn-danger" href="{{ route('apply.cancel', $apply->id) }}">Cancel
                                         Apply</a>
                                 @endif
+                                <a class="btn btn-info" href="{{ route('apply.donar.report', $apply->id) }}">Report</a>
                             </td>
                         </tr>
                     @endforeach

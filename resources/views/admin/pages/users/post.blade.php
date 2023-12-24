@@ -31,7 +31,7 @@
                 <th scope="col">Hospital Name/Address</th>
                 <th scope="col">Date</th>
                 <th scope="col">Upload Image</th>
-                <th scope="col">Action</th>
+                {{-- <th scope="col">Action</th> --}}
             </tr>
 
         </thead>
@@ -50,10 +50,10 @@
             <td>{{$post->date}}</td>
 
             <td><img class="img" src="{{url('/uploads/'.$post->image)}}" alt="" /></td>
-            <td>
+            {{-- <td>
                 <a class="btn btn-success" href="">Edit</a>
                 <a class="btn btn-danger" href="">Delete</a>
-            </td>
+            </td> --}}
         </tr>
         @endforeach
 

@@ -11,6 +11,7 @@
             height: 60px;
             width: 60px;
         }
+    
     </style>
 </head>
 <body>

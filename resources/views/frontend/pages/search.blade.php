@@ -2,11 +2,9 @@
 @section('content')
 
 <div class="mx-4 my-4">
-<div style="text-align: center" class="mb-3">
-    {{-- <h1>Blood Donation List</h1> --}}
-</div>
+
 <section id="gallery">
-    <div class="container", style="text-align: center">
+    <div class="container">
         <div class="row">
             {{-- @dd($donate) --}}
 
@@ -38,7 +36,7 @@
                         {{-- <h6>Contact: {{$mem->contact}}</h6> --}}
                         {{-- <h6>Address: {{$mem->address}}</h6> --}}
                         <h6>Last Donation Date: {{$mem->date}}</h6>
-
+                        </div>
                     </a>
 
                     <div>
@@ -77,7 +75,6 @@
         </div>
 
     @endif
-
     </section>
 </div>
 @endsection

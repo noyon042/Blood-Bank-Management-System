@@ -105,4 +105,60 @@ class UserController extends Controller
         $memberPosts=MemberPost::all();
         return view('admin.pages.users.post',compact('memberPosts'));
     }
+
+
+
+    public function delete($id)
+    {
+      $user=User::find($id);
+      if($user)
+      {
+        $user->delete();
+      }
+
+      notify()->success('User Deleted Successfully.');
+      return redirect()->back();
+    }
+
+
+    public function edit($id)
+    {
+      $user=User::find($id);
+
+      return view('admin.pages.users.edit',compact('user'));
+
+    }
+
+    public function update(Request $request,$id)
+    {
+        $user=User::find($id);
+
+        if($user)
+        {
+
+          $fileName=$user->image;
+          if($request->hasFile('image'))
+          {
+              $file=$request->file('image');
+              $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+
+              $file->storeAs('/uploads',$fileName);
+
+          }
+
+          $user->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            // 'blood_group'=>$request->blood_group,
+            'contact'=>$request->contact,
+            'address'=>$request->address,
+            // 'date'=>$request->date,
+            'image'=>$fileName
+          ]);
+
+          notify()->success('User updated successfully.');
+          return redirect()->back();
+        }
+    }
+
 }

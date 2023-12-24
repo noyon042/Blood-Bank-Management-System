@@ -14,6 +14,7 @@ use App\Http\Controllers\Frontend\FrontendHomeController;
 use App\Http\Controllers\Frontend\MemberController;
 use App\Http\Controllers\Frontend\PostController;
 use App\Http\Middleware\CheckAdmin;
+use App\Models\Apply;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\Attributes\PostCondition;
 
@@ -64,6 +65,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/profile/edit/{id}',[MemberController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/update/{id}',[MemberController::class, 'update'])->name('profile.update');
 
+
 //Member Post(Website)
 
     Route::get('/member/post',[PostController::class,'memberPost'])->name('member.post');
@@ -91,6 +93,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/member/singleview/{id}',[PostController::class,'view'])->name('member.singleview');
     Route::get('/apply-now/{donor_id}',[ApplyController::class,'applyNow'])->name('apply.now');
     Route::get('/cancel-apply/{donor_id}',[ApplyController::class,'cancelApply'])->name('apply.cancel');
+    Route::get('/apply/donar/report/{donor_id}',[ApplyController::class,'report'])->name('apply.donar.report');
     // Route::get('/accept-request/{recepient_id}',[ApplyController::class,'acceptRequest'])->name('request.accept');
 
     Route::get('/recepient/singleView/{id}',[PostController::class,'recView'])->name('recepient.singleView');
@@ -126,6 +129,9 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/users',[UserController::class,'list'])->name('users.list');
     Route::get('/users/create',[UserController::class,'createForm'])->name('users.create');
     Route::post('/users/store',[UserController::class,'store'])->name('users.store');
+    Route::get('/users/delete/{id}',[UserController::class,'delete'])->name('users.delete');
+Route::get('/users/edit/{id}',[UserController::class, 'edit'])->name('users.edit');
+Route::put('/users/update/{id}',[UserController::class, 'update'])->name('users.update');
 
 
     //Website Postlist(Admin Panel)
@@ -140,6 +146,8 @@ Route::get('/donorlist/listtable',[ListTable::class,'listtable'])->name('donorli
 Route::get('/donorlist/form',[ListTable::class,'createForm'])->name('donorlist.form');
 Route::post('/donorlist/store',[ListTable::class,'store'])->name('donorlist.store');
 Route::get('/admin-approval/{id}',[ListTable::class,'approval'])->name('admin.approval');
+Route::get('/search-donar',[ListTable::class,'search'])->name('donar.search');
+
 
 
 Route::get('/donorlist/delete/{id}',[ListTable::class,'delete'])->name('donorlist.delete');
@@ -181,9 +189,15 @@ Route::put('/recepient/update/{id}',[DataTable::class, 'update'])->name('recepie
 // Route::get('/hospital/store',[HospitalList::class,'store'])->name('hospital.store');
 //Hospital(Admin Panel)
 Route::get('/hospital-Donor',[HospitalInfo::class,'hospital'])->name('hospital');
+Route::get('/donor/delete/{id}',[HospitalInfo::class,'deleteDonor'])->name('donor.delete');
 Route::get('/hospital-Recepient',[HospitalInfo::class,'recepientHospital'])->name('hospital-Recipient');
+Route::get('/recepient/delete/{id}',[HospitalInfo::class,'deleteRecipient'])->name('recepient.delete');
 Route::get('/hospital/form',[HospitalInfo::class,'createForm'])->name('hospital.form');
 Route::post('/hospital/store',[HospitalInfo::class,'store'])->name('hospital.store');
+
+Route::get('/view/report',[ApplyController::class,'viewReport'])->name('view.report');
+Route::get('/print/report/{id}',[ApplyController::class,'printReport'])->name('print.report');
+
 });
 
 });

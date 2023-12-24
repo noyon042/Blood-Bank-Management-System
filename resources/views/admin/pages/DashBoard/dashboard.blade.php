@@ -41,7 +41,7 @@
                           <div class="chart sparkline" id="spark4"></div>
                           <div class="data-info">
                             <div class="desc">Report</div>
-                            <div class="value"><span class="indicator indicator-negative mdi mdi-chevron-down"></span><span class="number" data-toggle="counter" data-end="113">0</span>
+                            <div class="value"><span class="indicator indicator-negative mdi mdi-chevron-down"></span><span class="number" data-toggle="counter" data-end="{{$countReport->count()}}">0</span>
                             </div>
                           </div>
                         </div>

@@ -19,10 +19,10 @@
                     alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 class=" bounceInDown">Donate Blood & Save a Life</h5>
-                    <p class=" bounceInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo
+                    {{-- <p class=" bounceInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo
                         neque, <br>
                         aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis <br>
-                        sed sagittis at, sagittis quis neque. Praesent.</p>
+                        sed sagittis at, sagittis quis neque. Praesent.</p> --}}
 
                     <div class=" vbh">
 
@@ -37,10 +37,10 @@
                     alt="Third slide">
                 <div class="carousel-caption vdg-cur d-none d-md-block">
                     <h5 class=" bounceInDown">Donate Blood & Save a Life</h5>
-                    <p class=" bounceInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo
+                    {{-- <p class=" bounceInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo
                         neque, <br>
                         aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis <br>
-                        sed sagittis at, sagittis quis neque. Praesent.</p>
+                        sed sagittis at, sagittis quis neque. Praesent.</p> --}}
 
                     <div class=" vbh">
 

@@ -24,19 +24,21 @@
   </head>
   <body>
     @include('notify::components.notify')
-    <div class="be-wrapper be-fixed-sidebar ">
+    <div class="be-wrapper be-fixed-sidebar justify-content-between">
       <nav class="navbar navbar-expand fixed-top be-top-header">
         <div class="container-fluid bg-dark">
-          <div class="be-navbar-header"><a style="margin: 0 30px; font-size: xx-large; " href="index.html" class="text-white fw-bold">BBMS</a>
+          <div class="be-navbar-header"><a style="margin: 0 30px; font-size: xx-large; " href="" class="text-white fw-bold">BBMS</a>
           </div>
           <div class="page-title"><span style="text-align: center;
-    color: rgb(249, 246, 246);">Blood Bank Management System</span></div>
-          <div class="be-right-navbar">
+            color: rgb(249, 246, 246);">Blood Bank Management System</span></div>
+
+
+          <div class="be-right-navbar" style="">
             <ul class="nav navbar-nav float-right be-user-nav">
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false"><img src="https://i.ibb.co/Y0jGJFC/me.jpg" alt="Avatar"><span class="user-name">Noyon Mahmud</span></a>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ url('/uploads/' . auth()->user()->image) }}" style="border-radius: 50%; height: 60px;  width: 60px;" alt="Avatar"><span class="user-name">Noyon Mahmud</span></a>
                 <div class="dropdown-menu" role="menu">
                   <div class="user-info">
-                    <div class="user-name">Noyon Mahmud</div>
+                    <div class="user-name">{{auth()->user()->name}}</div>
                     <div>Admin</div>
                   </div><a class="dropdown-item" href="{{route('admin.logout')}}">{{auth()->user()->name}}<span></span> -Logout</a>
                 </div>
@@ -110,7 +112,7 @@
                     </ul>
                   </li>
 
-                  <li class=""><a href="#"><span>Report</span></a>
+                  <li class=""><a href="{{route('view.report')}}"><span>Report</span></a>
                   </li>
 
 
@@ -137,7 +139,7 @@
         </div>
       </div>
       <div class="be-content">
-        <div class="main-content container-fluid">
+        <div class="main-content container-fluid ">
 
 
           @yield('content')
@@ -147,6 +149,7 @@
       </div>
 
     </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://foxythemes.net/preview/products/beagle/assets/lib/jquery/jquery.min.js" type="text/javascript"></script>
     <script src="https://foxythemes.net/preview/products/beagle/assets/lib/perfect-scrollbar/js/perfect-scrollbar.min.js" type="text/javascript"></script>
     <script src="https://foxythemes.net/preview/products/beagle/assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
@@ -172,5 +175,6 @@
       });
     </script>
     @notifyJs
+    @stack('yourJsCode')
   </body>
 </html>

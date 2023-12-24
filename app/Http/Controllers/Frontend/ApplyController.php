@@ -13,54 +13,59 @@ class ApplyController extends Controller
     {
 
 
-        $check=Apply::where('user_id',auth()->user()->id)->where('member_post_id',$donorId)->first();
-        if($check)
-        {
+        $check = Apply::where('user_id', auth()->user()->id)->where('member_post_id', $donorId)->first();
+        if ($check) {
             notify()->error('Already Applied');
             return redirect()->back();
-        }else{
+        } else {
             Apply::create([
-                'user_id'=>auth()->user()->id,
-                'member_post_id'=>$donorId,
-           ]);
+                'user_id' => auth()->user()->id,
+                'member_post_id' => $donorId,
+            ]);
 
-           notify()->success('Applied Donor');
-           return redirect()->back();
+            notify()->success('Applied Donor');
+            return redirect()->back();
         }
-
     }
 
 
     public function cancelApply($apply_id)
     {
 
-        $apply=Apply::find($apply_id);
-        if($apply)
-        {
+        $apply = Apply::find($apply_id);
+        if ($apply) {
             $apply->update([
-                'status'=>'cancelled'
+                'status' => 'cancelled'
             ]);
         }
 
         notify()->success('Apply Cancelled');
-       return redirect()->back();
-
+        return redirect()->back();
     }
 
+    public function report($id)
+    {
+        // dd($id);
+        $report = Apply::find($id);
+        $memberPosts = Apply::with('memberPost')->get();
+        // dd($report);
+        return view('frontend.pages.applyReport', compact('report','memberPosts'));
+    }
 
-    // public function acceptRequest($recepient_id)
-    // {
+    public function viewReport(){
+        $report = Apply::all();
+        // $report = Apply::find($id);
+        $memberPosts = Apply::with('memberPost')->get();
+        $users = Apply::with('user')->get();
 
-    //     $requestAccept=Apply::find($recepient_id);
-    //     if($requestAccept)
-    //     {
-    //         $requestAccept->update([
-    //             'status'=>'accepted'
-    //         ]);
-    //     }
+        return view('admin.pages.Reports.report',compact('report','memberPosts','users'));
+    }
 
-    //     notify()->success('Request Accepted');
-    //    return redirect()->back();
+    public function printReport($id){
+         $report = Apply::find($id);
+         $memberPosts = Apply::with('memberPost')->get();
+         $users = Apply::with('user')->get();
+         return view('admin.pages.Reports.printreport',compact('report','memberPosts','users'));
 
-    // }
+    }
 }

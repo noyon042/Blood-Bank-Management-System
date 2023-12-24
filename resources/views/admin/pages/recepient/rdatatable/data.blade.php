@@ -20,7 +20,7 @@
 @section('content')
 
 <a href="{{route('recepient.create')}}" class="btn btn-success">Create New Recepient</a>
-<table class="table table-striped">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th scope="col"> ID</th>

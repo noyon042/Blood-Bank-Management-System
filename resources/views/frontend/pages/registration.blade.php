@@ -15,13 +15,13 @@
     </div>
 
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
+        <label for="exampleInputEmail1">Email address:</label>
         <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
             placeholder="Enter email">
 
     </div>
     <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
+        <label for="exampleInputPassword1">Password:</label>
         <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
 
@@ -65,14 +65,14 @@
     </div>
 
     <div class="form-group">
-        <label for="">Hospital Name/Address: </label>
+        <label for="">Address: </label>
         <input name="address" type="text" placeholder="Hospital Name/Address" class="form-control">
     </div>
 
-    <div class="form-group">
+    {{-- <div class="form-group">
         <label for="">Date: </label>
         <input name="date" type="date" class="form-control">
-    </div>
+    </div> --}}
 
     <div class="form-group">
         <label for="">Upload Image: </label>

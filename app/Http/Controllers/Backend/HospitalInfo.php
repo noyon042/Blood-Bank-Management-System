@@ -16,6 +16,19 @@ class HospitalInfo extends Controller
 
     return view('admin.pages.hospital.list',compact('hospitals','hospitalAddress'));
    }
+
+   public function deleteDonor($id)
+   {
+     $donor=MemberPost::find($id);
+     if($donor)
+     {
+       $donor->delete();
+     }
+
+     notify()->success('Donor Deleted Successfully.');
+     return redirect()->back();
+   }
+
    public function createForm()
    {
     return view('admin.pages.hospital.form');
@@ -40,5 +53,17 @@ class HospitalInfo extends Controller
     $hospitalRecepient=MemberPost::where('role','recepient')->where('status','Approved')->get();
 
     return view('admin.pages.hospital.recepient',compact('hospitals','hospitalRecepient'));
+   }
+
+   public function deleteRecipient($id)
+   {
+     $recipient=MemberPost::find($id);
+     if($recipient)
+     {
+       $recipient->delete();
+     }
+
+     notify()->success('Recipient Deleted Successfully.');
+     return redirect()->back();
    }
 }

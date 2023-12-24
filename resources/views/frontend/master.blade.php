@@ -17,6 +17,8 @@
         .notify{
             z-index: 9999;
         }
+
+
     </style>
 </head>
 
@@ -36,12 +38,16 @@
 
 
 @notifyJs
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <script src="{{url('/frontend/assets/js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{url('/frontend/assets/js/popper.min.js')}}"></script>
     <script src="{{url('/frontend/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{url('/frontend/assets/plugins/grid-gallery/js/grid-gallery.min.js')}}"></script>
     <script src="{{url('/frontend/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js')}}"></script>
     <script src="{{url('/frontend/assets/js/script.js')}}"></script>
+    @stack('yourJsCode')
+
 </body>
 
 </html>

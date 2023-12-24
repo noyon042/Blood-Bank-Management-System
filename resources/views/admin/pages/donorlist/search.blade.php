@@ -1,39 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .img{
-            border-radius: 50%;
-            height: 60px;
-            width: 60px;
-        }
-    </style>
-</head>
-<body>
-
-
 @extends('admin.master')
+
 @section('content')
-<h1>Donate Blood</h1>
-<a href="{{route('donorlist.form')}}" class="btn btn-success">Create New List</a>
 
-<div class="container mt-4 d-flex justify-content-end col-md-12">
-    <div class="col-md-6">
-      <form action="{{ route('donar.search') }}" method="get" class="form-inline justify-content-end">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search Donar Name..." name="search">
-          <div class="input-group-append">
-            <button type="submit" class="btn btn-warning">Search</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+<h2>Search result for : {{ request()->search }} found {{$donors->count()}} donors.</h2>
+<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
+@if($donors->count()>0)
 <table class="table table-bordered">
     <thead>
         <tr class="text-center">
@@ -54,7 +26,7 @@
     </thead>
     <tbody>
 
-    @foreach ($donorLists as $key=>$donorList)
+    @foreach ($donors as $key=>$donorList)
 
         <tr>
 
@@ -65,7 +37,9 @@
 <td>{{$donorList->contact}}</td>
 <td>{{$donorList->address}}</td>
 <td>{{$donorList->date}}</td>
-<td><img class="img" src="{{url('/uploads/'.$donorList->image)}}" alt=""></td>
+<td><img class="img" src="{{url('/uploads/'.$donorList->image)}}" style=" border-radius: 50%;
+    height: 60px;
+    width: 60px;" alt=""></td>
 <td>{{$donorList->status}}</td>
 
 {{-- <td>
@@ -89,8 +63,12 @@
         @endforeach
     </tbody>
 </table>
-{{-- {{$donorLists->links()}} --}}
 
+                @else
+
+                    <h1>No product found.</h1>
+                @endif
+
+
+</div>
 @endsection
-</body>
-</html>

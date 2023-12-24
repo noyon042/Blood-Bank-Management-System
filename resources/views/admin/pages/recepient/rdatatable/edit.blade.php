@@ -2,18 +2,13 @@
 
 @section('content')
 
-<h1>Create New recepient List</h1>
+<h1>Update recepient List</h1>
 
 <form action="{{route('donor.update',$recepient->id)}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('put')
 
-    {{-- <div class="form-group">
-        <label for="">Enter Product Name:</label>
-        <input value="{{$product->name}}" required type="text" class="form-control" id="" placeholder="Enter name" name="product_name">
-        @error('product_name')
-        <div class="alert alert-danger">{{ $message }}</div>
-        @enderror --}}
+
 
   <div class="form-group">
     <label for="">Enter Name</label>

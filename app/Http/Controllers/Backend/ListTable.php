@@ -117,4 +117,20 @@ class ListTable extends Controller
        return redirect()->back();
 
     }
+
+    public function search(Request $request)
+    {
+        // dd(request()->all())
+
+        if($request->search)
+        {
+            $donors=MemberPost::where('name','LIKE','%'.$request->search.'%')->get();
+            //select * from products where name like % akash %;
+        }else{
+            $donors=MemberPost::all();
+        }
+
+
+        return view("admin.pages.donorlist.search",compact('donors'));
+    }
 }

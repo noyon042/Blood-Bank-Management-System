@@ -1,39 +1,11 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .img{
-            border-radius: 50%;
-            height: 60px;
-            width: 60px;
-        }
-    </style>
-</head>
-<body>
-
 @extends('admin.master')
+
 @section('content')
 
-<a href="{{route('recepient.create')}}" class="btn btn-success">Create New Recepient</a>
+<h2>Search result for : {{ request()->search }} found {{$recipients->count()}} recipients.</h2>
+<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-<div class="container mt-4 d-flex justify-content-end col-md-12">
-    <div class="col-md-6">
-      <form action="{{ route('recipient.search') }}" method="get" class="form-inline justify-content-end">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search Recipient Name..." name="search">
-          <div class="input-group-append">
-            <button type="submit" class="btn btn-warning">Search</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-
+@if($recipients->count()>0)
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -54,7 +26,7 @@
 
     </thead>
 
-    @foreach ($recepientLists as $key=> $recepientList)
+    @foreach ($recipients as $key=> $recepientList)
 
     <tr>
 
@@ -65,7 +37,7 @@
         <td>{{$recepientList->contact}}</td>
         <td>{{$recepientList->address}}</td>
         <td>{{$recepientList->date}}</td>
-        <td><img class="img" src="{{url('/uploads/'.$recepientList->image)}}" alt=""></td>
+        <td><img class="img" src="{{url('/uploads/'.$recepientList->image)}}" style=" border-radius: 50%; height: 60px;width: 60px;" alt=""></td>
         <td>{{$recepientList->status}}</td>
 {{--
 <td>
@@ -86,6 +58,11 @@
 
 </table>
 
+                @else
+
+                    <h1>No recipient found.</h1>
+                @endif
+
+
+</div>
 @endsection
-</body>
-</html>

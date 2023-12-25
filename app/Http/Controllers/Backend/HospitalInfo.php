@@ -66,4 +66,36 @@ class HospitalInfo extends Controller
      notify()->success('Recipient Deleted Successfully.');
      return redirect()->back();
    }
+
+   public function search(Request $request)
+   {
+       // dd(request()->all())
+
+       if($request->search)
+       {
+           $hospitals=MemberPost::where('address','LIKE','%'.$request->search.'%')->get();
+           //select * from products where name like % akash %;
+       }else{
+           $hospitals=MemberPost::all();
+       }
+
+
+       return view("admin.pages.hospital.donorSearch",compact('hospitals'));
+   }
+
+   public function searchRecipient(Request $request)
+   {
+       // dd(request()->all())
+
+       if($request->search)
+       {
+           $recipients=MemberPost::where('address','LIKE','%'.$request->search.'%')->get();
+           //select * from products where name like % akash %;
+       }else{
+           $recipients=MemberPost::all();
+       }
+
+
+       return view("admin.pages.hospital.recipientSearch",compact('recipients'));
+   }
 }

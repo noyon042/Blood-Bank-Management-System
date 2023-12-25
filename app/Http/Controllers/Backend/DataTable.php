@@ -124,4 +124,20 @@ class DataTable extends Controller
        return redirect()->back();
 
     }
+
+    public function search(Request $request)
+    {
+        // dd(request()->all())
+
+        if($request->search)
+        {
+            $recipients=MemberPost::where('name','LIKE','%'.$request->search.'%')->get();
+            //select * from products where name like % akash %;
+        }else{
+            $recipients=MemberPost::all();
+        }
+
+
+        return view("admin.pages.recepient.rdatatable.search",compact('recipients'));
+    }
 }

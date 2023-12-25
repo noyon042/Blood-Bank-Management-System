@@ -37,9 +37,7 @@
 <td>{{$donorList->contact}}</td>
 <td>{{$donorList->address}}</td>
 <td>{{$donorList->date}}</td>
-<td><img class="img" src="{{url('/uploads/'.$donorList->image)}}" style=" border-radius: 50%;
-    height: 60px;
-    width: 60px;" alt=""></td>
+<td><img class="img" src="{{url('/uploads/'.$donorList->image)}}" style=" border-radius: 50%; height: 60px;width: 60px;" alt=""></td>
 <td>{{$donorList->status}}</td>
 
 {{-- <td>
@@ -66,7 +64,7 @@
 
                 @else
 
-                    <h1>No product found.</h1>
+                    <h1>No donor found.</h1>
                 @endif
 
 

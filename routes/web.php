@@ -10,6 +10,8 @@ use App\Http\Controllers\Backend\ListTable;
 use App\Http\Controllers\Backend\Recepient;
 use App\Http\Controllers\Backend\RequestReceived;
 use App\Http\Controllers\Frontend\ApplyController;
+use App\Http\Controllers\Frontend\Contact;
+use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendHomeController;
 use App\Http\Controllers\Frontend\MemberController;
 use App\Http\Controllers\Frontend\PostController;
@@ -52,6 +54,9 @@ Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login
     Route::get('/blood_donate',[PostController::class,'donate'])->name('web.blood.donate');
     Route::get('/blood_receive',[PostController::class,'receive'])->name('web.blood.receive');
 
+//Contact Us
+    Route::get('/contact/form',[ContactController::class,'contact'])->name('contact.form');
+    Route::post('/contact/store',[ContactController::class,'store'])->name('contact.store');
 
 
 
@@ -149,7 +154,6 @@ Route::get('/admin-approval/{id}',[ListTable::class,'approval'])->name('admin.ap
 Route::get('/search-donar',[ListTable::class,'search'])->name('donar.search');
 
 
-
 Route::get('/donorlist/delete/{id}',[ListTable::class,'delete'])->name('donorlist.delete');
 Route::get('/donor/edit/{id}',[ListTable::class, 'edit'])->name('donor.edit');
 Route::put('/donor/update/{id}',[ListTable::class, 'update'])->name('donor.update');
@@ -177,6 +181,8 @@ Route::get('/recepient/recepientdatatable',[DataTable::class,'data'])->name('rec
 Route::get('/recepient/create',[DataTable::class,'createForm'])->name('recepient.create');
 Route::post('/recepient/store',[DataTable::class,'store'])->name('recepient.store');
 Route::get('/admin-approval/{id}',[ListTable::class,'approval'])->name('admin.approval');
+Route::get('/search-recipient',[DataTable::class,'search'])->name('recipient.search');
+
 
 
 Route::get('/recepient/delete/{id}',[DataTable::class,'delete'])->name('recepient.delete');
@@ -190,8 +196,13 @@ Route::put('/recepient/update/{id}',[DataTable::class, 'update'])->name('recepie
 //Hospital(Admin Panel)
 Route::get('/hospital-Donor',[HospitalInfo::class,'hospital'])->name('hospital');
 Route::get('/donor/delete/{id}',[HospitalInfo::class,'deleteDonor'])->name('donor.delete');
+Route::get('/searchDonor-hospital',[HospitalInfo::class,'search'])->name('hospital.search');
+
+
 Route::get('/hospital-Recepient',[HospitalInfo::class,'recepientHospital'])->name('hospital-Recipient');
 Route::get('/recepient/delete/{id}',[HospitalInfo::class,'deleteRecipient'])->name('recepient.delete');
+Route::get('/searchRecipient-hospital',[HospitalInfo::class,'searchRecipient'])->name('hospital.searchRecipient');
+
 Route::get('/hospital/form',[HospitalInfo::class,'createForm'])->name('hospital.form');
 Route::post('/hospital/store',[HospitalInfo::class,'store'])->name('hospital.store');
 

@@ -1,21 +1,11 @@
 @extends('admin.master')
+
 @section('content')
 
-<a href="{{route('hospital.form')}}" class="btn btn-success">Create Hospital Form</a>
+<h2>Search result for : {{ request()->search }} found {{$hospitals->count()}} hospitals.</h2>
+<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-<div class="container mt-4 d-flex justify-content-end col-md-12">
-    <div class="col-md-6">
-      <form action="{{ route('hospital.search') }}" method="get" class="form-inline justify-content-end">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search Hospital/Address..." name="search">
-          <div class="input-group-append">
-            <button type="submit" class="btn btn-warning">Search</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-
+@if($hospitals->count()>0)
 <table class="table table-striped">
     <thead>
         <tr>
@@ -30,7 +20,7 @@
 
     </thead>
 
-    @foreach ($hospitalAddress as $key=> $hos)
+    @foreach ($hospitals as $key=> $hos)
 
     <tr>
 
@@ -48,4 +38,11 @@
 
 </table>
 
+                @else
+
+                    <h1>No hospital found.</h1>
+                @endif
+
+
+</div>
 @endsection

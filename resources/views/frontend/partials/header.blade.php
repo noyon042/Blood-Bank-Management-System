@@ -7,10 +7,19 @@
               <div class="col-md-6">
                 <form action="{{ route('memberPost.search') }}" method="get" class="form-inline">
                   <div class="input-group " style="    position: absolute;
-                  top: 10px; left:0px">
-                    <input type="text" class="form-control" placeholder="Search BloodGroup..." name="search">
+                  top: 10px; left:0px; width:324px;">
+                    <input type="text" style="border-radius: 9px" class="form-control" placeholder="Search BloodGroup..." name="search">
                     <div class="input-group-append">
-                      <button type="submit" class="btn btn-warning">Search</button>
+                      <button type="submit" style="background: #ffccd3;
+                      padding: 6px 15px;
+                      position: absolute;
+                      right: 5px;
+                      top: 5px;
+                      color: red;
+                      border-radius: 9px;
+                      z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                      </svg></button>
                     </div>
                   </div>
                 </form>

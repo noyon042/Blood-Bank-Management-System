@@ -1,7 +1,7 @@
 @extends('frontend.master')
 
 @section('content')
-<div style="margin: auto;width:43%">
+<div class="card p-4 mt-5 mb-4" style="margin: auto;width:43%">
 <h1>Update Profile</h1>
 
 <form action="{{route('profile.update',$editprofile->id)}}" method="post" enctype="multipart/form-data">
@@ -41,7 +41,7 @@
 
   <div class="form-group">
     <label for="">Contact </label>
-    <input value="{{$editprofile->contact}}" type="text" name="contact" class="form-control" id=""  placeholder="Contact">
+    <input value="{{$editprofile->contact}}" type="number" name="contact" class="form-control" id=""  placeholder="Contact">
   </div>
 
 

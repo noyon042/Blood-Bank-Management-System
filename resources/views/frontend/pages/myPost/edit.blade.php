@@ -1,7 +1,7 @@
 @extends('frontend.master')
 
 @section('content')
-<div style=" margin:auto;width:43% ">
+<div class="card p-3 mt-5 mb-4" style=" margin:auto;width:43% ">
 <h1>Update Your Post</h1>
 
 <form action="{{route('myPost.update',$editPost->id)}}" method="post" enctype="multipart/form-data">
@@ -57,7 +57,7 @@
 
   <div class="form-group">
     <label for="">Contact </label>
-    <input value="{{$editPost->contact}}" type="text" name="contact" class="form-control" id=""  placeholder="Contact">
+    <input value="{{$editPost->contact}}" type="number" name="contact" class="form-control" id=""  placeholder="Contact">
   </div>
 
 

@@ -35,7 +35,7 @@
   </div>
 
 <table class="table table-bordered">
-    <thead>
+    <thead class="bg-dark text-white">
         <tr class="text-center">
             <th scope="col">Donor ID</th>
             <th scope="col">Donor Name</th>
@@ -75,10 +75,10 @@
 </td> --}}
 
 <td>
-    <a class="btn btn-success" href="{{route('donor.edit',$donorList->id)}}">Edit</a>
+    <a class="btn bg-success text-white" href="{{route('donor.edit',$donorList->id)}}">Edit</a>
 
     @if($donorList->status=='pending')
-<a class="btn btn-danger" href="{{route('admin.approval',$donorList->id)}}">Approve Donar</a>
+<a class="btn btn-warning" href="{{route('admin.approval',$donorList->id)}}">Approve</a>
 @endif
 
     <a class="btn btn-danger" href="{{route('donorlist.delete',$donorList->id)}}">Delete</a>

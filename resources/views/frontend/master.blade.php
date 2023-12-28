@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{url('/frontend/assets/css/fontawsom-all.min.css')}}">
     <link rel="stylesheet" href="{{url('/frontend/assets/plugins/grid-gallery/css/grid-gallery.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url('/frontend/assets/css/style.css')}}" />
+
     <style>
         .notify{
             z-index: 9999;

@@ -7,7 +7,7 @@
 
 @if($hospitals->count()>0)
 <table class="table table-striped">
-    <thead>
+    <thead class="bg-dark text-white">
         <tr>
             <th scope="col"> ID</th>
             <th scope="col">Donor Name </th>

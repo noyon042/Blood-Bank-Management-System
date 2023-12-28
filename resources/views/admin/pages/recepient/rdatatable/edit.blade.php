@@ -30,7 +30,7 @@
 
   <div class="form-group">
     <label for="">Contact </label>
-    <input value="{{$recepient->contact}}" type="text" name="contact" class="form-control" id=""  placeholder="Contact">
+    <input value="{{$recepient->contact}}" type="number" name="contact" class="form-control" id=""  placeholder="Contact">
   </div>
 
 

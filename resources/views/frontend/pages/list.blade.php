@@ -38,7 +38,7 @@
         {{-- <td><img src="{{url('/uploads/'.$list->image)}}" alt="" /></td> --}}
         <td>
 
-            <a class="btn btn-danger" href="{{route('view.profile',$list->id)}}" >View</a>
+            <a class="btn bg-primary text-white" href="{{route('view.profile',$list->id)}}" >View</a>
             {{-- <a class="btn btn-success" href="">Edit</a> --}}
             {{-- <a class="btn btn-danger" href="">Delete</a> --}}
         </td>

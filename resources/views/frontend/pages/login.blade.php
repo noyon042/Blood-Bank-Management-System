@@ -3,9 +3,10 @@
 
 @section('content')
 
-<div style=" margin:auto;width:50% ">
+<div class="card shadow mt-4 mb-4 px-3 py-5 " style=" margin:auto;width:35% ">
+    <h2 class="card-title text-center mb-3">Login</h2>
 
-<form style="margin: 12%" action="{{route('member.do.login')}}" method="post">
+<form action="{{route('member.do.login')}}" method="post">
     @csrf
 
 

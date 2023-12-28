@@ -24,6 +24,15 @@ class ContactController extends Controller
             'phn_number' => $request->phn_number,
             'text' => $request->text,
         ]);
+
+        notify()->success('Message submitted successfully');
+
         return redirect()->back();
+    }
+
+    public function list()
+    {
+        $lists=Contact::all();
+        return view('admin.pages.Contact.list',compact('lists'));
     }
 }

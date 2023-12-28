@@ -2,9 +2,9 @@
 
 
 @section('content')
-<div style=" margin:auto;width:43% ">
-    <div style="    text-align: center;
-    font-weight: bold;margin:15px"><u>Register For New As A Member:</u></div>
+<div class="card shadow mt-4 mb-4 p-3" style=" margin:auto;width:43% ">
+
+    <h2 class="card-title text-center mb-4">Register as a new Member</h2>
 <form  action="{{route('member.store')}}" method="post" enctype="multipart/form-data">
     @csrf
 
@@ -61,7 +61,7 @@
 
     <div class="form-group">
         <label for="">Contact: </label>
-        <input name="contact" type="tel" class="form-control">
+        <input name="contact" type="number" class="form-control">
     </div>
 
     <div class="form-group">

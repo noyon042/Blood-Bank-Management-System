@@ -20,13 +20,32 @@ class FrontendHomeController extends Controller
     {
         // dd(request()->all())
 
+
+        // $request->validate([
+        //     'search' => 'nullable|string', // Add more validation rules as needed
+        // ]);
+
+        // $query = MemberPost::query();
+
+        // // Check if a search term is provided
+        // if ($request->filled('search')) {
+        //     $searchTerm = $request->input('search');
+        //     $query->where('blood_group', 'LIKE', '%' . $searchTerm . '%')
+        //         ->orWhere('city', 'LIKE', '%' . $searchTerm . '%');
+        // }
+
+        // // Get the search results
+        // $members = $query->get();
+
+
         if($request->search)
         {
             $members=MemberPost::where('blood_group','LIKE','%'.$request->search.'%')->get();
-            
+
         }else{
             $members=MemberPost::all();
         }
+        $approvedMembersCount = $members->where('status', 'Approved')->count();
 
 
 
@@ -44,7 +63,7 @@ class FrontendHomeController extends Controller
 
          }
 
-        return view("frontend.pages.search",compact('members','differences'));
+        return view("frontend.pages.search",compact('members','differences','approvedMembersCount'));
     }
 
 

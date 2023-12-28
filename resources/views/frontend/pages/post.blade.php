@@ -2,8 +2,10 @@
 
 
 @section('content')
-<div style=" margin:auto;width:43% ">
+<div  class="card shadow mt-4 mb-4" style=" margin:auto;width:43% ">
+
 <div class="mx-3 my-3">
+    <h2 class="card-title text-center mb-4">Create New Post</h2>
 
 <form action="{{route('member.post.store')}}" method="post" enctype="multipart/form-data">
     @csrf
@@ -50,7 +52,7 @@
 
   <div class="form-group">
     <label for="">Contact: </label>
-    <input type="tel" name="contact" class="form-control" id=""  placeholder="Contact">
+    <input type="number" name="contact" class="form-control" id=""  placeholder="Contact">
   </div>
 
 
@@ -71,7 +73,7 @@
     <input name="image" type="file" class="form-control">
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-info">Submit</button>
 </form>
 
 </div>

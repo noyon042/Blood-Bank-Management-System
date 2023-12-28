@@ -3,17 +3,17 @@
 @section('content')
 
 <div style="width:100%;">
-    <div style=" margin:auto;width:70%">
+    <div style=" margin:auto;width:90%">
      <h1 style="text-align: left"> All Apply For Donar:</h1>
 <table class="table border " style="width: 100%;"  >
-    <thead>
+    <thead class="bg-dark text-white">
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Date</th>
             <th scope="col">Recipient Name</th>
             <th scope="col">Donor Name</th>
             {{-- <th scope="col">Request Status</th> --}}
-            {{-- <th scope="col">Status</th> --}}
+            <th scope="col">Status</th>
             <th scope="col">Action</th>
         </tr>
     </thead>

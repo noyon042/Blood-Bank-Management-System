@@ -57,6 +57,8 @@ Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login
 //Contact Us
     Route::get('/contact/form',[ContactController::class,'contact'])->name('contact.form');
     Route::post('/contact/store',[ContactController::class,'store'])->name('contact.store');
+    Route::get('/contact/list',[ContactController::class,'list'])->name('contact.list');
+
 
 
 

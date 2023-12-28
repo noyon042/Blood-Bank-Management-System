@@ -79,7 +79,7 @@
                     <hr>
                     <p>Email: {{ auth()->user()->email }}</p>
                     <hr>
-                    <a class="btn btn-info" href="{{ route('profile.edit', auth()->user()->id) }}">Edit Profile</a>
+                    <a class="btn bg-success text-white" href="{{ route('profile.edit', auth()->user()->id) }}">Edit Profile</a>
                     <hr>
 
                 </div>

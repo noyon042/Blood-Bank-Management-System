@@ -8,7 +8,7 @@
                 <div class="">
                     {{-- @dd($donate) --}}
 
-                    <h2>Search result for : {{ request()->search }} found {{ $members->count() }} members.</h2>
+                    <h2>Search result for : {{ request()->search }} found {{ $approvedMembersCount }} members.</h2>
                     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
                         @if ($members->count() > 0)
@@ -62,7 +62,7 @@
                             @endforeach
                         @else
                             <div style="text-align: center">
-                                
+
                                 <h1 style="text-align: center">No member found.</h1>
 
                             </div>

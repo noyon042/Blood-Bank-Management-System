@@ -127,7 +127,7 @@
 
                       </ul>
                   </li>
-                  <li class=""><a href="#"><span>Setting</span></a>
+                  <li class=""><a href="{{route('contact.list')}}"><span>Contact List</span></a>
                   </li>
 
 

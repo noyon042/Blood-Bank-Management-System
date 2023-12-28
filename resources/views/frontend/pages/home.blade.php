@@ -27,7 +27,7 @@
                     <div class=" vbh">
 
                      <a href="{{route('aboutUs')}}">  <div class="btn btn-success  bounceInUp"> About Us </div></a>
-                        <div class="btn btn-success  bounceInUp"> Contact US </div>
+                     <a href="{{route('contact.form')}}"><div class="btn btn-success  bounceInUp"> Contact US </div></a>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     <div class=" vbh">
 
                         <a href="{{route('donor.list')}}"> <div  class="btn btn-danger text-white  bounceInUp">All Post List</div></a>
-                        <div class="btn btn-danger  bounceInUp"> Contact US </div>
+                        <a href="{{route('contact.form')}}"><div class="btn btn-danger  bounceInUp"> Contact US </div></a>
                     </div>
                 </div>
             </div>

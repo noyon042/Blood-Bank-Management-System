@@ -7,7 +7,7 @@
 
 @if($recipients->count()>0)
 <table class="table table-bordered">
-    <thead>
+    <thead class="bg-dark text-white">
         <tr>
             <th scope="col"> ID</th>
             <th scope="col">Name </th>
@@ -47,7 +47,7 @@
 </td> --}}
 
         <td>
-            <a class="btn btn-success" href="{{route('recepient.edit',$recepientList->id)}}">Edit</a>
+            <a class="btn bg-success text-white" href="{{route('recepient.edit',$recepientList->id)}}">Edit</a>
             @if($recepientList->status=='pending')
 <a class="btn btn-danger" href="{{route('admin.approval',$recepientList->id)}}">Approve Recepient</a>
 @endif

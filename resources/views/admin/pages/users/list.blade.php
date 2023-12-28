@@ -20,7 +20,7 @@
 <h1>Users List</h1>
 <a href="{{route('users.create')}}" class="btn btn-success">Create Users List</a>
 <table class="table table-bordered w-100 mx-auto">
-    <thead>
+    <thead class="bg-dark text-white">
         <tr>
             <th scope="col">#</th>
       <th scope="col">Name</th>
@@ -54,7 +54,7 @@
             {{-- <td>{{$singleUser->date}}</td> --}}
             <td>
                 {{-- <a class="btn btn-success" href="">View</a> --}}
-                <a class="btn btn-success" href="{{route('users.edit',$singleUser->id)}}">Edit</a>
+                <a class="btn bg-success text-white" href="{{route('users.edit',$singleUser->id)}}">Edit</a>
                 <a  class="btn btn-danger"href="{{route('users.delete',$singleUser->id)}}">Delete</a>
             </td>
         </tr>

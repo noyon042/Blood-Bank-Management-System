@@ -20,7 +20,7 @@
 
     {{-- <a href="{{route('member.post.store')}}" method="post" class="btn btn-success">Create Post List Of Frontend</a> --}}
     <table class="table table-striped">
-        <thead>
+        <thead class="bg-dark text-white">
             <tr>
                 <th scope="col"> ID</th>
                 <th scope="col">Name </th>

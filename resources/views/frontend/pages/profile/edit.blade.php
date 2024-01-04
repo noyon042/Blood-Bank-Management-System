@@ -64,7 +64,7 @@
       </div>
 
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn bg-success text-white">Submit</button>
 </form>
 </div>
 @endsection

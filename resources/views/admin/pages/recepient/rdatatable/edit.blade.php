@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Update recepient List</h1>
+<h1>Update Recepient Info</h1>
 
 <form action="{{route('donor.update',$recepient->id)}}" method="post" enctype="multipart/form-data">
     @csrf
@@ -43,7 +43,7 @@
 
 
   <div class="form-group">
-        <label for="dateNeeded">Last Donation Date</label>
+        <label for="dateNeeded">Required Date</label>
         <input value="{{$recepient->date}}" type="date" name="date" class="form-control" id="dateNeeded" placeholder="Donation Date" required>
       </div>
 

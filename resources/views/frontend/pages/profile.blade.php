@@ -51,6 +51,15 @@
                 .user-info p {
                     color: #666;
                 }
+
+                .btn.btn-s {
+                    background-color: rgb(5, 215, 5);
+                }
+
+                .btn.btn-s:focus {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
             </style>
         </head>
 
@@ -58,7 +67,14 @@
 
             <div class="profile-container">
                 <div class="profile-picture">
+                    @if (auth()->user()->image)
                     <img src="{{ url('/uploads/' . auth()->user()->image) }}" alt="Profile Picture">
+                    {{-- <img src="{{ url('/uploads/' . auth()->user()->image) }}" alt="Profile Picture"> --}}
+                    @else
+                    <img src="{{ url('/uploads/default.jpg')}}" alt="Profile Picture">
+
+
+                    @endif
                 </div>
                 <div class="user-info">
                     <h2>Name: {{ auth()->user()->name }}</h2>
@@ -79,7 +95,9 @@
                     <hr>
                     <p>Email: {{ auth()->user()->email }}</p>
                     <hr>
-                    <a class="btn bg-success text-white" href="{{ route('profile.edit', auth()->user()->id) }}">Edit Profile</a>
+                    <a class="btn bg-info text-white" href="{{ route('profile.edit', auth()->user()->id) }}">Edit
+                        Profile</a>
+
                     <hr>
 
                 </div>
@@ -87,43 +105,48 @@
 
             <hr>
 
-
             <div style="width:100%;">
                 <div style=" margin:auto;width:70%">
-                 <h1 style="text-align: left"> All Apply For Donar:</h1>
-            <table class="table ml-7 border " style="width: 100%;"  >
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Donor Name</th>
-                        {{-- <th scope="col">Request Status</th> --}}
-                        <th scope="col">Status</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
+                    <h1 style="text-align: left"> All Apply For Donar:</h1>
+                    <table class="table ml-7 border " style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Donor Name</th>
+                                {{-- <th scope="col">Request Status</th> --}}
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                    @foreach ($applies as $apply)
-                        <tr>
-                            <th scope="row">{{ $apply->id }}</th>
-                            <td>{{ $apply->created_at }}</td>
-                            <td>{{ $apply->memberPost->name}}</td>
-                            {{-- <td>{{ $apply->status }}</td> --}}
-                            <td>{{ $apply->status }}</td>
-                            <td>
-                                @if ($apply->status == 'pending')
-                                    <a class="btn btn-danger" href="{{ route('apply.cancel', $apply->id) }}">Cancel
-                                        Apply</a>
-                                @endif
-                                <a class="btn btn-info" href="{{ route('apply.donar.report', $apply->id) }}">Report</a>
-                            </td>
-                        </tr>
-                    @endforeach
+                            @foreach ($applies as $apply)
+                                <tr>
+                                    <th scope="row">{{ $apply->id }}</th>
+                                    <td>{{ $apply->created_at }}</td>
+                                    <td>{{ $apply->memberPost->name }}</td>
+                                    {{-- <td>{{ $apply->status }}</td> --}}
+                                    <td>{{ $apply->status }}</td>
+                                    <td>
+                                        @if ($apply->status == 'pending')
+                                            <a class="btn btn-danger" href="{{ route('apply.cancel', $apply->id) }}">Cancel
+                                                Apply</a>
+                                        @endif
 
-            </table>
-        </div>
-    </div>
+                                        @if ($apply->status == 'accepted')
+                                        <a class="btn btn-info"
+                                        href="{{ route('apply.donar.report', $apply->id) }}">Report</a>
+                                        @endif
+                                        {{-- <a class="btn btn-info"
+                                            href="{{ route('apply.donar.report', $apply->id) }}">Report</a> --}}
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                    </table>
+                </div>
+            </div>
 
             {{-- <div>
                 <table class="table ml-4 border" style="width: 750px"  >
@@ -157,8 +180,7 @@
             </div>
         </div> --}}
 
-
-
         </body>
+
     </html>
 @endsection

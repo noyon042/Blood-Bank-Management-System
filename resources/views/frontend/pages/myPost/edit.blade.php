@@ -57,7 +57,7 @@
 
   <div class="form-group">
     <label for="">Contact </label>
-    <input value="{{$editPost->contact}}" type="number" name="contact" class="form-control" id=""  placeholder="Contact">
+    <input value="{{$editPost->contact}}" type="text" name="contact" class="form-control" id=""  placeholder="Contact">
   </div>
 
 

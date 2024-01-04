@@ -10,7 +10,9 @@
 <body>
 
 
-    <section class="vh-100" style="background-color: #508bfc;">
+    {{-- <section class="vh-100" style="background-color: #508bfc;"> --}}
+        <section class="vh-100" style="background-image: url('/frontend/assets/images/bloodbank.jpg');background-repeat:no-repeat; background-size: cover;">
+
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -26,7 +28,7 @@
             <div class="text-danger ">{{session('error')}}</div>
             @endif
 
-           
+
 
 
                @csrf

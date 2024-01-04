@@ -20,20 +20,23 @@ class MemberController extends Controller
 
     public function store(Request $request)
     {
-        // $validate=Validator::make($request->all(),[
-        //     'name'=>'required',
-        //     'role'=>'required',
-        //     'blood_group'=>'required',
-        //     'contact'=>'required',
-        //     'user_email'=>'required|email',
-        //     'user_password'=>'required|min:6',
+        $validate=Validator::make($request->all(),[
+            'name' => 'required|regex:/^[a-zA-Z\s]+$/',
+            'role'=>'required',
+            'blood_group'=>'required',
+            'contact' => 'required|regex:/^01[1-9][0-9]{8}$/|numeric',
+            'email'=>'required|email',
+            'password'=>'required|min:6',
 
-        //  ]);
+         ]);
 
-        //  if($validate->fails())
-        //  {
-        //      return redirect()->back()->with('myError',$validate->getMessageBag());
-        //  }
+         if($validate->fails())
+         {
+            // notify()->success('Profile updated successfully.');
+
+            notify()->error($validate->getMessageBag());
+            return redirect()->back();
+         }
 
          $fileName=null;
          if($request->hasFile('user_image'))
@@ -155,7 +158,7 @@ public function update(Request $request,$id)
       ]);
 
       notify()->success('Profile updated successfully.');
-      return redirect()->back();
+      return redirect()->route('member.profile');
     }
 }
 

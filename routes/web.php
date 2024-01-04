@@ -83,6 +83,8 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/view-request/{id}',[PostController::class,'viewRequest'])->name('view.request');
 
     Route::get('/view-receiverRequest/{recepient_id}',[PostController::class,'acceptRequest'])->name('request.accept');
+    Route::get('/view-receiverRequest-rejected/{recepient_id}',[PostController::class,'rejectRequest'])->name('request.reject');
+
     Route::get('/myPost/edit/{id}',[PostController::class, 'edit'])->name('myPost.edit');
     Route::put('/myPost/update/{id}',[PostController::class, 'update'])->name('myPost.update');
 

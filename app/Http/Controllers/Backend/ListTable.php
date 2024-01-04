@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\DonorList;
 use App\Models\MemberPost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ListTable extends Controller
 {
@@ -21,6 +22,24 @@ class ListTable extends Controller
 
     public function store(Request $request){
 
+
+    $val = Validator::make($request->all(), [
+
+        'name' => 'required',
+        'role' => 'required',
+        'email' => 'required',
+        'blood_group' => 'required',
+        'contact' => 'required',
+        'date' => 'required',
+
+
+    ]);
+
+    if ($val->fails()) {
+
+        notify()->error($val->getMessageBag());
+        return redirect()->back();    }
+
         $fileName=null;
         if($request->hasFile('image'))
         {
@@ -32,15 +51,18 @@ class ListTable extends Controller
 
         }
 
-      DonorList::create([
+      MemberPost::create([
+
         'name'=>$request->name,
+        'user_id'=> auth()->user()->id,
+        'role'=>$request->role,
         'email'=>$request->email,
         'blood_group'=>$request->blood_group,
         'contact'=>$request->contact,
         'address'=>$request->address,
         'date'=>$request->date,
-        // 'status'=>$request->status,
-        'image'=>$fileName
+     //    'status'=>'pending',
+        'image'=>$fileName,
       ]);
       return redirect()->route('donorlist.listtable');
     }
@@ -96,7 +118,7 @@ class ListTable extends Controller
             'image'=>$fileName
           ]);
 
-          notify()->success('Donor updated successfully.');
+          notify()->success('Updated successfully.');
           return redirect()->back();
         }
     }
@@ -124,7 +146,7 @@ class ListTable extends Controller
 
         if($request->search)
         {
-            $donors=MemberPost::where('name','LIKE','%'.$request->search.'%')->get();
+            $donors=MemberPost::where('role','donation')->where('name','LIKE','%'.$request->search.'%')->get();
             //select * from products where name like % akash %;
         }else{
             $donors=MemberPost::all();

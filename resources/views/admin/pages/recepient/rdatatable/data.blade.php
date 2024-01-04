@@ -21,7 +21,7 @@
 
 <a href="{{route('recepient.create')}}" class="btn btn-success">Create New Recepient</a>
 
-<div class="container mt-4 d-flex justify-content-end col-md-12">
+<div class="container mt-4 d-flex justify-content-end col-md-12 mb-3 ">
     <div class="col-md-6">
       <form action="{{ route('recipient.search') }}" method="get" class="form-inline justify-content-end">
         <div class="input-group">
@@ -65,7 +65,14 @@
         <td>{{$recepientList->contact}}</td>
         <td>{{$recepientList->address}}</td>
         <td>{{$recepientList->date}}</td>
-        <td><img class="img" src="{{url('/uploads/'.$recepientList->image)}}" alt=""></td>
+        <td>
+            @if ($recepientList->image)
+            <img class="img" src="{{url('/uploads/'.$recepientList->image)}}" alt=""></td>
+            {{-- <img class="img" src="{{url('/uploads/'.$recepientList->image)}}" alt=""></td> --}}
+            @else
+            <img class="img" src="{{url('/uploads/default.jpg')}}" alt=""></td>
+
+            @endif
         <td>{{$recepientList->status}}</td>
 {{--
 <td>

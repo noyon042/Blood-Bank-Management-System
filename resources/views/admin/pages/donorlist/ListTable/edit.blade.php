@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Create New Donor List</h1>
+<h1>Update Donor Info</h1>
 
 <form action="{{route('donor.update',$donor->id)}}" method="post" enctype="multipart/form-data">
     @csrf

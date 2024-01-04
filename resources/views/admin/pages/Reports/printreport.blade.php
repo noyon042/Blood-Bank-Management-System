@@ -13,7 +13,7 @@
 
 
 
-            <div class="d-flex flex-column align-items-center justify-content-stretch mt-5"  id="printDiv">
+            <div class="d-flex flex-column align-items-center"  id="printDiv">
                 <div class="center-image mb-3">
                     <img src="http://localhost:8000/frontend/assets/images/logo.jpg" alt="Logo" class="img-fluid">
                 </div> <br><br>
@@ -76,7 +76,7 @@
             </table> --}}
 
 
-            <footer class="bg-white" id="contact">
+            <div class="bg-white" id="contact">
                 <div class="container bg-white">
                     <div class="row content-row">
                         <div class="col-lg-4 col-md-12 footer-contact">
@@ -111,7 +111,7 @@
                     </div>
 
                 </div>
-            </footer>
+            </div>
 
 
                 </div>

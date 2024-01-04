@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
+                                    <input type="email" class="form-control " id="email" name="email" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">Phone Number</label>
@@ -27,7 +27,7 @@
                                     <textarea class="form-control" id="message" name="text" rows="4"
                                         required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                <button type="submit" class="btn bg-success text-white  btn-block">Submit</button>
                             </form>
                         </div>
                     </div>

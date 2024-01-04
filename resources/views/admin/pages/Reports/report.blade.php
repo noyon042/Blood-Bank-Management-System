@@ -29,7 +29,10 @@
                 <td>{{ $apply->status }}</td>
                 <td>
 
+                    @if ($apply->status == 'accepted')
                     <a class="btn btn-info" href="{{ route('print.report', $apply->id) }}">Report</a>
+                    @endif
+                    {{-- <a class="btn btn-info" href="{{ route('print.report', $apply->id) }}">Report</a> --}}
                 </td>
             </tr>
         @endforeach

@@ -73,7 +73,7 @@ class HospitalInfo extends Controller
 
        if($request->search)
        {
-           $hospitals=MemberPost::where('address','LIKE','%'.$request->search.'%')->get();
+           $hospitals=MemberPost::where('role','donation')->where('address','LIKE','%'.$request->search.'%')->get();
            //select * from products where name like % akash %;
        }else{
            $hospitals=MemberPost::all();
@@ -89,7 +89,7 @@ class HospitalInfo extends Controller
 
        if($request->search)
        {
-           $recipients=MemberPost::where('address','LIKE','%'.$request->search.'%')->get();
+           $recipients=MemberPost::where('role','recepient')->where('address','LIKE','%'.$request->search.'%')->get();
            //select * from products where name like % akash %;
        }else{
            $recipients=MemberPost::all();

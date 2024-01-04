@@ -17,7 +17,13 @@
                 <div class="card">
 
                     <a href="{{route('member.singleview',$mem->id)}}">
-                        <img src="{{ url('/uploads/'.$mem->image) }}" alt="" class="card-img-top" style="height: 300px; width: 360px;">
+                        {{-- <img src="{{ url('/uploads/'.$mem->image) }}" alt="" class="card-img-top" style="height: 300px; width: 360px;"> --}}
+                       @if ($mem->image)
+                       <img src="{{ url('/uploads/'.$mem->image) }}" alt="" class="card-img-top" style="height: 300px; width: 360px;">
+                       @else
+                       <img src="{{ url('/uploads/default.jpg') }}" alt="" class="card-img-top" style="height: 300px; width: 360px;">
+                       @endif
+
                         <div class="card-body">
                         <h6>ID: {{$mem->id}}</h6>
                         <h6>Name: {{$mem->name}}</h6>

@@ -26,7 +26,9 @@
                                 <td>{{ $accept->status }}</td>
                                 <td>
                                     @if ($accept->status == 'pending')
-                                        <a class="btn btn-danger" href="{{ route('request.accept', $accept->id) }}">Accept Request
+                                        <a class="btn bg-success" href="{{ route('request.accept', $accept->id) }}">Accept Request
+                                        </a>
+                                        <a class="btn btn-danger" href="{{ route('request.reject', $accept->id) }}">Reject Request
                                         </a>
                                     @endif
                                 </td>
@@ -34,6 +36,6 @@
                         @endforeach
                 </table>
             </div>
-            
+
 
 @endsection

@@ -49,7 +49,15 @@
             <td>{{$post->address}}</td>
             <td>{{$post->date}}</td>
 
-            <td><img class="img" src="{{url('/uploads/'.$post->image)}}" alt="" /></td>
+            <td>
+                @if ($post->image)
+                <img class="img" src="{{url('/uploads/'.$post->image)}}" alt="" /></td>
+                {{-- <img class="img" src="{{url('/uploads/'.$post->image)}}" alt="" /></td> --}}
+                @else
+                <img class="img" src="{{url('/uploads/default.jpg')}}" alt="" /></td>
+
+
+                @endif
             {{-- <td>
                 <a class="btn btn-success" href="">Edit</a>
                 <a class="btn btn-danger" href="">Delete</a>

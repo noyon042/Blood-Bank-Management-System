@@ -7,6 +7,7 @@ use App\Models\MemberPost;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\RecepientList;
+use Illuminate\Support\Facades\Validator;
 
 class DataTable extends Controller
 {
@@ -26,6 +27,24 @@ class DataTable extends Controller
     public function store(Request $request)
     {
 
+
+    $val = Validator::make($request->all(), [
+
+        'name' => 'required',
+        'role' => 'required',
+        'email' => 'required',
+        'blood_group' => 'required',
+        'contact' => 'required',
+        'date' => 'required',
+
+
+    ]);
+
+    if ($val->fails()) {
+
+        notify()->error($val->getMessageBag());
+        return redirect()->back();    }
+
         $fileName=null;
         if($request->hasFile('image'))
         {
@@ -38,14 +57,17 @@ class DataTable extends Controller
         }
 
         // dd($request->all());
-        RecepientList::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'blood_group' => $request->blood_group,
-            'phn_number' => $request->phn_number,
-            'hospital_name' => $request->hospital_name,
-            'date_of_need' => $request->date_of_need,
-            'image'=>$fileName
+        MemberPost::create([
+            'name'=>$request->name,
+            'user_id'=> auth()->user()->id,
+            'role'=>$request->role,
+            'email'=>$request->email,
+            'blood_group'=>$request->blood_group,
+            'contact'=>$request->contact,
+            'address'=>$request->address,
+            'date'=>$request->date,
+         //    'status'=>'pending',
+            'image'=>$fileName,
         ]);
         return redirect()->route('recepient.recepientdatatable');
     }
@@ -102,7 +124,7 @@ class DataTable extends Controller
             'image'=>$fileName
           ]);
 
-          notify()->success('Recepient updated successfully.');
+          notify()->success('Updated successfully.');
           return redirect()->back();
         }
     }
@@ -131,7 +153,7 @@ class DataTable extends Controller
 
         if($request->search)
         {
-            $recipients=MemberPost::where('name','LIKE','%'.$request->search.'%')->get();
+            $recipients=MemberPost::where('role','recepient')->where('name','LIKE','%'.$request->search.'%')->get();
             //select * from products where name like % akash %;
         }else{
             $recipients=MemberPost::all();

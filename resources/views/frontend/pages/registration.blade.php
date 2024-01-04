@@ -10,19 +10,19 @@
 
     <div class="form-group">
         <label for="name">Name:</label>
-        <input name="name" type="text" class="form-control" id="name" placeholder="Enter your name">
+        <input required name="name" type="text" class="form-control" id="name" placeholder="Enter your name">
 
     </div>
 
     <div class="form-group">
         <label for="exampleInputEmail1">Email address:</label>
-        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        <input required name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
             placeholder="Enter email">
 
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Password:</label>
-        <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input required name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
 
     {{-- <div class="form-group">
@@ -61,7 +61,7 @@
 
     <div class="form-group">
         <label for="">Contact: </label>
-        <input name="contact" type="number" class="form-control">
+        <input required name="contact" type="number" class="form-control">
     </div>
 
     <div class="form-group">
@@ -69,10 +69,10 @@
         <input name="address" type="text" placeholder="Hospital Name/Address" class="form-control">
     </div>
 
-    {{-- <div class="form-group">
+    <div class="form-group">
         <label for="">Date: </label>
         <input name="date" type="date" class="form-control">
-    </div> --}}
+    </div>
 
     <div class="form-group">
         <label for="">Upload Image: </label>

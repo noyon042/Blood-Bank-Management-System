@@ -59,7 +59,13 @@
 
 <div class="profile-container">
     <div class="profile-picture">
+        @if ($profile->image)
         <img src="{{url('/uploads/'.$profile->image)}}" alt="Profile Picture">
+        {{-- <img src="{{url('/uploads/'.$profile->image)}}" alt="Profile Picture"> --}}
+         @else
+         <img src="{{url('/uploads/default.jpg')}}" alt="Profile Picture">
+
+        @endif
     </div>
     <div class="user-info">
         <h2>Name: {{$profile->name}}</h2><hr>

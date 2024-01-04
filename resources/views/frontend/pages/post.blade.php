@@ -8,11 +8,12 @@
     <h2 class="card-title text-center mb-4">Create New Post</h2>
 
 <form action="{{route('member.post.store')}}" method="post" enctype="multipart/form-data">
+
     @csrf
 
 <div class="form-group">
     <label for="name">Name:</label>
-    <input name="name" type="text" class="form-control" id="name" placeholder="Enter your name">
+    <input required name="name" type="text" class="form-control" id="name" placeholder="Enter your name">
 
   </div>
 
@@ -27,7 +28,7 @@
 
   <div class="form-group">
     <label for="exampleInputEmail1">Email address:</label>
-    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input required name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 
 </div>
 {{-- <div class="form-group">
@@ -52,7 +53,7 @@
 
   <div class="form-group">
     <label for="">Contact: </label>
-    <input type="number" name="contact" class="form-control" id=""  placeholder="Contact">
+    <input required type="number" name="contact" class="form-control" id=""  placeholder="Contact">
   </div>
 
 
@@ -65,7 +66,7 @@
 
   <div class="form-group">
     <label for="">Donation Date/ Required Date:</label>
-    <input type="date" name="date" class="form-control" id="dateNeeded" placeholder="Donation Date/ Required Date">
+    <input required type="date" name="date" class="form-control" id="dateNeeded" placeholder="Donation Date/ Required Date">
   </div>
 
   <div class="form-group">

@@ -1,9 +1,9 @@
 @extends('admin.master')
 @section('content')
 
-<a href="{{route('hospital.form')}}" class="btn btn-success">Create Hospital Form</a>
+{{-- <a href="{{route('hospital.form')}}" class="btn btn-success">Create Hospital Form</a> --}}
 
-<div class="container mt-4 d-flex justify-content-end col-md-12">
+<div class="container mt-4 d-flex justify-content-end col-md-12 mb-3 ">
     <div class="col-md-6">
       <form action="{{ route('hospital.search') }}" method="get" class="form-inline justify-content-end">
         <div class="input-group">

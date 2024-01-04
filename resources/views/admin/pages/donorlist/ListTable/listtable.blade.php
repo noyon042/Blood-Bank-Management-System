@@ -19,9 +19,9 @@
 @extends('admin.master')
 @section('content')
 <h1>Donate Blood</h1>
-<a href="{{route('donorlist.form')}}" class="btn btn-success">Create New List</a>
+<a href="{{route('donorlist.form')}}" class="btn btn-success">Create New Donor</a>
 
-<div class="container mt-4 d-flex justify-content-end col-md-12">
+<div class="container mt-4 d-flex justify-content-end col-md-12 mb-3 ">
     <div class="col-md-6">
       <form action="{{ route('donar.search') }}" method="get" class="form-inline justify-content-end">
         <div class="input-group">
@@ -65,7 +65,14 @@
 <td>{{$donorList->contact}}</td>
 <td>{{$donorList->address}}</td>
 <td>{{$donorList->date}}</td>
-<td><img class="img" src="{{url('/uploads/'.$donorList->image)}}" alt=""></td>
+<td>
+    @if ($donorList->image)
+    <img class="img" src="{{url('/uploads/'.$donorList->image)}}" alt=""></td>
+    {{-- <img class="img" src="{{url('/uploads/'.$donorList->image)}}" alt=""></td> --}}
+    @else
+    <img class="img" src="{{url('/uploads/default.jpg')}}" alt=""></td>
+
+    @endif
 <td>{{$donorList->status}}</td>
 
 {{-- <td>

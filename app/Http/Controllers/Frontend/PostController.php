@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Psy\Command\WhereamiCommand;
 use App\Http\Controllers\Controller;
 use App\Models\Apply;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -23,6 +24,24 @@ class PostController extends Controller
 
    public function store(Request $request)
    {
+
+
+    $val = Validator::make($request->all(), [
+
+        'name' => 'required|regex:/^[a-zA-Z\s]+$/',
+        'role'=>'required',
+        'blood_group'=>'required',
+        'contact' => 'required|regex:/^01[1-9][0-9]{8}$/|numeric',
+        'email'=>'required|email',
+        'date' => 'required',
+
+
+    ]);
+
+    if ($val->fails()) {
+
+        notify()->error($val->getMessageBag());
+        return redirect()->back();    }
 
     // dd($request->all());
 
@@ -184,7 +203,7 @@ public function update(Request $request,$id)
       ]);
 
       notify()->success('Post updated successfully.');
-      return redirect()->back();
+      return redirect()->route('myPost');
     }
 }
 
@@ -214,6 +233,23 @@ return view('frontend.pages.myPost.viewRequest',compact('requestAccept'));
         }
 
         notify()->success('Request Accepted');
+       return redirect()->back();
+
+    }
+
+
+    public function rejectRequest($recepient_id)
+    {
+
+        $requestReject=Apply::find($recepient_id);
+        if($requestReject)
+        {
+            $requestReject->update([
+                'status'=>'rejected'
+            ]);
+        }
+
+        notify()->success('Request Rejected');
        return redirect()->back();
 
     }

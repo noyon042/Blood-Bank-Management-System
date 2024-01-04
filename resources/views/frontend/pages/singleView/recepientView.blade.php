@@ -15,7 +15,14 @@
             <div class="col-lg-4 mb-4" style="margin: auto">
                 <div class="card">
 
+                    @if ($singleRecepient->image)
                     <img src="{{url('/uploads/'.$singleRecepient->image)}}" alt="" class="card-img-top" style="height: 300px; width: 360px;">
+                    {{-- <img src="{{url('/uploads/'.$singleRecepient->image)}}" alt="" class="card-img-top" style="height: 300px; width: 360px;"> --}}
+                     @else
+                     <img src="{{url('/uploads/default.jpg')}}" alt="" class="card-img-top" style="height: 300px; width: 360px;">
+
+
+                    @endif
                     <div class="card-body">
                         <h6>ID: {{$singleRecepient->id}}</h6>
                         <h6>Name: {{$singleRecepient->name}}</h6>

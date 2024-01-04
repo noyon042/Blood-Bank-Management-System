@@ -58,12 +58,17 @@
             <td>{{$request->address}}</td>
             <td>{{$request->date}}</td>
             <td>
+                @if ($request->image)
                 <img class="img" src="{{url('/uploads/'.$request->image)}}" alt="">
+                @else
+                <img class="img" src="{{url('/uploads/default.jpg')}}" alt="">
+                @endif
+                {{-- <img class="img" src="{{url('/uploads/'.$request->image)}}" alt=""> --}}
             </td>
             <td>{{$request->status}}</td>
             <td>
                 <a class="btn bg-success text-white" href="{{route('myPost.edit',$request->id)}}">Edit</a>
-                <a class="btn btn-primary" href="{{route('view.request',$request->id)}}">View</a>
+                <a class="btn btn-warning" href="{{route('view.request',$request->id)}}">View</a>
 
                 {{-- <a class="btn btn-danger" href="">Delete</a> --}}
             </td>

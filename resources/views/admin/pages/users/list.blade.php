@@ -44,7 +44,14 @@
             <td>{{$key+1}}</td>
             <td>{{$singleUser->name}}</td>
             <td>
+                @if ($singleUser->image)
                 <img class="img" src="{{url('/uploads/'.$singleUser->image)}}" alt="">
+                {{-- <img class="img" src="{{url('/uploads/'.$singleUser->image)}}" alt=""> --}}
+                @else
+                <img class="img" src="{{url('/uploads/default.jpg')}}" alt="">
+
+
+                @endif
             </td>
             <td>{{$singleUser->email}}</td>
             <td>{{$singleUser->role}}</td>

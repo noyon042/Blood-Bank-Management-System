@@ -18,7 +18,10 @@
         .notify{
             z-index: 9999;
         }
-
+        .btn:focus {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
 
     </style>
 </head>
@@ -47,6 +50,8 @@
     <script src="{{url('/frontend/assets/plugins/grid-gallery/js/grid-gallery.min.js')}}"></script>
     <script src="{{url('/frontend/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js')}}"></script>
     <script src="{{url('/frontend/assets/js/script.js')}}"></script>
+
+
     @stack('yourJsCode')
 
 </body>

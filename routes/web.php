@@ -162,6 +162,11 @@ Route::get('/donorlist/delete/{id}',[ListTable::class,'delete'])->name('donorlis
 Route::get('/donor/edit/{id}',[ListTable::class, 'edit'])->name('donor.edit');
 Route::put('/donor/update/{id}',[ListTable::class, 'update'])->name('donor.update');
 
+//Donor Response
+Route::get('/active-Donor',[ListTable::class,'activeDonor'])->name('activeDonor');
+Route::get('/donor/delete/{id}',[ListTable::class,'deleteDonor'])->name('donor.delete');
+Route::get('/searchDonor-active',[ListTable::class,'search'])->name('active.search');
+
 
 //BloodGroup(Admin Panel)
 Route::get('/bloodgroup/blood',[BloodGroup::class]);
@@ -209,6 +214,8 @@ Route::get('/searchRecipient-hospital',[HospitalInfo::class,'searchRecipient'])-
 
 Route::get('/hospital/form',[HospitalInfo::class,'createForm'])->name('hospital.form');
 Route::post('/hospital/store',[HospitalInfo::class,'store'])->name('hospital.store');
+
+
 
 Route::get('/view/report',[ApplyController::class,'viewReport'])->name('view.report');
 Route::get('/print/report/{id}',[ApplyController::class,'printReport'])->name('print.report');

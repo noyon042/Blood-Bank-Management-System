@@ -21,7 +21,7 @@
   </div>
 
 
-  <button type="submit" class="btn btn-primary">Login</button>
+  <button type="submit" class="btn bg-success text-white btn-block">Login</button>
 </form>
 </div>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Apply;
 use App\Models\DonorList;
 use App\Models\MemberPost;
 use Illuminate\Http\Request;
@@ -155,4 +156,15 @@ class ListTable extends Controller
 
         return view("admin.pages.donorlist.search",compact('donors'));
     }
+
+
+    public function activeDonor(){
+        //   $donorLists = DonorList::paginate(5);
+
+
+        $activeDonors =Apply::where('status','accepted')->get();
+
+            return view('admin.pages.donorResponse.active', compact('activeDonors'));
+        }
+
 }

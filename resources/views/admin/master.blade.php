@@ -62,7 +62,7 @@
                   <li class="divider">Menu</li>
                   <li class="active"><a href="{{route('dashboard')}}"><i ></i><span>Dashboard</span></a>
                   </li>
-                  <li class=""><a href="#"><span>Donor List</span></a>
+                  <li class=""><a href="#"><span>Donor</span></a>
                     <ul class="sub-menu">
 
                       <li><a href="{{route('donorlist.listtable')}}">Donor Data List</a>
@@ -103,6 +103,16 @@
                   </li>
 
 
+                      <li><a href="{{route('activeDonor')}}">Active Donor</a>
+                      </li>
+                      <li><a href="{{route('hospital-Recipient')}}">Inactive Donor</a>
+                      </li>
+
+
+
+
+
+
                   <li class=""><a href="#"><span class="">Recipient</span></a>
                     <ul class="sub-menu">
 
@@ -112,7 +122,7 @@
                     </ul>
                   </li>
 
-                  <li class=""><a href="{{route('view.report')}}"><span>Report</span></a>
+                  <li class=""><a href="{{route('view.report')}}"><span>Report List</span></a>
                   </li>
 
 
@@ -120,13 +130,17 @@
                     <ul class="sub-menu">
                         <li><a href="{{route('users.list')}}">List</a>
                         </li>
-                        <li><a href="{{route('website.post')}}">Frontend Post</a>
-                        </li>
+                        {{-- <li><a href="{{route('website.post')}}">Frontend Post</a>
+                        </li> --}}
 
 
 
                       </ul>
                   </li>
+
+                  <li><a href="{{route('website.post')}}">Frontend All Post</a>
+                  </li>
+
                   <li class=""><a href="{{route('contact.list')}}"><span>Contact List</span></a>
                   </li>
 

@@ -79,7 +79,7 @@
         <input name="user_image" type="file" class="form-control">
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn bg-success text-white ">Submit</button>
 </form>
 </div>
 @endsection

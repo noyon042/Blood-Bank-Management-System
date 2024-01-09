@@ -167,4 +167,15 @@ class ListTable extends Controller
             return view('admin.pages.donorResponse.active', compact('activeDonors'));
         }
 
+
+        public function inactiveDonor(){
+            //   $donorLists = DonorList::paginate(5);
+
+
+            $inactiveDonors =Apply::whereNotIn('status',['accepted','rejected'])->get();
+
+                return view('admin.pages.donorResponse.inactive', compact('inactiveDonors'));
+            }
+
+
 }

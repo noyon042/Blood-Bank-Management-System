@@ -167,6 +167,9 @@ Route::get('/active-Donor',[ListTable::class,'activeDonor'])->name('activeDonor'
 Route::get('/donor/delete/{id}',[ListTable::class,'deleteDonor'])->name('donor.delete');
 Route::get('/searchDonor-active',[ListTable::class,'search'])->name('active.search');
 
+Route::get('/inactive-Donor',[ListTable::class,'inactiveDonor'])->name('inactiveDonor');
+Route::get('/donor/delete/{id}',[ListTable::class,'deleteDonor'])->name('donor.delete');
+
 
 //BloodGroup(Admin Panel)
 Route::get('/bloodgroup/blood',[BloodGroup::class]);

@@ -20,14 +20,14 @@
  .notify{
             z-index: 9999;
         }
-    </style>
+    </style>  
   </head>
   <body>
     @include('notify::components.notify')
     <div class="be-wrapper be-fixed-sidebar justify-content-between">
       <nav class="navbar navbar-expand fixed-top be-top-header">
         <div class="container-fluid bg-dark">
-          <div class="be-navbar-header"><a style="margin: 0 30px; font-size: xx-large; " href="" class="text-white fw-bold">BBMS</a>
+          <div class="be-navbar-header"><a style="margin: 0 30px; font-size: xx-large; "  class="text-white fw-bold">BBMS</a>
           </div>
           <div class="page-title"><span style="text-align: center;
             color: rgb(249, 246, 246);">Blood Bank Management System</span></div>
@@ -59,7 +59,7 @@
             <div class="left-sidebar-scroll">
               <div class="left-sidebar-content">
                 <ul class="sidebar-elements">
-                  <li class="divider">Menu</li>
+                  <li class="divider" style="font-size: 22px;">Menu</li>
                   <li class="active"><a href="{{route('dashboard')}}"><i ></i><span>Dashboard</span></a>
                   </li>
                   <li class=""><a href="#"><span>Donor</span></a>
@@ -105,7 +105,7 @@
 
                       <li><a href="{{route('activeDonor')}}">Active Donor</a>
                       </li>
-                      <li><a href="{{route('hospital-Recipient')}}">Inactive Donor</a>
+                      <li><a href="{{route('inactiveDonor')}}">Inactive Donor</a>
                       </li>
 
 

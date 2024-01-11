@@ -68,4 +68,16 @@ class ApplyController extends Controller
          return view('admin.pages.Reports.printreport',compact('report','memberPosts','users'));
 
     }
+
+
+    public function activedonor(){
+        //   $donorLists = DonorList::paginate(5);
+
+
+        $activeDonors =Apply::where('status','accepted')->get();
+        $uniqueDonorCount = $activeDonors->unique('member_post_id')->count();
+
+
+            return view('frontend.pages.activeDonor', compact('activeDonors','uniqueDonorCount'));
+        }
 }

@@ -30,12 +30,11 @@ class DataTable extends Controller
 
     $val = Validator::make($request->all(), [
 
-        'name' => 'required',
-        'role' => 'required',
-        'email' => 'required',
-        'blood_group' => 'required',
-        'contact' => 'required',
-        'date' => 'required',
+        'name' => 'required|regex:/^[a-zA-Z\s]+$/',
+        'role'=>'required',
+        'blood_group'=>'required',
+        'contact' => 'required|regex:/^01[1-9][0-9]{8}$/|numeric',
+        'email'=>'required|email',
 
 
     ]);
@@ -99,6 +98,7 @@ class DataTable extends Controller
 
     public function update(Request $request,$id)
     {
+
         $recepient=MemberPost::find($id);
 
         if($recepient)

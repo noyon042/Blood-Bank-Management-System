@@ -45,7 +45,7 @@ class FrontendHomeController extends Controller
         }else{
             $members=MemberPost::all();
         }
-        $approvedMembersCount = $members->where('status', 'Approved')->count();
+        $approvedMembersCount = $members->where('status', 'Approved')->where('user_id', '!=', auth()->user()->id)->count();
 
 
 

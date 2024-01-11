@@ -143,9 +143,9 @@
                                     <a class="nav-link" href="{{route('donor.list')}}">All Post List</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('contact.form')}}">Contact US</a>
+                                    <a class="nav-link" href="{{route('ActiveDonor')}}">Active Donor</a>
                                 </li>
-                            
+
                             </ul>
                         </div>
                     </nav>

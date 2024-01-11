@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Apply;
 use App\Models\MemberPost;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class Dashboard extends Controller
@@ -15,8 +16,11 @@ class Dashboard extends Controller
         // $countBloodGroup = MemberPost::whereIn('blood_group', ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'])->get();
         $countBloodGroup=MemberPost::where('role','donation')->where('status','Approved')->get();
         $countReport=Apply::where('status','accepted')->get();
+        $countUser=User::where('role','member')->get();
+        $countPost=MemberPost::where('status','Approved')->get();
 
 
-        return view('admin.pages.DashBoard.dashboard',compact('countDonar','countRecepient','countBloodGroup','countReport'));
+
+        return view('admin.pages.DashBoard.dashboard',compact('countDonar','countRecepient','countBloodGroup','countReport','countUser','countPost'));
     }
 }

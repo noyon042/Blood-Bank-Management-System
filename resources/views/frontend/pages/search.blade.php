@@ -13,7 +13,7 @@
 
                         @if ($members->count() > 0)
                             @foreach ($members as $mem)
-                                @if ($mem->status == 'Approved')
+                                @if ($mem->status == 'Approved' && auth()->user()->id!=$mem->user_id)
                                     <div class="col-lg-4 mb-4" style="margin: auto">
                                         <div class="card">
 
@@ -43,6 +43,10 @@
                                                     <div class="alert alert-success">
                                                         Available
                                                     </div>
+                                                    <div>
+                                                        <a href="{{ route('member.singleview', $mem->id) }}"
+                                                            class="btn btn-outline-success btn-sm">Request For Blood</a>
+                                                    </div>
                                                 @else
                                                     <div class="alert alert-danger">
                                                         Unavailable
@@ -50,10 +54,10 @@
                                                 @endif
 
                                             </div>
-                                            <div>
+                                            {{-- <div>
                                                 <a href="{{ route('member.singleview', $mem->id) }}"
                                                     class="btn btn-outline-success btn-sm">Request For Blood</a>
-                                            </div>
+                                            </div> --}}
 
                                         </div>
 

@@ -76,7 +76,7 @@
 
     <div class="form-group">
         <label for="">Upload Image: </label>
-        <input name="user_image" type="file" class="form-control">
+        <input name="user_image" type="file" accept="image/*" class="form-control">
     </div>
 
     <button type="submit" class="btn bg-success text-white ">Submit</button>

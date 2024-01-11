@@ -20,7 +20,7 @@
  .notify{
             z-index: 9999;
         }
-    </style>  
+    </style>
   </head>
   <body>
     @include('notify::components.notify')
@@ -39,7 +39,7 @@
                 <div class="dropdown-menu" role="menu">
                   <div class="user-info">
                     <div class="user-name">{{auth()->user()->name}}</div>
-                    <div>Admin</div>
+                    <div></div>
                   </div><a class="dropdown-item" href="{{route('admin.logout')}}">{{auth()->user()->name}}<span></span> -Logout</a>
                 </div>
               </li>

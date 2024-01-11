@@ -66,7 +66,7 @@
 
       <div class="form-group">
         <label for="">Upload Image: </label>
-        <input name="image" type="file" class="form-control">
+        <input name="image" type="file" accept="image/*" class="form-control">
       </div>
 
 

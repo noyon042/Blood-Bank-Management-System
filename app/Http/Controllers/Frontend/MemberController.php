@@ -131,6 +131,22 @@ public function edit($id)
 
 public function update(Request $request,$id)
 {
+
+    $validate=Validator::make($request->all(),[
+        'name' => 'required|regex:/^[a-zA-Z\s]+$/',
+        'contact' => 'required|regex:/^01[1-9][0-9]{8}$/|numeric',
+        'email'=>'required|email',
+
+     ]);
+
+     if($validate->fails())
+     {
+        // notify()->success('Profile updated successfully.');
+
+        notify()->error($validate->getMessageBag());
+        return redirect()->back();
+     }
+
     $upadateProfile=user::find($id);
 
     if($upadateProfile)

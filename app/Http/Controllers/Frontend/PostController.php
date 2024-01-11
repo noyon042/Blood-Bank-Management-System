@@ -86,14 +86,14 @@ class PostController extends Controller
 
             $donations = MemberPost::all();
 
-            $correctdate = Carbon::now();
+            $currentdate = Carbon::now();
 
             $differences = [];
 
             foreach ($donations as $donation)
              {
                 $donationdate = Carbon::parse($donation->date);
-                $difference = $correctdate->diffInDays($donationdate);
+                $difference = $currentdate->diffInDays($donationdate);
                 $differences[$donation->id] = $difference;
             }
            // dd($differences);
@@ -177,6 +177,22 @@ return view('frontend.pages.card_section.donate', compact('donate', 'differences
 
 public function update(Request $request,$id)
 {
+
+    $validate=Validator::make($request->all(),[
+        'name' => 'required|regex:/^[a-zA-Z\s]+$/',
+        'contact' => 'required|regex:/^01[1-9][0-9]{8}$/|numeric',
+        'email'=>'required|email',
+
+     ]);
+
+     if($validate->fails())
+     {
+        // notify()->success('Profile updated successfully.');
+
+        notify()->error($validate->getMessageBag());
+        return redirect()->back();
+     }
+
     $editPost=MemberPost::find($id);
 
     if($editPost)

@@ -76,7 +76,7 @@
 
       <div class="form-group">
         <label for="">Upload Image: </label>
-        <input value="{{$editPost->image}}" name="image" type="file" class="form-control">
+        <input value="{{$editPost->image}}" name="image" type="file" accept="image/*" class="form-control">
       </div>
 
 

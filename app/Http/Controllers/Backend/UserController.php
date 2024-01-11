@@ -62,8 +62,9 @@ class UserController extends Controller
     {
 
         $validate=Validator::make($request->all(),[
-           'user_name'=>'required',
+           'user_name'=>'required|regex:/^[a-zA-Z\s]+$/',
            'role'=>'required',
+           'contact'=>'required|regex:/^01[1-9][0-9]{8}$/|numeric',
            'user_email'=>'required|email',
            'user_password'=>'required|min:6',
 
@@ -71,8 +72,8 @@ class UserController extends Controller
 
         if($validate->fails())
         {
-            return redirect()->back()->with('myError',$validate->getMessageBag());
-        }
+            notify()->error($validate->getMessageBag());
+            return redirect()->back();        }
 
         $fileName=null;
         if($request->hasFile('user_image'))
@@ -131,6 +132,19 @@ class UserController extends Controller
 
     public function update(Request $request,$id)
     {
+
+        $validate=Validator::make($request->all(),[
+            'name'=>'required|regex:/^[a-zA-Z\s]+$/',
+            'contact'=>'required|regex:/^01[1-9][0-9]{8}$/|numeric',
+            'email'=>'required|email',
+
+         ]);
+
+         if($validate->fails())
+         {
+            notify()->error($validate->getMessageBag());
+            return redirect()->back();         }
+
         $user=User::find($id);
 
         if($user)

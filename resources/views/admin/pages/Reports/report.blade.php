@@ -30,7 +30,7 @@
                 <td>
 
                     @if ($apply->status == 'accepted')
-                    <a class="btn btn-info" href="{{ route('print.report', $apply->id) }}">Report</a>
+                    <a class="btn btn-info" href="{{ route('print.report', $apply->id) }}">View Report</a>
                     @endif
                     {{-- <a class="btn btn-info" href="{{ route('print.report', $apply->id) }}">Report</a> --}}
                 </td>

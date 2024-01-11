@@ -35,8 +35,10 @@
     <img class="img" src="{{url('/uploads/'.$request->memberPost->image)}}" style=" border-radius: 50%;height: 60px;width: 60px;" alt=""></td>
     {{-- <img class="img" src="{{url('/uploads/'.$donorList->image)}}" alt=""></td> --}}
    </td>
-
-
+<td>
+     <a class="btn btn-danger" href="{{ route('donor.delete', $request->memberPost->id) }}">Delete</a>
+</td>
+        </tr>
 
         @endforeach
     </tbody>

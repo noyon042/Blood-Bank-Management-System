@@ -14,6 +14,8 @@ class ListTable extends Controller
     public function listtable(){
     //   $donorLists = DonorList::paginate(5);
     $donorLists =MemberPost::where('role','donation')->get();
+    // ->latest('name')
+    // ->get();
         return view('admin.pages.donorlist.ListTable.listtable', compact('donorLists'));
     }
 
@@ -26,12 +28,11 @@ class ListTable extends Controller
 
     $val = Validator::make($request->all(), [
 
-        'name' => 'required',
-        'role' => 'required',
-        'email' => 'required',
-        'blood_group' => 'required',
-        'contact' => 'required',
-        'date' => 'required',
+        'name' => 'required|regex:/^[a-zA-Z\s]+$/',
+            'role'=>'required',
+            'blood_group'=>'required',
+            'contact' => 'required|regex:/^01[1-9][0-9]{8}$/|numeric',
+            'email'=>'required|email',
 
 
     ]);
@@ -92,6 +93,20 @@ class ListTable extends Controller
 
     public function update(Request $request,$id)
     {
+        $val = Validator::make($request->all(), [
+
+            'name' => 'required|regex:/^[a-zA-Z\s]+$/',
+            'contact' => 'required|regex:/^01[1-9][0-9]{8}$/|numeric',
+            'email'=>'required|email',
+
+
+        ]);
+
+        if ($val->fails()) {
+
+            notify()->error($val->getMessageBag());
+            return redirect()->back();    }
+
         $donor=MemberPost::find($id);
 
         if($donor)
@@ -164,6 +179,7 @@ class ListTable extends Controller
 
         $activeDonors =Apply::where('status','accepted')->get();
 
+
             return view('admin.pages.donorResponse.active', compact('activeDonors'));
         }
 
@@ -175,7 +191,37 @@ class ListTable extends Controller
             $inactiveDonors =Apply::whereNotIn('status',['accepted','rejected'])->get();
 
                 return view('admin.pages.donorResponse.inactive', compact('inactiveDonors'));
+
             }
 
+
+            public function deleteDonor($id)
+            {
+              $donor=Apply::find($id);
+              if($donor)
+              {
+                $donor->deleteDonor();
+              }
+
+              notify()->success('Inactive Donor Deleted Successfully.');
+              return redirect()->back();
+            }
+
+
+            // public function activeSearch(Request $request)
+            // {
+            //     // dd(request()->all())
+
+            //     if($request->activeSearch)
+            //     {
+            //         $donors=Apply::where('role','donation')->where('bloodGroup','LIKE','%'.$request->activeSearch.'%')->get();
+            //         //select * from products where name like % akash %;
+            //     }else{
+            //         $donors=Apply::all();
+            //     }
+
+
+            //     return view("admin.pages.donorResponse.search",compact('donors'));
+            // }
 
 }

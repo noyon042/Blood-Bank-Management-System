@@ -34,6 +34,8 @@
    <select required class="form-control" name="role" id="">
         <!-- <option value="">Admin</option> -->
         <option value="admin">Manager</option>
+        <option value="member">Member</option>
+
         {{-- <option value="manager">Manager</option> --}}
    </select>
   </div>

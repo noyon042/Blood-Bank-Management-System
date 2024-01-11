@@ -16,12 +16,14 @@ class CheckAdmin
     public function handle(Request $request, Closure $next)
     {
 
-        
+
         if(auth()->user()->role =='admin')
         {
             return $next($request);
         }
-        notify()->error('You are not admin.');
+        // notify()->error('You are not admin.');
+        notify()->success('Login successfully');
+
         return redirect()->route('home');
     }
 }

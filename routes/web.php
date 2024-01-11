@@ -107,6 +107,9 @@ Route::group(['middleware'=>'auth'],function(){
 
     Route::get('/recepient/singleView/{id}',[PostController::class,'recView'])->name('recepient.singleView');
 
+    Route::get('/active-Donor',[ApplyController::class,'activedonor'])->name('ActiveDonor');
+
+
 });
 
 
@@ -164,8 +167,7 @@ Route::put('/donor/update/{id}',[ListTable::class, 'update'])->name('donor.updat
 
 //Donor Response
 Route::get('/active-Donor',[ListTable::class,'activeDonor'])->name('activeDonor');
-Route::get('/donor/delete/{id}',[ListTable::class,'deleteDonor'])->name('donor.delete');
-Route::get('/searchDonor-active',[ListTable::class,'search'])->name('active.search');
+// Route::get('/searchDonor-active',[ListTable::class,'activeSearch'])->name('active.search');
 
 Route::get('/inactive-Donor',[ListTable::class,'inactiveDonor'])->name('inactiveDonor');
 Route::get('/donor/delete/{id}',[ListTable::class,'deleteDonor'])->name('donor.delete');

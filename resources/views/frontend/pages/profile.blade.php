@@ -136,7 +136,7 @@
 
                                         @if ($apply->status == 'accepted')
                                         <a class="btn btn-info"
-                                        href="{{ route('apply.donar.report', $apply->id) }}">Report</a>
+                                        href="{{ route('apply.donar.report', $apply->id) }}">View Report</a>
                                         @endif
                                         {{-- <a class="btn btn-info"
                                             href="{{ route('apply.donar.report', $apply->id) }}">Report</a> --}}

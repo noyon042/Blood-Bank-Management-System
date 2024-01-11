@@ -34,10 +34,21 @@
     <input value="{{$editprofile->password}}" name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 </div>
 
+
+
   <div class="form-group">
     <label for="">Blood Group</label>
-    <input value="{{$editprofile->blood_group}}" type="text" name="blood_group" class="form-control" id=""  placeholder="Blood Type">
-  </div>
+    <select input value="{{$editprofile->blood_group}}" type="text" name="blood_group" class="form-control" id=""  placeholder="Blood Type">
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+    </select>
+    </div>
 
   <div class="form-group">
     <label for="">Contact </label>
@@ -60,7 +71,7 @@
 
       <div class="form-group">
         <label for="">Upload Image: </label>
-        <input value="{{$editprofile->image}}" name="image" type="file" class="form-control">
+        <input value="{{$editprofile->image}}" name="image" type="file" accept="image/*" class="form-control">
       </div>
 
 

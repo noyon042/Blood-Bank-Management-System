@@ -49,7 +49,7 @@
 
       <div class="form-group">
         <label for="">Upload Image: </label>
-        <input value="{{$recepient->image}}" name="image" type="file" class="form-control">
+        <input value="{{$recepient->image}}" name="image" accept="image/*" type="file" class="form-control">
       </div>
 
 

@@ -29,7 +29,7 @@
             <th>Name</th>
             <th scope="col">Role</th>
             {{-- <th scope="col">Request Date</th> --}}
-            <th>User Id</th>
+            {{-- <th>User Id</th> --}}
             <th scope="col">Email Address</th>
             <th scope="col">Blood Group</th>
             <th scope="col">Contact</th>
@@ -51,7 +51,7 @@
             <th scope="row">{{$key+1}}</th>
             <td>{{$request->name}}</td>
             <td>{{$request->role}}</td>
-            <td>{{$request->user_id}}</td>
+            {{-- <td>{{$request->user_id}}</td> --}}
             <td>{{$request->email}}</td>
             <td>{{$request->blood_group}}</td>
             <td>{{$request->contact}}</td>
@@ -68,7 +68,12 @@
             <td>{{$request->status}}</td>
             <td>
                 <a class="btn bg-success text-white" href="{{route('myPost.edit',$request->id)}}">Edit</a>
+
+                @if ($request->role=='donation')
                 <a class="btn btn-warning" href="{{route('view.request',$request->id)}}">View</a>
+
+                @endif
+                {{-- <a class="btn btn-warning" href="{{route('view.request',$request->id)}}">View</a> --}}
 
                 {{-- <a class="btn btn-danger" href="">Delete</a> --}}
             </td>
